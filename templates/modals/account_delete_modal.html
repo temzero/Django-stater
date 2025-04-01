@@ -1,0 +1,17 @@
+<div id="deleteAccountModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-[999]">
+    <div class="flex flex-col gap-4 items-center bg-white px-6 py-4 rounded shadow-lg w-[400px]">
+        <h2 class="text-3xl text-center font-semibold text-red-500">Delete Account!</h2>
+
+        <img class="h-10 w-10 font-light" src="/static/icon/trash.svg" alt="delete"/>
+        <div class="flex flex-col items-center">
+            <p class="text-center text-sm font-light">We're truly sorry to see you go!</p>
+            <p class="text-center text-sm font-light">Deleting your account is a permanent action, and will irreversibly remove all your data, including any saved information and content associated with your profile.</p>
+            <p class="text-center text-sm font-light mt-4">Do you still want to proceed?</p>
+        </div>
+        <form method="POST" action="{% url 'profile-delete' %}" class="flex gap-2 mt-4 w-full justify-end">
+            {% csrf_token %}
+            <button type="submit" class="button w-full button-primary bg-red-500 cursor-default">Delete</button>
+            <button type="button" onclick="closeDeleteAccountModal()" class="button w-full">Cancel</button>
+        </form>
+    </div>
+</div>

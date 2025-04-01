@@ -1,0 +1,38 @@
+{% extends 'layouts/default.html' %}
+
+{% block header %}
+<h1 class="text-3xl">Settings</h1>
+{% endblock %}
+
+{% block center_content %}
+
+    <a href="{% url 'profile-settings' %}" class="flex px-4 py-2 items-center justify-between border-2 rounded mb-4">
+        <div class="flex gap-4 items-center">
+            <img class="avatar w-20 h-20" src="{{user.profile.avatarDisplay}}"/>
+            <div>
+                <h1 class="text-lg font-bold">{{user.profile.fullName}}</h1>
+                <h1 class="text-sm opacity-60">{{user.email}}</h1>
+            </div>
+        </div>
+        <img class="h-4 w-4 opacity-60" src="/static/icon/right.svg" alt="Right Icon"/>
+    </a>
+
+    <div class="flex flex-col border-2 rounded w-full">
+        <a href="{% url 'settings-general' %}" class="px-4 py-2 border-b border-gray-300">General</a>
+        <a href="{% url 'profile-password-change' %}" class="px-4 py-2 border-b border-gray-300">Change Password</a>
+        <a href="#" class="px-4 py-2 border-b border-gray-300 text-red-600" onclick="openDeleteAccountModal()">Delete Account</a>
+    </div>
+
+    {% include 'modals/password_change_modal.html' with form=change_password_form %}
+    {% include 'modals/account_delete_modal.html' %}
+
+    <script>
+        function openDeleteAccountModal() {
+            document.getElementById('deleteAccountModal').classList.remove('hidden');
+        }
+        function closeDeleteAccountModal() {
+            document.getElementById('deleteAccountModal').classList.add('hidden');
+        }
+    </script>
+    
+{% endblock %}

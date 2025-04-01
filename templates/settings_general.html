@@ -1,0 +1,16 @@
+{% extends 'layouts/default.html' %}
+
+{% block header %}
+<h1 class="text-3xl">General Settings</h1>
+{% endblock %}
+
+{% block center_content %}
+
+    <div class="flex flex-col border-2 rounded w-full">
+        <a href="{% url 'settings-general' %}" class="px-4 py-2 border-b ">General</a>
+        <a href="{% url 'profile-email-change' %}" class="px-4 py-2 border-b">Email Settings</a>
+        <a href="{% url 'profile-password-change' %}" class="px-4 py-2 border-b">Change Password</a>
+        <a href="{% url 'profile-delete' %}" class="px-4 py-2 border-b">Delete Account</a>
+    </div>
+
+{% endblock %}

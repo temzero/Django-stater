@@ -1,0 +1,35 @@
+<div id="changeEmailModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-[999]">
+
+    <div class="flex flex-col gap-4 items-center bg-white rounded shadow-lg w-[360px]">
+
+        <div class="bg-white p-6 py-5 rounded w-[360px]">
+            <div class="flex flex-col justify-center gap-4 mb-2">
+                <h2 class="text-3xl text-center font-semibold">Change Email</h2>
+                <img class="h-12" src="/static/icon/email.svg" alt="Logo"/>
+            </div>
+
+            <!-- Display Current Email -->
+            <div class="flex items-center gap-1 justify-center">
+                <p class="text-xl font-light">{{ request.user.email }}</p>
+
+                {% if not request.user.emailaddress_set.first.verified %}
+                    <!-- <p class="text-red-500 text-xs mt-1">Email not verified</p> -->
+                    <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
+                {% else %}
+                    <img class="h-5" src="/static/icon/tick.svg" alt="Logo"/>
+                {% endif %}
+            </div>
+
+            <!-- Change Email Form -->
+            <form id="changeEmailForm" action="{% url 'profile-email-change' %}" method="post" class="mt-6">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Enter new email" class="input" required autofocus>
+                {% if form.email.errors %}
+                    <p class="text-red-500 text-xs p-1">{{ form.email.errors.0 }}</p>
+                {% endif %}
+
+                <button type="submit" class="button w-full button-primary p-1 mt-4">Send Email Verification</button>
+            </form>
+        </div>
+    </div>
+</div>

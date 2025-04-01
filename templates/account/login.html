@@ -1,0 +1,56 @@
+{% extends "layouts/account.html" %}
+{% load i18n %}
+{% load allauth account %}
+
+{% block head_title %}
+    {% trans "Login" %}
+{% endblock head_title %}
+
+{% block content %}
+
+    <form class="flex flex-col gap-6 w-full items-center p-6 bg-white shadow-lg rounded max-w-[360px]" method="post" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        <h2 class="text-2xl font-semibold text-center">{% trans "Login" %}</h2>
+    
+        <!-- Preserve Redirection -->
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+        <div class="space-y-2">
+            <!-- Email/Username Input -->
+            <input type="text" name="login" placeholder="Username or email" required class="input" autofocus>
+        
+            <!-- Password Input -->
+            <input type="password" name="password" placeholder="Password" required class="input">
+            <!-- Show General Errors -->
+            {% if form.non_field_errors %}
+                <p class="text-red-500 text-xs">{{ form.non_field_errors.0 }}</p>
+            {% endif %}
+            
+            {% if form.login.errors %}
+                <p class="text-red-500 text-xs">{{ form.login.errors.0 }}</p>
+            {% endif %}
+    
+            {% if form.password.errors %}
+                <p class="text-red-500 text-xs">{{ form.password.errors.0 }}</p>
+            {% endif %}
+        </div>
+    
+        <button class="button button-primary py-1 w-full" type="submit">
+            {% trans "Log In" %}
+        </button>
+    </form>
+
+        <!-- Forgot Password Link -->
+    <a href="{% url 'account_reset_password' %}" class="mt-8 mb-2 text-sm text-blue-500 hover:underline">
+        Forgot Password?
+    </a>
+
+    <p class="text-sm">
+        {% trans "Don't have an account?" %} 
+        <a class="text-blue-500 hover:underline" href="{% url 'account_signup' %}">{% trans "Register here!" %}</a>
+    </p>
+    {% if SOCIALACCOUNT_ENABLED %}
+        <p class="mt-4">{% trans "Or sign in with:" %}</p>
+        {% include "socialaccount/snippets/login.html" %}
+    {% endif %}
+    
+{% endblock %}

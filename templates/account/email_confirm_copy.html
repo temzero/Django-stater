@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Email Confirmation</h1>
+
+    {% if confirmation %}
+        <p>Confirm email for user: {{ confirmation.email_address.user.username }}</p>
+        <p>Email: {{ confirmation.email_address.email }}</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+        </form>
+    {% else %}
+        <p>No confirmation data found.</p>
+    {% endif %}
+{% endblock %}
+

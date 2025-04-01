@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block layout %}
+
+<div class="relative flex flex-col items-center justify-center min-h-screen bg-gray-200">
+    <a class="absolute top-12 flex items-center gap-2" href="/">
+        <img class="h-10" src="/static/images/logo.svg" alt="Logo"/>
+        <span class="text-3xl font-semibold">Project Title</span>
+    </a>
+    {% block content %}{% endblock %}
+</div>
+
+
+{% endblock %}

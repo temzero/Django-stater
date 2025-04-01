@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #247cff;
+    --red-color: #F04A4D;
+    --secondary-color: #dfdfdf;
+    --primary-text-color: white;
+    --border-color: #D1D5DB;
+
+    --input-height: 36px;
+}
+
+input {
+    outline: none; /* Removes the default outline */
+    border: none; /* Removes border */
+    box-shadow: none; /* Removes any box shadow */
+    background-color: transparent; /* Optional: Makes background transparent */
+}
+
+/* Removes hover effect */
+input:hover,
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hide the datepicker dropdown but keep the input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* Optional: Hide the dropdown arrow in Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+}
+
+.gender-select {
+    width: 100%;
+    background-color: transparent;
+    padding-right: 2.5rem;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.gender-select:focus {
+    outline: none;
+}
+
+.red-text {
+    color: var(--red-color)
+}
+
+/* Buttons */
+.a {
+    color: var(--primary-color);
+}
+
+.a:hover {
+    opacity: .8;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    min-width: 60px;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button-primary {
+    border: none;
+    background: var(--primary-color);
+    color: var(--primary-text-color);
+}
+
+.input {
+    height: var(--input-height);
+    width: 100%;
+    padding: 0 5px; 
+    border: 2px solid var(--border-color);
+    background-color: #eee;
+    border-radius: 4px;
+    outline: none;   
+}
+
+.input-container {
+    width: 100%;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    padding: 4px 6px;
+    background-color: #eee;
+}
+
+.form-input {
+    font-size: 1.2rem;
+    font-weight: 200;
+    width: 100%;
+    background-color: transparent;
+}
+
+/* elements */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.2rem;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    background-color: white;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 2px solid var(--border-color);
+    outline-offset: -2px;
+}
