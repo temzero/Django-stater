@@ -22,14 +22,14 @@
             <input type="file" id="avatarInput" accept="image/*" name="avatar" class="hidden">
         </div>
 
-        <div class="input-container bg-white border-none">
+        <div class="input-container bg-transparent border-none">
             <label for="id_gender" class="block text-xs font-semibold">Username</label> 
             <div class="text-xl font-light">
                 {{ user.username }}
             </div>
         </div>
 
-        <div class="input-container bg-white border-none">
+        <div class="input-container bg-transparent border-none">
             <label for="id_gender" class="block text-xs font-semibold">Email</label>
             <div class="flex justify-between">
                 <div class="flex gap-2 items-center">
@@ -98,22 +98,32 @@
 </form>
 
 {% include 'modals/change_email_modal.html' %}
+{% include 'partials/theme_toggle.html' %}
 
+{% endblock %}
+
+{% block script %}
 <script>
-    const emailModal = document.getElementById('changeEmailModal')
+    const emailModal = document.getElementById('changeEmailModal');
+    const emailModalContent = emailModal.querySelector('.modal-content');
 
+    // Function to show the modal with animation
     function openEmailModal() {
-        emailModal.classList.remove('hidden');
-        emailModal.querySelector('input[name="email"]').focus()
+        emailModal.classList.add("show"); // Show modal and trigger animation
+        emailModalContent.classList.add("show"); // Trigger animation on content
+
+        // Focus the email input field and clear the value
+        emailModal.querySelector('input[name="email"]').focus();
+        emailModal.querySelector('input[name="email"]').value = '';
     }
+
     // Close the modal when clicking outside the content area
     emailModal.addEventListener('click', function (event) {
         if (event.target === emailModal) {
-            emailModal.classList.add('hidden');
-            emailModal.querySelector('input[name="email"]').value = '';
+            emailModal.classList.remove("show"); // Hide modal and trigger animation out
+            emailModalContent.classList.remove("show");
         }
     });
-
 
     const avatarInput = document.querySelector('input[name="avatar"]');
     const avatarPreview = document.getElementById("avatarPreview");
@@ -130,7 +140,8 @@
         }
     });
 </script>
-
 {% endblock %}
+
+
 
 

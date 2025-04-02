@@ -5,4 +5,5 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('settings/', settings_view, name='settings'),
     path('settings/general', settings_general_view, name='settings-general'),
+    path('settings/theme', settings_theme_view, name='settings-theme'),
 ]

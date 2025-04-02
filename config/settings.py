@@ -32,6 +32,10 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 # Application definition
 
 INSTALLED_APPS = [
+    'tailwind',
+    'theme',
+    'django_browser_reload',
+
     'django.contrib.sites',  # Required for allauth
     'allauth',
     'allauth.account',
@@ -59,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -151,3 +156,9 @@ ACCOUNT_LOGIN_METHODS = {"email", "username"}
 ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
 
 ACCOUNT_LOGOUT_ON_GET = True
+
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"

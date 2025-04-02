@@ -1,4 +1,4 @@
-{% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Django Starter{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <!-- Load HTMX and extensions FIRST without defer -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% tailwind_css %}
+
     <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
     <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
     
-    <!-- Then load other scripts with defer -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="{% static 'script/script.js' %}"></script>
 </head>
 <body>
     {% include 'includes/messages.html' %}
-
     {% block layout %}{% endblock %}
 </body>
 </html>

@@ -1,0 +1,95 @@
+<div class="flex items-center gap-2">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+    <span>Dark Mode</span>
+</div>
+
+<!-- Hidden form for submitting theme -->
+<form id="theme-form"
+  hx-post="{% url 'settings-theme' %}"  
+  hx-trigger="change from:#theme-input"  
+  hx-swap="none"> 
+  {% csrf_token %}
+  <input type="hidden" name="theme" id="theme-input">
+</form>
+  
+<script>
+  const userTheme = "{{ request.user.profile.theme }}"
+  localStorage.setItem("theme", userTheme);
+
+  // Toggle button
+  const themeToggle = document.getElementById("theme-toggle");
+  const htmlElement = document.documentElement;
+
+  // Check for saved theme preference
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme) {
+    htmlElement.classList.add(storedTheme);
+    themeToggle.checked = storedTheme === "dark";
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+
+  const themeForm = document.getElementById("theme-form");
+  const themeInput = document.getElementById("theme-input");
+
+  const updateTheme = (isDark) => {
+        const theme = isDark ? "dark" : "light";
+        themeInput.value = theme;
+        htmlElement.classList.toggle("dark", isDark);
+        localStorage.setItem("theme", theme);
+        themeInput.dispatchEvent(new Event("change"));
+    };
+
+  themeToggle.addEventListener("change", () => updateTheme(themeToggle.checked));
+</script>
+  
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+    }
+  
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .2s;
+      border-radius: 34px;
+    }
+  
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #eee;
+      border: 2px solid white;
+      transition: .24s;
+      border-radius: 50%;
+    }
+  
+    input:checked + .slider {
+      background-color: #0adb73;
+    }
+  
+    input:checked + .slider:before {
+      transform: translateX(17px);
+    }
+  </style>

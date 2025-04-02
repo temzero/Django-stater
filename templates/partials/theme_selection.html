@@ -1,0 +1,18 @@
+<form id="dropdown-theme-form" class="border w-60 rounded bg-transparent" method="POST" action="{% url 'settings-theme' %}">
+    {% csrf_token %}
+    <select name="theme" id="dropdown-theme-select" class="flex items-center bg-transparent appearance-none">
+        <option class="bg-gray-100 dark:bg-gray-800" value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
+        <option class="bg-gray-100 dark:bg-gray-800" value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
+        <option class="bg-gray-100 dark:bg-gray-800" value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
+    </select>
+</form>
+
+<script>
+    const themeFormSelect = document.getElementById("dropdown-theme-form");
+    const themeSelect = document.getElementById("dropdown-theme-select");
+
+    themeSelect.addEventListener("change", function() {
+        themeFormSelect.submit();
+    });
+</script>
+

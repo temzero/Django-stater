@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.core.validators import RegexValidator
 from .models import Profile
 
 class ProfileForm(forms.ModelForm):
@@ -45,3 +44,11 @@ class EmailForm(forms.ModelForm):
             raise forms.ValidationError("This email is already in use.")
 
         return email
+    
+class ThemeForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['user']
+        widgets = {
+            'theme': forms.Select(choices=Profile.THEME_CHOICES, attrs={'class': 'theme-select'})
+        }

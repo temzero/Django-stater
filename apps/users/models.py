@@ -11,9 +11,9 @@ class Profile(models.Model):
         ('P', 'Prefer not to say'),
     ]
     THEME_CHOICES = [
-        ('light', 'Light Mode'),
-        ('dark', 'Dark Mode'),
-        ('custom', 'Custom'),
+        ('light', 'Light'),
+        ('dark', 'Dark'),
+        ('system', 'System Setting'),
     ]
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)

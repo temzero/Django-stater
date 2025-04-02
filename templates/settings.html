@@ -23,16 +23,29 @@
         <a href="#" class="px-4 py-2 border-b border-gray-300 text-red-600" onclick="openDeleteAccountModal()">Delete Account</a>
     </div>
 
-    {% include 'modals/password_change_modal.html' with form=change_password_form %}
     {% include 'modals/account_delete_modal.html' %}
+{% endblock %}
 
+{% block script %}
     <script>
+        const deleteAccountModal = document.getElementById('deleteAccountModal')
+        const deleteAccountModalContent = deleteAccountModal.querySelector('.modal-content');
+
         function openDeleteAccountModal() {
-            document.getElementById('deleteAccountModal').classList.remove('hidden');
+            deleteAccountModal.classList.add('show');
+            deleteAccountModalContent.classList.add('show');
         }
         function closeDeleteAccountModal() {
-            document.getElementById('deleteAccountModal').classList.add('hidden');
+            deleteAccountModal.classList.remove('show');
+            deleteAccountModalContent.classList.remove('show');
         }
+
+        // Close the modal when clicking outside the content area
+        deleteAccountModal.addEventListener('click', function (event) {
+            if (event.target === deleteAccountModal) {
+                closeDeleteAccountModal()
+            }
+        });
     </script>
-    
 {% endblock %}
+    

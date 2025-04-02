@@ -1,0 +1,29 @@
+{% extends 'layouts/default.html' %}
+
+{% block header %}
+<h1 class="text-3xl">Theme</h1>
+{% endblock %}
+
+{% block center_content %}
+
+    <form id="dropdown-theme-form" class="border-2 bg-transparent" method="POST" action="{% url 'settings-theme' %}">
+        {% csrf_token %}
+        <select name="theme" id="dropdown-theme-select" class="p-2 w-full bg-transparent appearance-none">
+            <option class="bg-gray-100 dark:bg-gray-800" value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
+            <option class="bg-gray-100 dark:bg-gray-800" value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
+            <option class="bg-gray-100 dark:bg-gray-800" value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
+        </select>
+    </form>
+
+    {% include 'partials/theme_toggle.html' %}
+
+<script>
+    const themeFormSelect = document.getElementById("dropdown-theme-form");
+    const themeSelect = document.getElementById("dropdown-theme-select");
+
+    themeSelect.addEventListener("change", function() {
+        themeFormSelect.submit();
+    });
+</script>
+{% endblock %}
+

@@ -1,1 +1,11 @@
+# .gitattributes
 * text=auto
+*.py text
+*.html text
+*.css text
+*.js text
+*.svg binary
+*.woff binary
+*.ttf binary
+*.png binary
+*.jpg binary

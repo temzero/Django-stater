@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import path, include
 from apps.users.views import profile_view
 
 from django.conf import settings
@@ -14,6 +14,8 @@ urlpatterns = [
     path('', include('apps.core.urls')),
     path('profile/', include('apps.users.urls')), 
     path('@<username>/', profile_view, name='profile'), 
+
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
 
 # Only use in development

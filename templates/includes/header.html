@@ -10,7 +10,7 @@
             {% if request.user.is_authenticated %}
             <li x-data="{ dropdownOpen: false }">
                 <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="flex items-center cursor-pointer select-none">
-                    <img class="avatar mr-2 h-8 w-8" src="{{user.profile.avatarDisplay}}"/>
+                    <img class="mr-2 h-8 w-8 avatar-header" src="{{user.profile.avatarDisplay}}"/>
                     {% if user.first_name %}
                         {{user.first_name}}
                     {% else %}
@@ -18,20 +18,20 @@
                     {% endif %}
 
                 </a>
-                <ul x-show="dropdownOpen" x-cloak class="flex flex-col absolute right-0 top-10 bg-white border border-gray-300 text-black shadow rounded w-36 z-20 shadow-lg overflow-hidden"
+                <ul x-show="dropdownOpen" x-cloak class="dropdown-menu"
                 x-transition:enter="duration-100 ease"
                 x-transition:enter-start="opacity-0 -translate-y-5 scale-90"
                 x-transition:enter-end="opacity-100 translate-y-0 scale-100"
                 >
-                    <a href="{% url 'profile' %}" class="hover:bg-gray-100 p-2 border-b border-gray-300">My Profile</a>
-                    <a href="{% url 'settings' %}" class="hover:bg-gray-100 p-2 border-b border-gray-300">Settings</a>
-                    <a href="{% url 'account_logout' %}" class="hover:bg-gray-100 p-2 border-gray-300 text-red-500">Log Out</a>
+                    <a href="{% url 'profile' %}">My Profile</a>
+                    <a href="{% url 'settings' %}">Settings</a>
+                    <a href="{% url 'account_logout' %}" class="text-red-500">Log Out</a>
                 </ul>
             </li>
             
             {% else %}
-            <li class="a"><a href="{% url 'account_login' %}">Login</a></li>
-            <li class="a"><a href="{% url 'account_signup' %}">Register</a></li>
+            <li class="a font-bold"><a href="{% url 'account_login' %}">Login</a></li>
+            <li class="a font-bold"><a href="{% url 'account_signup' %}">Register</a></li>
             {% endif %}
         </ul>
     </nav>
