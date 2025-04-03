@@ -2,23 +2,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        function renderTheme() {
+            const userTheme = "{{ request.user.profile.theme }}"; 
+            let localTheme = userTheme || localStorage.getItem("theme");
+            // if there is no localTheme or system
+            if (!localTheme || localTheme === 'auto' || localTheme === "system") {
+                localTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            // Apply the theme BEFORE the page renders
+            if (localTheme === "dark") {document.documentElement.classList.add("dark")} 
+            else {document.documentElement.classList.remove("dark")}
+            localStorage.setItem("theme", localTheme)
+        }
+        renderTheme()
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Django Starter{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 
+    <!-- Load AlpineJS first, without defer -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Load other scripts with defer -->
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js" defer></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/ws.js" defer></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.14" defer></script>
+    <script src="{% static 'script/script.js' %}" defer></script>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% tailwind_css %}
-
-    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
-    <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
-
-    <script src="{% static 'script/script.js' %}"></script>
 </head>
+    
 <body>
     {% include 'includes/messages.html' %}
     {% block layout %}{% endblock %}

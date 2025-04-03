@@ -1,58 +1,51 @@
 <messages>
     {% if messages %}
-    <div x-data="{ showMessage: false }" >
+    <div x-data="{ showMessage: false, timeout: null }" 
+        x-init="timeout = setTimeout(() => showMessage = true, 200); timeout = setTimeout(() => showMessage = false, 7000);"
+        @mouseenter="clearTimeout(timeout)" 
+        @mouseleave="timeout = setTimeout(() => showMessage = false, 1000)">
+
     {% for message in messages %}
     <div class="fixed bottom-4 right-0 min-w-[320px] max-w-sm w-auto mx-auto px-4 z-50"
-        x-show="showMessage" 
-        x-init="setTimeout(() => showMessage = true, 200), setTimeout(() => showMessage = false, 7000)"
+        x-show="showMessage"
         x-transition:enter="duration-700 ease-out"
         x-transition:enter-start="opacity-0 translate-x-40"
         x-transition:enter-end="opacity-100 translate-x-0"
         x-transition:leave="duration-200 ease-in"
         x-transition:leave-start="opacity-100 translate-x-0"
         x-transition:leave-end="opacity-0 translate-x-40">
-        {% if message.tags == "success" %}
-            <div class="relative font-light border-2 border-green-300 text-green-700 h-auto p-3 py-2 overflow-hidden rounded-sm shadow-xl flex items-center alert-{{ message.tags }}
-                bg-white/90 dark:bg-green-200/10 dark:border-none dark:text-green-400 backdrop-blur-md">
-                <div class="absolute inset-0 bg-[url('/static/icon/tick.svg')] bg-no-repeat bg-[length:90px_90px] bg-right opacity-20"></div>
-            
-                <div class="relative flex flex-col justify-center">
-                    <h1 class="text-lg font-bold leading-normal">Success</h1>
-                    <p class="text-sm">{{ message }}</p>
-                </div>
-            </div>
-        {% elif message.tags == "error" %}
-            <div class="relative font-light border-2 border-red-300 text-red-700 h-auto p-3 py-2 overflow-hidden rounded-sm shadow-xl flex items-center alert-{{ message.tags }}
-                bg-white/90 dark:bg-red-200/10 dark:border-none dark:text-red-400 backdrop-blur-md">
-                <div class="absolute inset-0 bg-[url('/static/icon/error.svg')] bg-no-repeat bg-[length:80px_80px] bg-right opacity-10 "></div>
-            
-                <div class="relative flex flex-col justify-center">
-                    <h1 class="text-lg font-bold leading-normal">Error</h1>
-                    <p class="text-sm">{{ message }}</p>
-                </div>
-            </div>
-        {% elif message.tags == "warning" %}
-            <div class="relative font-light border-2 border-yellow-300 text-yellow-600 h-auto p-3 py-2 overflow-hidden rounded-sm shadow-xl flex items-center alert-{{ message.tags }}
-                bg-white/90 dark:bg-yellow-200/10 dark:border-none dark:text-yellow-400 backdrop-blur-md">
 
-                <div class="absolute inset-0 bg-[url('/static/icon/warning.svg')] bg-no-repeat bg-[length:80px_80px] bg-right opacity-20"></div>
-            
-                <div class="relative flex flex-col justify-center">
-                    <h1 class="text-lg font-bold leading-normal">Warning</h1>
+        <div class="relative font-light border-2 dark:border-transparent h-auto p-3 py-2 overflow-hidden rounded-sm shadow-xl flex items-center backdrop-blur-md transition-all duration-200 ease-in-out hover:shadow-md alert-{{ message.tags }} 
+            {% if message.tags == 'success' %} border-green-600/20 text-green-800 dark:text-green-400 bg-green-100/80  hover:bg-white dark:bg-[#252f2a] dark:hover:bg-[#203e2f]
+            {% elif message.tags == 'error' %} border-red-600/20 text-red-800 dark:text-red-400 bg-red-100/80 hover:bg-white dark:bg-[#3b2e2e] dark:hover:bg-[#393434]
+            {% elif message.tags == 'warning' %} border-yellow-600/20 text-yellow-800 dark:text-yellow-400 bg-yellow-100/40  hover:bg-white dark:bg-[#2e2a21] dark:hover:bg-[#383325]
+            {% else %} border-gray-600/20 text-gray-800 bg-white/80 hover:bg-gray-100 dark:text-white dark:bg-gray-100/10 dark:hover:bg-gray-200/20
+            {% endif %}">
+
+            <!-- Background Icon -->
+            {% if message.tags == 'success' %}
+                <div class="absolute inset-0 bg-[url('/static/icon/tick.svg')] bg-no-repeat bg-[length:80px_80px] bg-right opacity-10"></div>
+            {% elif message.tags == 'error' %}
+                <div class="absolute inset-0 bg-[url('/static/icon/error.svg')] bg-no-repeat bg-[length:80px_80px] bg-[calc(100%-.2rem)_center] opacity-10"></div>
+            {% elif message.tags == 'warning' %}
+                <div class="absolute inset-0 bg-[url('/static/icon/warning.svg')] bg-no-repeat bg-[length:80px_80px] bg-right opacity-10"></div>
+            {% elif message.tags == 'info' %}
+                <div class="absolute inset-0 bg-[url('/static/icon/info3.svg')] bg-no-repeat bg-[length:30px_30px] bg-[calc(100%-.0rem)_center] opacity-10"></div>
+            {% endif %}
+
+            <!-- Message Content -->
+            <div class="relative flex flex-col justify-center">
+                {% if message.tags != "info" %}
+                    <h1 class="text-lg font-bold leading-normal capitalize">{{ message.tags }}</h1>
                     <p class="text-sm">{{ message }}</p>
-                </div>
+                {% else %}
+                    <p class="text-sm font-normal">{{ message }}</p>
+                {% endif %}
             </div>
-        {% elif message.tags == "info" %}
-            <div class="relative border-2 border-gray-300 h-auto p-2 py-2 overflow-hidden rounded-sm shadow-xl flex items-center alert-{{ message.tags }}
-                bg-white/80 dark:bg-gray-100/10 dark:border-none dark:text-white backdrop-blur-md">
-                <!-- <img class="h-5 opacity-50 mr-2" src="/static/icon/info2.svg" alt="Logo"/> -->
+        </div>
 
-                <div class="absolute inset-0 bg-[url('/static/icon/info2.svg')] bg-no-repeat bg-[length:50px_50px] bg-right opacity-20"></div>
-                <p class="text-sm">{{ message }}</p>
-            </div>
-        {% endif %}
 
-        </div> 
+    </div> 
     </div>
     {% endfor %}
     {% endif %}

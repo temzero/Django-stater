@@ -1,38 +1,35 @@
-<header class="header">
+<header class="navbar">
     <div>
         <a class="flex items-center gap-2 mr-4" href="/">
             <img class="h-6" src="/static/images/logo.svg" alt="Logo"/>
             <span class="a text-xl font-bold">Project Title</span>
         </a>
     </div>
-    <nav class="block relative">
-        <ul class="navitems flex gap-4 items-center justify-center h-full">
-            {% if request.user.is_authenticated %}
-            <li x-data="{ dropdownOpen: false }">
-                <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="flex items-center cursor-pointer select-none">
-                    <img class="mr-2 h-8 w-8 avatar-header" src="{{user.profile.avatarDisplay}}"/>
-                    {% if user.first_name %}
-                        {{user.first_name}}
-                    {% else %}
-                        @{{user.username}}
-                    {% endif %}
-
-                </a>
-                <ul x-show="dropdownOpen" x-cloak class="dropdown-menu"
-                x-transition:enter="duration-100 ease"
-                x-transition:enter-start="opacity-0 -translate-y-5 scale-90"
-                x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+    <div class="relative navitems flex gap-4 items-center justify-center h-full">
+        {% if request.user.is_authenticated %}
+        <div x-data="{ dropdownOpen: false }">
+            <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="flex items-center cursor-pointer select-none">
+                <img class="mr-2 h-8 w-8 avatar-header" src="{{user.profile.avatarDisplay}}"/>
+                {% if user.first_name %}
+                    {{user.first_name}}
+                {% else %}
+                    @{{user.username}}
+                {% endif %}
+            </a>
+            <div x-show="dropdownOpen" x-cloak class="dropdown-menu absolute top-12 -right-2 min-w-[140px]"
+                x-transition:enter="duration-200 ease"
+                x-transition:enter-start="opacity-0 -translate-y-4 scale-20"
+                x-transition:enter-end="opacity-100 scale-100"
                 >
-                    <a href="{% url 'profile' %}">My Profile</a>
-                    <a href="{% url 'settings' %}">Settings</a>
-                    <a href="{% url 'account_logout' %}" class="text-red-500">Log Out</a>
-                </ul>
-            </li>
-            
-            {% else %}
-            <li class="a font-bold"><a href="{% url 'account_login' %}">Login</a></li>
-            <li class="a font-bold"><a href="{% url 'account_signup' %}">Register</a></li>
-            {% endif %}
-        </ul>
-    </nav>
+                <a href="{% url 'profile' %}">My Profile</a>
+                <a href="{% url 'settings' %}">Settings</a>
+                <a href="{% url 'account_logout' %}" class="text-red-500">Log Out</a>
+            </div>
+        </div>
+        
+        {% else %}
+        <li class="a font-bold"><a href="{% url 'account_login' %}">Login</a></li>
+        <li class="a font-bold"><a href="{% url 'account_signup' %}">Register</a></li>
+        {% endif %}
+    </div>
 </header>

@@ -4,9 +4,9 @@ from apps.users.forms import ThemeForm
 from django.http import HttpResponseRedirect
 
 def home_view(request):
-    messages.info(request, 'This is an informational message.')
-    messages.error(request, 'There was an error while saving your changes.')
-    messages.warning(request, 'Be careful, something might go wrong.')
+    # messages.info(request, 'This is an informational message.')
+    # messages.error(request, 'There was an error while saving your changes.')
+    # messages.warning(request, 'Be careful, something might go wrong.')
     messages.success(request, 'Your changes were saved successfully!')
     return render(request, "home.html")
 
@@ -43,5 +43,9 @@ def settings_theme_view(request):
 
 
     # Render the form for GET requests
+    messages.warning(request, 'Be careful, something might go wrong.')
+    # messages.success(request, 'Your changes were saved successfully!')
+    # messages.error(request, 'There was an error while saving your changes.')
+    # messages.info(request, 'This is an informational message.')
     form = ThemeForm(instance=request.user.profile)
     return render(request, 'settings/settings_theme.html', {'form': form})

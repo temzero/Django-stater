@@ -6,7 +6,7 @@
 
 {% block center_content %}
 
-    <a href="{% url 'profile-settings' %}" class="flex px-4 py-2 items-center justify-between border-2 rounded mb-4">
+    <a href="{% url 'profile-settings' %}" class="flex px-4 py-2 items-center justify-between rounded mb-4 border-2 custom-border">
         <div class="flex gap-4 items-center">
             <img class="avatar w-20 h-20" src="{{user.profile.avatarDisplay}}"/>
             <div>
@@ -17,10 +17,14 @@
         <img class="h-4 w-4 opacity-60" src="/static/icon/right.svg" alt="Right Icon"/>
     </a>
 
-    <div class="flex flex-col border-2 rounded w-full">
-        <a href="{% url 'settings-general' %}" class="px-4 py-2 border-b border-gray-300">General</a>
-        <a href="{% url 'profile-password-change' %}" class="px-4 py-2 border-b border-gray-300">Change Password</a>
-        <a href="#" class="px-4 py-2 border-b border-gray-300 text-red-600" onclick="openDeleteAccountModal()">Delete Account</a>
+    <div class="flex flex-col rounded w-full border-2 custom-border">
+        <a href="{% url 'settings-general' %}" class="px-4 py-2 custom-border-bottom">General</a>
+        <div class="flex pr-1 justify-between items-center custom-border-bottom">
+            <a href="{% url 'settings-theme' %}" class="p-3 w-full">Theme</a>
+            {% include 'partials/theme_selection.html' %}
+        </div>
+        <a href="{% url 'profile-password-change' %}" class="px-4 py-2 custom-border-bottom">Change Password</a>
+        <a href="#" class="px-4 py-2 text-red-600" onclick="openDeleteAccountModal()">Delete Account</a>
     </div>
 
     {% include 'modals/account_delete_modal.html' %}

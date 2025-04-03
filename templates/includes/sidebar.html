@@ -1,0 +1,31 @@
+<nav class="sidebar">
+    <div class="w-full flex flex-col items-center">
+        <a class="flex items-center justify-center" href="/">
+            <img class="h-10 w-10" src="/static/images/logo.svg" alt="Logo"/>
+        </a>
+    </div>
+    <div class="block relative">
+        <ul class="navitems flex gap-4 items-center justify-center h-full">
+            {% if request.user.is_authenticated %}
+            <li x-data="{ dropdownOpen: false }">
+                <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="flex items-center cursor-pointer select-none">
+                    <img class="mr-2 h-8 w-8 avatar-header" src="{{user.profile.avatarDisplay}}"/>
+                </a>
+                <ul x-show="dropdownOpen" x-cloak class="dropdown-menu absolute bottom-0 left-0 min-w-[150px]"
+                x-transition:enter="duration-200 ease"
+                x-transition:enter-start="opacity-0 -translate-x-8 translate-y-8 scale-20"
+                x-transition:enter-end="opacity-100 scale-100"
+                >
+                <a href="{% url 'account_logout' %}" class="text-red-500">Log Out</a>
+                <a href="{% url 'settings' %}">Settings</a>
+                <a href="{% url 'profile' %}">My Profile</a>
+                </ul>
+            </li>
+            
+            {% else %}
+            <li class="a font-bold"><a href="{% url 'account_login' %}">Login</a></li>
+            <li class="a font-bold"><a href="{% url 'account_signup' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -1,9 +1,9 @@
-<form id="dropdown-theme-form" class="border w-60 rounded bg-transparent" method="POST" action="{% url 'settings-theme' %}">
+<form id="dropdown-theme-form" class="w-60 overflow-hidden rounded custom-border" method="POST" action="{% url 'settings-theme' %}">
     {% csrf_token %}
-    <select name="theme" id="dropdown-theme-select" class="flex items-center bg-transparent appearance-none">
-        <option class="bg-gray-100 dark:bg-gray-800" value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
-        <option class="bg-gray-100 dark:bg-gray-800" value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
-        <option class="bg-gray-100 dark:bg-gray-800" value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
+    <select name="theme" id="dropdown-theme-select" class="w-full bg-transparent">
+        <option value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
+        <option value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
+        <option value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
     </select>
 </form>
 
@@ -13,6 +13,7 @@
 
     themeSelect.addEventListener("change", function() {
         themeFormSelect.submit();
+        localStorage.setItem("theme", themeSelect.value);
     });
 </script>
 

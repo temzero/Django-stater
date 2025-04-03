@@ -13,7 +13,7 @@ class Profile(models.Model):
     THEME_CHOICES = [
         ('light', 'Light'),
         ('dark', 'Dark'),
-        ('system', 'System Setting'),
+        ('system', 'System'),
     ]
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
