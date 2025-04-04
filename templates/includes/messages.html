@@ -37,9 +37,9 @@
             <div class="relative flex flex-col justify-center">
                 {% if message.tags != "info" %}
                     <h1 class="text-lg font-bold leading-normal capitalize">{{ message.tags }}</h1>
-                    <p class="text-sm">{{ message }}</p>
+                    <p class="text-sm">{{ message|safe }}</p>
                 {% else %}
-                    <p class="text-sm font-normal">{{ message }}</p>
+                    <p class="text-sm font-normal">{{ message|safe }}</p>
                 {% endif %}
             </div>
         </div>

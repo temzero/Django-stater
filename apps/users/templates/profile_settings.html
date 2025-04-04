@@ -1,97 +1,105 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/form_layout.html' %}
 
-{% block content %}
-<div class="relative w-full flex flex-col items-center">
-    <h1 class="absolute top-0 left-0 font-bold mb-4 text-2xl font-semibold">Profile Setting</h1>
+{% block title %}Profile{% endblock %}
 
-    <form method="POST" enctype="multipart/form-data" 
-        class="w-full max-w-[500px] flex flex-col gap-2 items-center justify-center">
-        {% csrf_token %}
-        <input type="hidden" name="form_type" value="profile_details">
-        
-        <!-- Profile Avatar Upload -->
-        <div class="relative mb-2">
-            <label for="{{ profile_form.avatar.id_for_label }}" class="cursor-pointer">
-                <div class="overflow-hidden rounded-full">
-                    <img id="avatarPreview" class="avatar" src="{{ profile.avatarDisplay }}" />
-                    <div class="w-24 h-24 rounded-full absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                        <img class="h-6" src="/static/icon/edit-white.svg" alt="Logo"/>
-                    </div>
-                </div>
-            </label>
-            <input type="file" id="avatarInput" accept="image/*" name="avatar" class="hidden">
-        </div>
+{% block buttons %}
+    <button onclick=" document.getElementById('profileForm').submit()" id="saveButton" class="button button-primary button-disabled" type="submit">Save</button>
+    <a href="{% url 'profile' %}" class="button">Cancel</a>
+{% endblock %}
 
-        <div class="input-container bg-transparent border-none">
-            <label for="id_gender" class="block text-xs font-semibold">Username</label> 
-            <div class="text-xl font-light">
-                {{ user.username }}
-            </div>
-        </div>
+{% block form_content %}
 
-        <div class="input-container bg-transparent border-none">
-            <label for="id_gender" class="block text-xs font-semibold">Email</label>
-            <div class="flex justify-between">
-                <div class="flex gap-2 items-center">
-                    <div class="text-xl font-light">
-                        {{ user.email }}
-                    </div>
-                    {% if not request.user.emailaddress_set.first.verified %}
-                        <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
-                    {% else %}
-                        <img class="h-4" src="/static/icon/tick.svg" alt="Logo"/>
-                    {% endif %}
-                </div>
-                <div class="flex gap-3">
-                    {% if not request.user.emailaddress_set.first.verified %}
-                    <a href="#" class="text-yellow-500 hover:underline" onclick="document.getElementById('verifyEmailForm').submit();">Verify Email</a>
-                    {% endif %}
-                    <a href="#" class="a" onclick="openEmailModal()">Change</a>
+<form id="profileForm" action="{% url 'profile-settings' %}" method="POST" enctype="multipart/form-data"
+    class="mx-auto max-w-[500px] flex flex-col gap-2 items-center">
+    {% csrf_token %}
+    <input type="hidden" name="form_type" value="profile_details">
+    
+    <!-- Profile Avatar Upload -->
+    <div class="relative">
+        <label for="{{ profile_form.avatar.id_for_label }}" class="cursor-pointer">
+            <div class="overflow-hidden rounded-full">
+                <img id="avatarPreview" class="avatar" src="{{ user.profile.avatarDisplay }}" />
+                <div class="w-24 h-24 rounded-full absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                    <img class="h-6" src="/static/icon/edit-white.svg" alt="Logo"/>
                 </div>
             </div>
-        </div>
+        </label>
+        <input type="file" id="avatarInput" accept="image/*" name="avatar" class="hidden">
+    </div>
 
-        <div class="flex gap-2 w-full">
-            <div class="input-container">
-                <label for="id_gender" class="block text-xs font-semibold">First Name</label>
-                {{ user_form.first_name }}
+    <div class="input-container bg-transparent border-none">
+        <label for="id_gender" class="text-xs font-semibold">Username</label> 
+        <div class="text-lg font-light">
+            {{ user.username }}
+        </div>
+    </div>
+
+    <div class="input-container bg-transparent border-none">
+        <label for="id_gender" class="text-xs font-semibold">Email</label>
+        <div class="flex justify-between items-center text-lg">
+            <div class="flex gap-2 items-center">
+                <div class="font-light">
+                    {{ user.email }}
+                </div>
+                {% if not request.user.emailaddress_set.first.verified %}
+                    <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
+                {% else %}
+                    <img class="h-4" src="/static/icon/tick.svg" alt="Logo"/>
+                {% endif %}
             </div>
-            <div class="input-container">
-                <label for="id_gender" class="block text-xs font-semibold">Last Name</label>
-                {{ user_form.last_name }}
+            <div class="flex gap-3">
+                {% if not request.user.emailaddress_set.first.verified %}
+                <a href="#" class="text-yellow-500 text-sm hover:underline" onclick="document.getElementById('verifyEmailForm').submit();">Verify</a>
+                {% endif %}
+                <a href="#" class="text-blue-500 text-sm hover:underline" onclick="openEmailModal()">Change</a>
             </div>
         </div>
-        
-        <div class="input-container">
-            <label for="id_gender" class="block text-xs font-semibold">Phone Number</label>
-            {{ profile_form.phone_number }}
-        </div>
+    </div>
 
-        <!-- Gender -->
+    <div class="flex gap-2 w-full">
         <div class="input-container">
-            <label for="id_gender" class="block text-xs font-semibold">Gender</label>
-            {{ profile_form.gender }}
+            <label for="id_first_name" class="text-xs font-semibold">First Name</label>
+            {{ user_form.first_name }}
+            <script>
+                document.getElementById('{{ user_form.first_name.id_for_label }}').addEventListener('input', function(e) {
+                    e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+                });
+            </script>
         </div>
-
-        <!-- Birthday -->
         <div class="input-container">
-            <label for="id_gender" class="block text-xs font-semibold">Birthday</label>
-            {{ profile_form.birthday }}
+            <label for="id_last_name" class="text-xs font-semibold">Last Name</label>
+            {{ user_form.last_name }}
+            <script>
+                document.getElementById('{{ user_form.last_name.id_for_label }}').addEventListener('input', function(e) {
+                    e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+                });
+            </script>
         </div>
+    </div>
+    
+    <div class="input-container">
+        <label for="id_gender" class="text-xs font-semibold">Phone Number</label>
+        {{ profile_form.phone_number }}
+    </div>
 
-        <!-- Bio -->
-        <div class="input-container">
-            <label for="id_gender" class="block text-xs font-semibold">Bio</label>
-            {{ profile_form.bio }}
-        </div>
+    <!-- Gender -->
+    <div class="input-container">
+        <label for="id_gender" class="text-xs font-semibold">Gender</label>
+        {{ profile_form.gender }}
+    </div>
 
-        <!-- Action Buttons -->
-        <div class="absolute top-0 right-0 flex justify-end gap-2">
-            <button class="button button-primary" type="submit">Save</button>
-            <a href="{% url 'profile' %}" class="button">Cancel</a>
-        </div>
-    </form>
-</div>
+    <!-- Birthday -->
+    <div class="input-container">
+        <label for="id_gender" class="text-xs font-semibold">Birthday</label>
+        {{ profile_form.birthday }}
+    </div>
+
+    <!-- Bio -->
+    <div class="input-container">
+        <label for="id_gender" class="text-xs font-semibold">Bio</label>
+        {{ profile_form.bio }}
+    </div>
+</form>
 
 <form id="verifyEmailForm" action="{% url 'profile-email-verify' %}" method="post" class="hidden">
     {% csrf_token %}
@@ -103,10 +111,13 @@
 
 {% block script %}
 <script>
+    // Add event listener to detect changes in the form
+    document.getElementById('profileForm').addEventListener('input', function() {
+        document.getElementById('saveButton').classList.remove('button-disabled');
+    });
+
     const emailModal = document.getElementById('changeEmailModal');
     const emailModalContent = emailModal.querySelector('.modal-content');
-
-    // Function to show the modal with animation
     function openEmailModal() {
         emailModal.classList.add("show"); // Show modal and trigger animation
         emailModalContent.classList.add("show"); // Trigger animation on content
@@ -115,8 +126,6 @@
         emailModal.querySelector('input[name="email"]').focus();
         emailModal.querySelector('input[name="email"]').value = '';
     }
-
-    // Close the modal when clicking outside the content area
     emailModal.addEventListener('click', function (event) {
         if (event.target === emailModal) {
             emailModal.classList.remove("show"); // Hide modal and trigger animation out
@@ -124,10 +133,8 @@
         }
     });
 
-    const avatarInput = document.querySelector('input[name="avatar"]');
+    const avatarInput = document.getElementById('avatarInput');
     const avatarPreview = document.getElementById("avatarPreview");
-    avatarInput.classList.add('hidden')
-
     avatarInput.addEventListener("change", function (event) {
         const file = event.target.files[0];
         if (file) {

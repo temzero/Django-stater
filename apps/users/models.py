@@ -30,7 +30,7 @@ class Profile(models.Model):
     theme = models.CharField(
         max_length=6, 
         choices=THEME_CHOICES, 
-        default='light', 
+        default='system', 
         null=True, 
         blank=True
     )

@@ -1,4 +1,4 @@
-{% extends "layouts/account.html" %}
+{% extends "layouts/account_layout.html" %}
 {% load i18n %}
 {% load allauth account %}
 
@@ -8,7 +8,7 @@
 
 {% block content %}
 
-    <form class="form max-w-sm" method="post" action="{% url 'account_signup' %}">
+    <form class="form max-w-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         <h2 class="text-2xl font-semibold">{% trans "Register" %}</h2>
 
@@ -35,13 +35,23 @@
 
             <div class="flex gap-2">
                 <!-- First Name Input -->
-                <input type="text" name="first_name" placeholder="First Name" required class="input">
+                <input id="registerFirstName" type="text" name="first_name" placeholder="First Name" required class="input">
+                <script>
+                    document.getElementById('registerFirstName').addEventListener('input', function(e) {
+                        e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+                    });
+                </script>
                 {% if form.first_name.errors %}
                     <p class="text-red-500 text-xs">{{ form.first_name.errors.0 }}</p>
                 {% endif %}
             
                 <!-- Last Name Input -->
-                <input type="text" name="last_name" placeholder="Last Name" required class="input">
+                <input id="registerLastName" type="text" name="last_name" placeholder="Last Name" required class="input">
+                <script>
+                    document.getElementById('registerLastName').addEventListener('input', function(e) {
+                        e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+                    });
+                </script>
                 {% if form.last_name.errors %}
                     <p class="text-red-500 text-xs">{{ form.last_name.errors.0 }}</p>
                 {% endif %}
@@ -64,14 +74,16 @@
             {% trans "Create Account" %}
         </button>
     </form>
-
-    <p class="text-sm mt-8">
-        {% trans "Already have an account?" %}
-        <a class="text-blue-500 hover:underline" href="{% url 'account_login' %}">{% trans "Login here!" %}</a>
-    </p>
-
-    {% if SOCIALACCOUNT_ENABLED %}
-        <p class="mt-4">{% trans "Or sign up with:" %}</p>
-        {% include "socialaccount/snippets/signup.html" %}
-    {% endif %}
+    
+    <div class="absolute top-[calc(50%+210px)] left-1/2 -translate-x-1/2 text-center">
+        <p class="text-sm">
+            {% trans "Already have an account?" %}
+            <a class="text-blue-500 hover:underline" href="{% url 'account_login' %}">{% trans "Login here!" %}</a>
+        </p>
+    
+        {% if SOCIALACCOUNT_ENABLED %}
+            <p class="mt-4">{% trans "Or sign up with:" %}</p>
+            {% include "socialaccount/snippets/signup.html" %}
+        {% endif %}
+    </div>
 {% endblock %}

@@ -2,17 +2,23 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import Profile
 from allauth.account.forms import SignupForm
+    
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': '...'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': '...'}),
+        }
 
-class CustomSignupForm(SignupForm):
-    first_name = forms.CharField(max_length=30, required=True, label="First Name")
-    last_name = forms.CharField(max_length=30, required=True, label="Last Name")
-
-    def save(self, request):
-        user = super().save(request)
-        user.first_name = self.cleaned_data["first_name"]
-        user.last_name = self.cleaned_data["last_name"]
-        user.save()
-        return user
+    # capitalize first and last names
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name', '')
+        return first_name.title()
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name', '')
+        return last_name.title()
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -20,21 +26,10 @@ class ProfileForm(forms.ModelForm):
         exclude = ['user']
         widgets = {
             'avatar': forms.ClearableFileInput(attrs={'id': 'avatarInput', 'class': 'hidden'}),
-            'gender': forms.Select(choices=Profile.GENDER_CHOICES, attrs={'class': 'form-input, gender-select'}),
+            'gender': forms.Select(choices=Profile.GENDER_CHOICES, attrs={'class': 'form-input, w-full bg-transparent'}),
             'birthday': forms.DateInput(attrs={'type': 'date', 'class': 'form-input'}),
-            'bio': forms.Textarea(attrs={'rows': 3, 'class': 'form-input'}),
-            'phone_number': forms.TextInput(attrs={'class': 'form-input'}),
-        }
-
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'email', 'username']
-        widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-input'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-input'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email', 'class': 'form-input'}),
-            'username': forms.TextInput(attrs={'placeholder': 'Username', 'class': 'form-input'}),
+            'bio': forms.Textarea(attrs={'rows': 4, 'class': 'form-input', 'placeholder': '...', 'maxlength': 180, 'style': 'resize: none;'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-input', 'placeholder': '...'}),
         }
 
 class EmailForm(forms.ModelForm):
@@ -64,3 +59,14 @@ class ThemeForm(forms.ModelForm):
         widgets = {
             'theme': forms.Select(choices=Profile.THEME_CHOICES, attrs={'class': 'theme-select'})
         }
+
+class CustomSignupForm(SignupForm):
+    first_name = forms.CharField(max_length=30, required=True, label="First Name")
+    last_name = forms.CharField(max_length=30, required=True, label="Last Name")
+
+    def save(self, request):
+        user = super().save(request)
+        user.first_name = self.cleaned_data["first_name"].title()
+        user.last_name = self.cleaned_data["last_name"].title()
+        user.save()
+        return user

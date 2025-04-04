@@ -20,24 +20,31 @@ def profile_view(request, username=None):
 
 @login_required
 def profile_settings_view(request):
-    user = request.user
-    profile = user.profile
-
     if request.method == "POST":
-        user_form = UserForm(request.POST, instance=user)
-        profile_form = ProfileForm(request.POST, request.FILES, instance=profile)
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        
+        messages.success(request, 'Post request received!')
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+            messages.success(request, 'Profile updated successfully!')
             return redirect('profile')
-
+        else:
+            # Add form errors to messages
+            for field, errors in user_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"User {field}: {error}")
+            for field, errors in profile_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"Profile {field}: {error}")
     else:
-        user_form = UserForm(instance=user)
-        profile_form = ProfileForm(instance=profile)
+        # For GET requests, show forms with current data
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
 
     return render(request, 'profile_settings.html', {
-        'profile' : profile,
         'user_form': user_form,
         'profile_form': profile_form
     })
@@ -71,17 +78,14 @@ def profile_email_change_view(request):
 
             if User.objects.filter(email=email).exclude(pk=user.pk).exists():
                 messages.warning(request, f"{email} is already in use.")
-                print("Warning message added")  # Debugging
             else:
                 form.save()
                 send_email_confirmation(request, user)
-                print("Success message added")  # Debugging
                 messages.success(request, "Email updated! Please confirm your new email.")
             
             return redirect("profile-settings")
 
         messages.error(request, "Invalid email. Please try again.")
-        print("Error message added")  # Debugging
 
     return render(request, "email.html", {"form": form})
 

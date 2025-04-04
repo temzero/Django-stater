@@ -1,12 +1,10 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/form_layout.html' %}
 
-{% block header %}
-<h1 class="text-3xl">Settings</h1>
-{% endblock %}
+{% block title %}Settings{% endblock %}
 
-{% block center_content %}
+{% block form_content %}
 
-    <a href="{% url 'profile-settings' %}" class="flex px-4 py-2 items-center justify-between rounded mb-4 border-2 custom-border">
+    <a href="{% url 'profile' %}" class="flex px-4 py-2 items-center justify-between rounded mb-4 border-2 custom-border">
         <div class="flex gap-4 items-center">
             <img class="avatar w-20 h-20" src="{{user.profile.avatarDisplay}}"/>
             <div>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block layout %}
+
+    {% include 'includes/sidebar.html' %}
+    <div class="w-full relative">
+        {% include 'includes/header.html' %}
+
+        <div class="sticky top-12 flex justify-end px-6 pt-6 z-30 pointer-events-none">
+            <div class="absolute top-4 left-6 text-2xl">{% block title %}{% endblock %}</div>
+            <div class="flex gap-2 pointer-events-auto">{% block buttons %}{% endblock %}</div>
+        </div>
+
+        <div class="relative mx-auto max-w-[900px]">
+            {% block content %}{% endblock %}
+        </div>
+
+    </div>
+    {% block script %}{% endblock %}
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layouts/account.html" %}
+{% extends "layouts/account_layout.html" %}
 {% load i18n %}
 {% load allauth account %}
 
@@ -8,7 +8,7 @@
 
 {% block content %}
 
-    <form class="form max-w-[360px]" method="post" action="{% url 'account_login' %}">
+    <form class="form max-w-[360px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" method="post" action="{% url 'account_login' %}">
         {% csrf_token %}
         <h2 class="text-2xl font-semibold text-center">{% trans "Login" %}</h2>
     
@@ -39,18 +39,19 @@
         </button>
     </form>
 
-        <!-- Forgot Password Link -->
-    <a href="{% url 'account_reset_password' %}" class="mt-8 mb-2 text-sm text-blue-500 hover:underline">
-        Forgot Password?
-    </a>
-
-    <p class="text-sm">
-        {% trans "Don't have an account?" %} 
-        <a class="text-blue-500 hover:underline" href="{% url 'account_signup' %}">{% trans "Register here!" %}</a>
-    </p>
-    {% if SOCIALACCOUNT_ENABLED %}
-        <p class="mt-4">{% trans "Or sign in with:" %}</p>
-        {% include "socialaccount/snippets/login.html" %}
-    {% endif %}
+    <div class="absolute top-[calc(50%+150px)] left-1/2 -translate-x-1/2 text-center space-y-1">
+        <a href="{% url 'account_reset_password' %}" class="text-sm text-blue-500 hover:underline">
+            Forgot Password?
+        </a>
+    
+        <p class="text-sm">
+            {% trans "Don't have an account?" %} 
+            <a class="text-blue-500 hover:underline" href="{% url 'account_signup' %}">{% trans "Register here!" %}</a>
+        </p>
+        {% if SOCIALACCOUNT_ENABLED %}
+            <p class="mt-4">{% trans "Or sign in with:" %}</p>
+            {% include "socialaccount/snippets/login.html" %}
+        {% endif %}
+    </div>
     
 {% endblock %}

@@ -7,7 +7,7 @@ def home_view(request):
     # messages.info(request, 'This is an informational message.')
     # messages.error(request, 'There was an error while saving your changes.')
     # messages.warning(request, 'Be careful, something might go wrong.')
-    messages.success(request, 'Your changes were saved successfully!')
+    # messages.success(request, 'Your changes were saved successfully!')
     return render(request, "home.html")
 
 def settings_view(request):

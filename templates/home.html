@@ -1,8 +1,7 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/default_layout.html' %}
 
 {% block content %}
-<div class="w-full flex justify-center">
-    <div class="flex flex-col gap-4 max-w-4xl font-light">
+    <div class="flex flex-col mx-auto gap-4 font-light">
         <h1 class="text-4xl">Home</h1>
         <p>
             <strong class="text-lg">The Whispers of the Forgotten Forest</strong><br>
@@ -40,5 +39,6 @@
             And so, the city remains, suspended at the edge of existence, watching as the stars flicker and fade, waiting for the day when time itself ceases to be.
         </p>
     </div>
-</div>
+    
+    {% include 'includes/footer.html' %}
 {% endblock %}

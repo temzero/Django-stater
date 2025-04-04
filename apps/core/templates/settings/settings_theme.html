@@ -1,10 +1,10 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/form_layout.html' %}
 
-{% block header %}
+{% block title %}
 <h1 class="text-3xl">Theme</h1>
 {% endblock %}
 
-{% block center_content %}
+{% block form_content %}
     {% include 'partials/theme_selection.html' %}
     {% include 'partials/theme_toggle.html' %}
 {% endblock %}
