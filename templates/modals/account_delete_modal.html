@@ -1,16 +1,39 @@
 <div id="deleteAccountModal" class="modal bg-red-500/25">
-    <div class="modal-content w-[400px]">
+    <div class="modal-content w-[400px] flex flex-col justify-center items-center gap-4">
         <h2 class="text-3xl text-center text-red-500">Delete Account!</h2>
-        <img class="h-10 w-full font-light text-center my-4" src="/static/icon/trash.svg" alt="delete"/>
-        <div class="flex flex-col items-center px-4">
-            <p class="text-center text-sm font-light">We're truly sorry to see you go!</p>
-            <p class="text-center text-sm font-light">Deleting your account is a permanent action, and will irreversibly remove all your data, including any saved information and content associated with your profile.</p>
-            <p class="text-center text-sm font-light mt-4">Do you still want to proceed?</p>
-        </div>
-        <form method="POST" action="{% url 'profile-delete' %}" class="flex gap-2 mt-8 w-full justify-end">
+        <i class="material-symbols-outlined text-red-500 text-5xl">delete_forever</i>
+
+        <p class="text-center text-sm font-light">We're truly sorry to see you go!</p>
+        <p class="text-center text-sm font-light">Deleting your account is a permanent action, and will irreversibly remove all your data, including any saved information and content associated with your profile.</p>
+        <p class="text-center text-sm font-light">Do you still want to proceed?</p>
+
+        <form method="POST" action="{% url 'profile-delete' %}" class="flex gap-2 mt-4 w-full justify-end">
             {% csrf_token %}
-            <button type="submit" class="button w-full button-primary bg-red-500 cursor-default">Delete</button>
+            <button type="submit" class="button button-primary w-full bg-red-500 cursor-default">Delete</button>
             <button type="button" onclick="closeDeleteAccountModal()" class="button w-full">Cancel</button>
         </form>
     </div>
 </div>
+
+<script>
+    // handle show modal
+    const deleteAccountModal = document.getElementById('deleteAccountModal')
+    const deleteAccountModalContent = deleteAccountModal.querySelector('.modal-content');
+
+    function openDeleteAccountModal() {
+        deleteAccountModal.classList.add('show');
+        deleteAccountModalContent.classList.add('show');
+    }
+
+    function closeDeleteAccountModal() {
+        deleteAccountModal.classList.remove('show');
+        deleteAccountModalContent.classList.remove('show');
+    }
+
+    // Close the modal when clicking outside the content area
+    deleteAccountModal.addEventListener('click', function (event) {
+        if (event.target === deleteAccountModal) {
+            closeDeleteAccountModal()
+        }
+    });
+</script>

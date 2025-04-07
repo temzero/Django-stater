@@ -100,6 +100,7 @@ def profile_delete_view(request):
 
     return render(request, 'account_delete.html')
 
+@login_required
 def profile_email_verify_view(request):
     send_email_confirmation(request, request.user)
     return redirect('profile-settings')

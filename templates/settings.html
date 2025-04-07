@@ -1,10 +1,10 @@
 {% extends 'layouts/form_layout.html' %}
 
-{% block title %}Settings{% endblock %}
+{% block label %}Settings{% endblock %}
 
 {% block form_content %}
-
-    <a href="{% url 'profile' %}" class="flex px-4 py-2 items-center justify-between rounded mb-4 border-2 custom-border">
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'profile' %}" class="flex p-3 items-center justify-between rounded mb-4 border-2 custom-border">
         <div class="flex gap-4 items-center">
             <img class="avatar w-20 h-20" src="{{user.profile.avatarDisplay}}"/>
             <div>
@@ -12,42 +12,29 @@
                 <h1 class="text-sm opacity-60">{{user.email}}</h1>
             </div>
         </div>
-        <img class="h-4 w-4 opacity-60" src="/static/icon/right.svg" alt="Right Icon"/>
+        <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
     </a>
+    {% endif %}
 
     <div class="flex flex-col rounded w-full border-2 custom-border">
-        <a href="{% url 'settings-general' %}" class="px-4 py-2 custom-border-bottom">General</a>
-        <div class="flex pr-1 justify-between items-center custom-border-bottom">
-            <a href="{% url 'settings-theme' %}" class="p-3 w-full">Theme</a>
+        <a href="{% url 'settings-general' %}" class="h-12 flex items-center px-4 custom-border-b">General</a>
+        <div class="h-12 flex items-center justify-between px-4 pr-1 custom-border-b">
+            <a href="{% url 'settings-theme' %}" class="w-full">Theme</a>
             {% include 'partials/theme_selection.html' %}
         </div>
-        <a href="{% url 'profile-password-change' %}" class="px-4 py-2 custom-border-bottom">Change Password</a>
-        <a href="#" class="px-4 py-2 text-red-600" onclick="openDeleteAccountModal()">Delete Account</a>
+        
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'profile-password-change' %}" class="h-12 flex items-center px-4 custom-border-b">Change Password</a>
+        <a href="#" class="h-12 flex items-center px-4 custom-border-b" onclick="openChangePasswordModal()">Change Password</a>
+        <a href="#" class="h-12 flex items-center px-4 text-red-600" onclick="openDeleteAccountModal()">Delete Account</a>
+        {% endif %}
+
     </div>
 
+    {% include 'modals/change_password_modal.html' %}
     {% include 'modals/account_delete_modal.html' %}
 {% endblock %}
 
 {% block script %}
-    <script>
-        const deleteAccountModal = document.getElementById('deleteAccountModal')
-        const deleteAccountModalContent = deleteAccountModal.querySelector('.modal-content');
-
-        function openDeleteAccountModal() {
-            deleteAccountModal.classList.add('show');
-            deleteAccountModalContent.classList.add('show');
-        }
-        function closeDeleteAccountModal() {
-            deleteAccountModal.classList.remove('show');
-            deleteAccountModalContent.classList.remove('show');
-        }
-
-        // Close the modal when clicking outside the content area
-        deleteAccountModal.addEventListener('click', function (event) {
-            if (event.target === deleteAccountModal) {
-                closeDeleteAccountModal()
-            }
-        });
-    </script>
 {% endblock %}
     

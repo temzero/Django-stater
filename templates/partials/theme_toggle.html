@@ -1,83 +1,21 @@
-<div class="flex items-center gap-2">
-    <label class="switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider"></span>
-    </label>
-    <span>Dark Mode</span>
-</div>
-
-<!-- Hidden form for submitting theme -->
-<form id="theme-form"
-  hx-post="{% url 'settings-theme' %}"  
-  hx-trigger="change from:#theme-input"  
-  hx-swap="none"> 
+<form class="custom-border rounded flex" id="theme-form" hx-post="{% url 'settings-theme' %}" hx-trigger="change from:#theme-input" hx-swap="none">
   {% csrf_token %}
-  <input type="hidden" name="theme" id="theme-input">
+    <button type="submit" value="light" class="flex items-center justify-center flex-1 p-2 hover:opacity-80">
+      <i class="material-symbols-outlined">light_mode</i>
+    </button>
+    <button type="submit" value="dark" class="flex items-center justify-center flex-1 p-2 hover:opacity-80 border-l border-r" style="border-color: var(--border-color);">
+      <i class="material-symbols-outlined">dark_mode</i>
+    </button>
+    <button type="submit" value="system" class="flex items-center justify-center flex-1 p-2 hover:opacity-80">
+      <i class="material-symbols-outlined">routine</i>
+    </button>
+  </div>
 </form>
-  
-<script>
-  function handleToggleThemeButton() {
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeForm = document.getElementById("theme-form");
-    const themeInput = document.getElementById("theme-input");
-    if (localStorage.getItem("theme") === "dark") {themeToggle.checked = localStorage.getItem("theme") === "dark"} 
-    function updateTheme(isDark) {
-          const theme = isDark ? "dark" : "light";
-          themeInput.value = theme;
-          document.documentElement.classList.toggle("dark", isDark);
-          localStorage.setItem("theme", theme);
-          themeInput.dispatchEvent(new Event("change"));
-      };
-    themeToggle.addEventListener("change", () => updateTheme(themeToggle.checked));
-  }
 
-  handleToggleThemeButton()
+<script>
+
 </script>
   
-  <style>
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 22px;
-    }
-  
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-  
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .2s;
-      border-radius: 34px;
-    }
-  
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 18px;
-      width: 18px;
-      left: 2px;
-      bottom: 2px;
-      background-color: #eee;
-      border: 2px solid white;
-      transition: .24s;
-      border-radius: 50%;
-    }
-  
-    input:checked + .slider {
-      background-color: #0adb73;
-    }
-  
-    input:checked + .slider:before {
-      transform: translateX(17px);
-    }
-  </style>
+<style>
+
+</style>

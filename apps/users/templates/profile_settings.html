@@ -1,6 +1,6 @@
 {% extends 'layouts/form_layout.html' %}
 
-{% block title %}Profile{% endblock %}
+{% block label %}Profile{% endblock %}
 
 {% block buttons %}
     <button onclick=" document.getElementById('profileForm').submit()" id="saveButton" class="button button-primary button-disabled" type="submit">Save</button>
@@ -20,7 +20,7 @@
             <div class="overflow-hidden rounded-full">
                 <img id="avatarPreview" class="avatar" src="{{ user.profile.avatarDisplay }}" />
                 <div class="w-24 h-24 rounded-full absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                    <img class="h-6" src="/static/icon/edit-white.svg" alt="Logo"/>
+                    <i class="material-symbols-outlined">edit</i>
                 </div>
             </div>
         </label>

@@ -1,15 +1,21 @@
 {% extends 'layouts/form_layout.html' %}
 
-{% block title %}
-<h1 class="text-3xl">General Settings</h1>
-{% endblock %}
+{% block label %}General Settings{% endblock %}
 
 {% block form_content %}
 
     <div class="flex flex-col rounded w-full border-2 custom-border">
-        <div class="flex justify-between items-center">
-            <a href="{% url 'settings-theme' %}" class="p-3 w-full">Theme</a>
+        <div class="h-12 flex items-center justify-between px-4 pr-1 custom-border-b">
+            <a href="{% url 'settings-theme' %}" class="w-full">Theme</a>
             {% include 'partials/theme_selection.html' %}
+        </div>
+        <div class="h-12 flex items-center justify-between px-4 pr-1">
+            <a href="{% url 'settings-theme' %}" class="w-full">Language</a>
+            <select name="language" id="language" class="w-full bg-transparent">
+                {% for lang in languages %}
+                    <option value="{{ lang.code }}" {% if lang.code == current_language %}selected{% endif %}>{{ lang.name }}</option>
+                {% endfor %}
+            </select>
         </div>
     </div>
 

@@ -16,31 +16,21 @@
 </form>
   
 <script>
-  // Toggle button
-  const themeToggle = document.getElementById("theme-toggle");
-  const htmlElement = document.documentElement;
-
-  // Check for saved theme preference
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme) {
-    htmlElement.classList.add(storedTheme);
-    themeToggle.checked = storedTheme === "dark";
-  } else {
-    localStorage.setItem("theme", "light");
+  function handleToggleThemeButton() {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeInput = document.getElementById("theme-input");
+    if (localStorage.getItem("theme") === "dark") {themeToggle.checked = localStorage.getItem("theme") === "dark"} 
+    function updateTheme(isDark) {
+      const theme = isDark ? "dark" : "light";
+      themeInput.value = theme;
+      document.documentElement.classList.toggle("dark", isDark);
+      localStorage.setItem("theme", theme);
+      themeInput.dispatchEvent(new Event("change"));
+    };
+    themeToggle.addEventListener("change", () => updateTheme(themeToggle.checked));
   }
 
-  const themeForm = document.getElementById("theme-form");
-  const themeInput = document.getElementById("theme-input");
-
-  const updateTheme = (isDark) => {
-        const theme = isDark ? "dark" : "light";
-        themeInput.value = theme;
-        htmlElement.classList.toggle("dark", isDark);
-        localStorage.setItem("theme", theme);
-        themeInput.dispatchEvent(new Event("change"));
-    };
-
-  themeToggle.addEventListener("change", () => updateTheme(themeToggle.checked));
+  handleToggleThemeButton()
 </script>
   
   <style>

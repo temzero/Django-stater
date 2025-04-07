@@ -67,6 +67,10 @@ select:focus {
     background-color: var(--bg-color);
 }
 
+.material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1;
+  }
+
 .modal {
     position: fixed;
     inset: 0;
@@ -107,7 +111,7 @@ select:focus {
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* 6 * 0.25rem (Tailwind's spacing scale) */
+    gap: 1rem; /* 6 * 0.25rem (Tailwind's spacing scale) */
     width: 100%;
     align-items: center;
     padding: 1.5rem; /* 6 * 0.25rem */
@@ -159,7 +163,7 @@ textarea.form-input {
 .custom-border {
     border: 1px solid var(--border-color);
 }
-.custom-border-bottom {
+.custom-border-b {
     border-bottom: 1px solid var(--border-color);
 }
 

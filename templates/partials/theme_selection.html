@@ -1,19 +1,60 @@
+{% if request.user.is_authenticated %}
 <form id="dropdown-theme-form" class="w-60 overflow-hidden rounded custom-border" method="POST" action="{% url 'settings-theme' %}">
     {% csrf_token %}
     <select name="theme" id="dropdown-theme-select" class="w-full bg-transparent">
-        <option value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
-        <option value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
-        <option value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
+            <option value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
+            <option value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
+            <option value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
     </select>
 </form>
 
 <script>
     const themeFormSelect = document.getElementById("dropdown-theme-form");
     const themeSelect = document.getElementById("dropdown-theme-select");
-
+    
     themeSelect.addEventListener("change", function() {
         themeFormSelect.submit();
         localStorage.setItem("theme", themeSelect.value);
     });
 </script>
+
+{% else %}
+<select id="themeSelectUnauthenticated" class="w-60 custom-border bg-transparent">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+    <option value="system">System Setting</option>
+</select>
+
+<script>
+function handleThemeSelectUnauthenticated() {
+    const themeSelect = document.getElementById("themeSelectUnauthenticated");
+    const storedTheme = localStorage.getItem("theme") || "system";
+    themeSelect.value = storedTheme;
+    alert(`storedTheme: ${storedTheme}`);
+    
+    function applyTheme(theme) {
+        if (theme === "system") {
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.classList.toggle("dark", systemPrefersDark);
+        } else {
+            document.documentElement.classList.toggle("dark", theme === "dark");
+        }
+    }
+    
+    applyTheme(storedTheme);
+    
+    themeSelect.addEventListener("change", function () {
+        const selectedTheme = this.value;
+        alert(`selectedTheme: ${selectedTheme}`);
+        localStorage.setItem("theme", selectedTheme);
+        applyTheme(selectedTheme);
+    });
+}
+
+handleThemeSelectUnauthenticated();
+</script>
+  
+{% endif %}
+
+
 

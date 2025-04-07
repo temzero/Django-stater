@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from apps.users.forms import ThemeForm
-from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+
 
 def home_view(request):
     # messages.info(request, 'This is an informational message.')
@@ -43,7 +44,7 @@ def settings_theme_view(request):
 
 
     # Render the form for GET requests
-    messages.warning(request, 'Be careful, something might go wrong.')
+    # messages.warning(request, 'Be careful, something might go wrong.')
     # messages.success(request, 'Your changes were saved successfully!')
     # messages.error(request, 'There was an error while saving your changes.')
     # messages.info(request, 'This is an informational message.')
