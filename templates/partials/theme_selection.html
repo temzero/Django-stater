@@ -4,7 +4,7 @@
     <select name="theme" id="dropdown-theme-select" class="w-full bg-transparent">
             <option value="light" {% if request.user.profile.theme == 'light' %}selected{% endif %}>Light</option>
             <option value="dark" {% if request.user.profile.theme == 'dark' %}selected{% endif %}>Dark</option>
-            <option value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System Setting</option>
+            <option value="system" {% if request.user.profile.theme == 'system' %}selected{% endif %}>System</option>
     </select>
 </form>
 
@@ -19,7 +19,7 @@
 </script>
 
 {% else %}
-<select id="themeSelectUnauthenticated" class="w-60 custom-border bg-transparent">
+<select id="unauthenticated-theme-select" class="w-60 custom-border bg-transparent">
     <option value="light">Light</option>
     <option value="dark">Dark</option>
     <option value="system">System Setting</option>
@@ -27,27 +27,12 @@
 
 <script>
 function handleThemeSelectUnauthenticated() {
-    const themeSelect = document.getElementById("themeSelectUnauthenticated");
+    const themeSelect = document.getElementById("unauthenticated-theme-select");
     const storedTheme = localStorage.getItem("theme") || "system";
     themeSelect.value = storedTheme;
-    alert(`storedTheme: ${storedTheme}`);
-    
-    function applyTheme(theme) {
-        if (theme === "system") {
-            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            document.documentElement.classList.toggle("dark", systemPrefersDark);
-        } else {
-            document.documentElement.classList.toggle("dark", theme === "dark");
-        }
-    }
-    
-    applyTheme(storedTheme);
     
     themeSelect.addEventListener("change", function () {
-        const selectedTheme = this.value;
-        alert(`selectedTheme: ${selectedTheme}`);
-        localStorage.setItem("theme", selectedTheme);
-        applyTheme(selectedTheme);
+        applyTheme(this.value);
     });
 }
 

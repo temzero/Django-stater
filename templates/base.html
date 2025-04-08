@@ -3,26 +3,22 @@
 <html lang="en">
 <head>
     <script>
-        function renderTheme() {
-            const userTheme = "{{ request.user.profile.theme|default_if_none:'' }}".trim(); 
-            const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            
-            let localTheme = userTheme || localStorage.getItem("theme") || "system";
+        function applyTheme(theme) {
+            const localTheme = theme || localStorage.getItem("theme") || "system";
+            localStorage.setItem("theme", localTheme);
+            // If it's not in localStorage yet (first login), fallback to server-side theme
 
-            if (localTheme === "dark") {
-                document.documentElement.classList.add("dark");
-            } else if (localTheme === "light") {
+            if (localTheme === "light") {
                 document.documentElement.classList.remove("dark");
-            } else if (localTheme === "system") {
-                if (systemTheme === "dark") {
-                    document.documentElement.classList.add("dark");
-                } else {
-                    document.documentElement.classList.remove("dark");
-                }
+            } else if (localTheme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.classList.toggle("dark", prefersDark);
             }
         }
 
-        renderTheme();
+        applyTheme();
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,8 +37,10 @@
 
     {% tailwind_css %}
 </head>
+
 <body class="flex">
     {% include 'includes/messages.html' %}
     {% block layout %}{% endblock %}
 </body>
+
 </html>

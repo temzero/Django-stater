@@ -20,6 +20,9 @@
                 x-transition:enter="duration-200 ease"
                 x-transition:enter-start="opacity-0 -translate-y-4 scale-20"
                 x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="duration-100 ease-in"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 -translate-y-4 scale-20"
                 >
                 <a href="{% url 'profile' %}">My Profile</a>
                 <a href="{% url 'settings' %}">Settings</a>

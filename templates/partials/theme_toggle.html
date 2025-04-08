@@ -1,21 +1,47 @@
-<form class="custom-border rounded flex" id="theme-form" hx-post="{% url 'settings-theme' %}" hx-trigger="change from:#theme-input" hx-swap="none">
+<form id="theme-switch-form" class="w-full border custom-border rounded-lg overflow-hidden flex"
+  hx-post="{% url 'settings-theme' %}"
+  hx-trigger="submit"
+  hx-swap="none">
   {% csrf_token %}
-    <button type="submit" value="light" class="flex items-center justify-center flex-1 p-2 hover:opacity-80">
-      <i class="material-symbols-outlined">light_mode</i>
-    </button>
-    <button type="submit" value="dark" class="flex items-center justify-center flex-1 p-2 hover:opacity-80 border-l border-r" style="border-color: var(--border-color);">
-      <i class="material-symbols-outlined">dark_mode</i>
-    </button>
-    <button type="submit" value="system" class="flex items-center justify-center flex-1 p-2 hover:opacity-80">
-      <i class="material-symbols-outlined">routine</i>
-    </button>
-  </div>
+
+  <button type="submit" name="theme" value="light" class="theme-btn flex items-center justify-center flex-1 p-2 opacity-60 hover:opacity-80">
+    <i class="material-symbols-outlined">light_mode</i>
+  </button>
+  
+  <div class="border-r custom-border"></div>
+  
+  <button type="submit" name="theme" value="dark" class="theme-btn flex items-center justify-center flex-1 p-2 opacity-60 hover:opacity-80">
+    <i class="material-symbols-outlined">dark_mode</i>
+  </button>
+  
+  <div class="border-r custom-border"></div>
+
+  <button type="submit" name="theme" value="system" class="theme-btn flex items-center justify-center flex-1 p-2 opacity-60 hover:opacity-80">
+    <i class="material-symbols-outlined">computer</i>
+  </button>
 </form>
 
 <script>
+const themeSwitchForm = document.querySelector('#theme-switch-form');
+themeSwitchForm.querySelectorAll('.theme-btn').forEach(button => {
+  // alert(`localstorage ${localStorage.getItem('theme')}`)
+  if (button.value === localStorage.getItem('theme')) {
+    button.classList.add('active');
+  }
 
+  button.addEventListener('click', () => {
+    applyTheme(button.value);
+
+    themeSwitchForm.querySelectorAll('.theme-btn').forEach(button => {button.classList.remove('active')});
+    button.classList.add('active');
+  });
+});
 </script>
+
   
 <style>
-
+  .theme-btn.active {
+    background-color: var(--border-color);
+    opacity: 1 !important;
+  }
 </style>

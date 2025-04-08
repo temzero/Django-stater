@@ -51,19 +51,32 @@ def profile_settings_view(request):
 
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.http import HttpResponse
+from django.urls import reverse
 
 @login_required
 def profile_password_change_view(request):
     form = PasswordChangeForm(request.user, request.POST or None)
 
-    if request.method == "POST":
+    if request.htmx:
         if form.is_valid():
             form.save()
-            update_session_auth_hash(request, request.user)  # Keep user logged in
-            messages.success(request, 'Password Update Successfully!')
+            update_session_auth_hash(request, request.user)
+            messages.success(request, 'Password updated Successfully!')
+            response = HttpResponse()
+            response["HX-Redirect"] = reverse("settings")  # or use a hardcoded URL
+            return response
+        else:
+            return render(request, 'partials/password_errors.html', {'form': form})
+
+    elif request.method == "POST":
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, request.user)
+            messages.success(request, 'Password changed!')
             return redirect('settings')
 
-    return render(request, 'password.html', {'form': form})
+    return render(request, 'change_password.html', {'form': form})
 
 @login_required
 def profile_email_change_view(request):

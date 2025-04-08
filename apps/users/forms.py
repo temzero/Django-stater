@@ -52,13 +52,15 @@ class EmailForm(forms.ModelForm):
 
         return email
     
+
 class ThemeForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user']
+        fields = ['theme']  # Only update theme
         widgets = {
             'theme': forms.Select(choices=Profile.THEME_CHOICES, attrs={'class': 'theme-select'})
         }
+
 
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=30, required=True, label="First Name")

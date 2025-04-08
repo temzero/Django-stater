@@ -1,37 +1,39 @@
-<div class="flex items-center gap-2">
-    <label class="switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider"></span>
-    </label>
-    <span>Dark Mode</span>
-</div>
-
-<!-- Hidden form for submitting theme -->
 <form id="theme-form"
-  hx-post="{% url 'settings-theme' %}"  
-  hx-trigger="change from:#theme-input"  
-  hx-swap="none"> 
+  hx-post="{% url 'settings-theme' %}"
+  hx-trigger="change from:#theme-input"
+  hx-swap="none"
+  class="flex items-center gap-2">
   {% csrf_token %}
+  
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+  </label>
+  <span>Dark Mode</span>
+
   <input type="hidden" name="theme" id="theme-input">
 </form>
-  
+
 <script>
-  function handleToggleThemeButton() {
+  (function handleToggleThemeButton() {
     const themeToggle = document.getElementById("theme-toggle");
     const themeInput = document.getElementById("theme-input");
-    if (localStorage.getItem("theme") === "dark") {themeToggle.checked = localStorage.getItem("theme") === "dark"} 
-    function updateTheme(isDark) {
+
+    const isDarkStored = localStorage.getItem("theme") === "dark";
+    themeToggle.checked = isDarkStored;
+    document.documentElement.classList.toggle("dark", isDarkStored);
+
+    themeToggle.addEventListener("change", () => {
+      const isDark = themeToggle.checked;
       const theme = isDark ? "dark" : "light";
       themeInput.value = theme;
       document.documentElement.classList.toggle("dark", isDark);
       localStorage.setItem("theme", theme);
       themeInput.dispatchEvent(new Event("change"));
-    };
-    themeToggle.addEventListener("change", () => updateTheme(themeToggle.checked));
-  }
-
-  handleToggleThemeButton()
+    });
+  })();
 </script>
+
   
   <style>
     .switch {

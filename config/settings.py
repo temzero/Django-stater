@@ -157,6 +157,12 @@ ACCOUNT_LOGIN_METHODS = {"email", "username"}
 ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
 
 ACCOUNT_LOGOUT_ON_GET = True
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 1209600
+ACCOUNT_SESSION_REMEMBER = True
+
+
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
