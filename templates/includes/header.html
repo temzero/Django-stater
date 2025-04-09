@@ -27,7 +27,7 @@
                 x-transition:leave-end="opacity-0 -translate-y-4 scale-20"
                 >
                 <a href="{% url 'profile' %}">{% trans "My Profile" %}</a>
-                <a href="{% url 'settings' %}">{% trans "Settings" %}</a>
+                <a href="{% url 'settings' %}" class="custom-border-b">{% trans "Settings" %}</a>
                 <a href="{% url 'account_logout' %}" class="text-red-500">{% trans "Log Out" %}</a>
             </div>
         </div>

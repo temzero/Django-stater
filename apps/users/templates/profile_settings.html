@@ -21,7 +21,7 @@
             <div class="overflow-hidden rounded-full">
                 <img id="avatarPreview" class="avatar" src="{{ user.profile.avatarDisplay }}" />
                 <div class="w-24 h-24 rounded-full absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                    <i class="material-symbols-outlined">{% trans "edit" %}</i>
+                    <i class="material-symbols-outlined">edit</i>
                 </div>
             </div>
         </label>
@@ -91,7 +91,7 @@
 
     <!-- Birthday -->
     <div class="input-container">
-        <label for="id_gender" class="text-xs font-semibold">{% trans "Birthday" %}</label>
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Birthday (m/d/y)" %}</label>
         {{ profile_form.birthday }}
     </div>
 

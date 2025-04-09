@@ -1,7 +1,7 @@
 {% extends 'layouts/form_layout.html' %}
 {% load i18n %}
 
-{% block label %}Settings{% endblock %}
+{% block label %}{% trans "Settings" %}{% endblock %}
 
 {% block form_content %}
     {% if request.user.is_authenticated %}

@@ -133,19 +133,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-LANGUAGES = [
-    ('en', 'English'),
-    ('zh-hans', 'Chinese (Simplified)'),
-    ('fr', 'French'),
-    ('hi', 'Hindi'),
-    ('ja', 'Japanese'),
-    ('ko', 'Korean'),
-    ('ru', 'Russian'),
-    ('es', 'Spanish'),
-    ('th', 'Thai'),
-    ('vi', 'Vietnamese')
-]
+from django.utils.translation import gettext_lazy as _
 
+LANGUAGES = [
+    ('en', _('English')),
+    ('zh-hans', _('Chinese (Simplified)')),
+    ('es', _('Spanish')),
+    ('vi', _('Vietnamese'))
+]
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',

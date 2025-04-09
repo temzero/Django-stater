@@ -52,14 +52,6 @@ class Profile(models.Model):
         )],
         verbose_name=_('Phone number')
     )
-    theme = models.CharField(
-        max_length=6,
-        choices=THEME_CHOICES,
-        default='system',
-        null=True,
-        blank=True,
-        verbose_name=_('Theme')
-    )
 
     def __str__(self):
         return f"{self.user.username}'s Profile"

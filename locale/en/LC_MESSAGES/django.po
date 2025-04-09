@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 10:00+0700\n"
+"POT-Creation-Date: 2025-04-09 14:50+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: .\apps\core\templates\settings\settings_general.html:4
 #: .\apps\core\templates\settings\settings_general.html:9
 msgid "General Setting"
 msgstr ""
 
-#: .\apps\core\views.py:22
-msgid "Theme updated successfully!"
+#: .\apps\core\views.py:8 .\apps\core\views.py:37
+msgid "There was an issue with the theme selection."
 msgstr ""
 
 #: .\apps\core\views.py:23
+msgid "Theme updated successfully!"
+msgstr ""
+
+#: .\apps\core\views.py:24
 msgid "Invalid theme selection"
 msgstr ""
 
-#: .\apps\core\views.py:33
+#: .\apps\core\views.py:34
 #, python-format
 msgid "Theme switched to %(theme)s!"
-msgstr ""
-
-#: .\apps\core\views.py:36
-msgid "There was an issue with the theme selection."
 msgstr ""
 
 #: .\apps\users\models.py:9
@@ -184,10 +185,6 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: .\apps\users\templates\profile_settings.html:24
-msgid "edit"
-msgstr ""
-
 #: .\apps\users\templates\profile_settings.html:32
 #: .\templates\account\signup.html:25
 msgid "Username"
@@ -270,6 +267,22 @@ msgstr ""
 
 #: .\apps\users\views.py:109
 msgid "Account deleted!"
+msgstr ""
+
+#: .\config\settings.py:139
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:140
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: .\config\settings.py:141
+msgid "Spanish"
+msgstr ""
+
+#: .\config\settings.py:142
+msgid "Vietnamese"
 msgstr ""
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:13
@@ -370,7 +383,7 @@ msgid "My Profile"
 msgstr ""
 
 #: .\templates\includes\header.html:30 .\templates\includes\sidebar.html:97
-#: .\templates\includes\sidebar.html:131
+#: .\templates\includes\sidebar.html:131 .\templates\settings.html:4
 msgid "Settings"
 msgstr ""
 

@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <messages>
     {% if messages %}
     <div x-data="{ showMessage: false, timeout: null }" 
@@ -15,33 +17,24 @@
         x-transition:leave-start="opacity-100 translate-x-0"
         x-transition:leave-end="opacity-0 translate-x-40">
 
-        <div class="relative font-light border-2 dark:border-transparent h-auto p-3 py-2 overflow-hidden rounded-sm shadow-xl flex items-center backdrop-blur-md transition-all duration-200 ease-in-out hover:shadow-md alert-{{ message.tags }} 
+        <div class="font-light border-2 dark:border-transparent p-2 overflow-hidden rounded-sm shadow-xl flex gap-2 backdrop-blur-md transition-all duration-200 ease-in-out hover:shadow-md alert-{{ message.tags }} 
             {% if message.tags == 'success' %} border-green-600/20 text-green-800 dark:text-green-400 bg-green-100/80  hover:bg-white dark:bg-[#252f2a] dark:hover:bg-[#203e2f]
             {% elif message.tags == 'error' %} border-red-600/20 text-red-800 dark:text-red-400 bg-red-100/80 hover:bg-white dark:bg-[#3b2e2e] dark:hover:bg-[#393434]
             {% elif message.tags == 'warning' %} border-yellow-600/20 text-yellow-800 dark:text-yellow-400 bg-yellow-100/40  hover:bg-white dark:bg-[#2e2a21] dark:hover:bg-[#383325]
             {% else %} border-gray-600/20 text-gray-800 bg-white/80 hover:bg-gray-100 dark:text-white dark:bg-gray-100/10 dark:hover:bg-gray-200/20
             {% endif %}">
 
-            <!-- Background Icon -->
             {% if message.tags == 'success' %}
-                <div class="absolute inset-0 bg-[url('/static/icon/tick.svg')] bg-no-repeat bg-[length:80px_80px] bg-right opacity-10"></div>
+                <i class="material-symbols-outlined">check</i>
             {% elif message.tags == 'error' %}
-                <div class="absolute inset-0 bg-[url('/static/icon/error.svg')] bg-no-repeat bg-[length:80px_80px] bg-[calc(100%-.2rem)_center] opacity-10"></div>
+                <i class="material-symbols-outlined">block</i>
             {% elif message.tags == 'warning' %}
-                <div class="absolute inset-0 bg-[url('/static/icon/warning.svg')] bg-no-repeat bg-[length:80px_80px] bg-right opacity-10"></div>
+                <i class="material-symbols-outlined">priority_high</i>
             {% elif message.tags == 'info' %}
                 <div class="absolute inset-0 bg-[url('/static/icon/info.svg')] bg-no-repeat bg-[length:30px_30px] bg-[calc(100%-.0rem)_center] opacity-10"></div>
             {% endif %}
 
-            <!-- Message Content -->
-            <div class="relative flex flex-col justify-center">
-                {% if message.tags != "info" %}
-                    <h1 class="text-lg font-bold leading-normal capitalize">{{ message.tags }}</h1>
-                    <p class="text-sm">{{ message|safe }}</p>
-                {% else %}
-                    <p class="text-sm font-normal">{{ message|safe }}</p>
-                {% endif %}
-            </div>
+            <p>{{ message|safe }}</p>
         </div>
     </div> 
     </div>

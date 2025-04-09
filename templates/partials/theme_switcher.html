@@ -1,7 +1,4 @@
-<form id="theme-switch-form" class="w-full border custom-border rounded-lg overflow-hidden flex"
-  hx-post="{% url 'settings-theme' %}"
-  hx-trigger="submit"
-  hx-swap="none">
+<div id="theme-switcher" class="w-full border custom-border rounded-lg overflow-hidden flex">
   {% csrf_token %}
 
   <button type="submit" name="theme" value="light" class="theme-btn flex items-center justify-center flex-1 p-2 opacity-60 hover:opacity-80">
@@ -19,11 +16,11 @@
   <button type="submit" name="theme" value="system" class="theme-btn flex items-center justify-center flex-1 p-2 opacity-60 hover:opacity-80">
     <i class="material-symbols-outlined">computer</i>
   </button>
-</form>
+</div>
 
 <script>
-const themeSwitchForm = document.querySelector('#theme-switch-form');
-themeSwitchForm.querySelectorAll('.theme-btn').forEach(button => {
+const themeSwitcher = document.querySelector('#theme-switcher');
+themeSwitcher.querySelectorAll('.theme-btn').forEach(button => {
   // alert(`localstorage ${localStorage.getItem('theme')}`)
   if (button.value === localStorage.getItem('theme')) {
     button.classList.add('active');
@@ -32,7 +29,7 @@ themeSwitchForm.querySelectorAll('.theme-btn').forEach(button => {
   button.addEventListener('click', () => {
     applyTheme(button.value);
 
-    themeSwitchForm.querySelectorAll('.theme-btn').forEach(button => {button.classList.remove('active')});
+    themeSwitcher.querySelectorAll('.theme-btn').forEach(button => {button.classList.remove('active')});
     button.classList.add('active');
   });
 });

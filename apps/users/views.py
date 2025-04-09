@@ -23,8 +23,6 @@ def profile_settings_view(request):
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
-        messages.success(request, _('Post request received!'))
-
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()

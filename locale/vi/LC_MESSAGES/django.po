@@ -8,103 +8,104 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 10:05+0700\n"
+"POT-Creation-Date: 2025-04-09 14:41+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: .\apps\core\templates\settings\settings_general.html:4
 #: .\apps\core\templates\settings\settings_general.html:9
 msgid "General Setting"
-msgstr ""
+msgstr "Cài đặt chung"
 
-#: .\apps\core\views.py:22
-msgid "Theme updated successfully!"
-msgstr ""
+#: .\apps\core\views.py:8 .\apps\core\views.py:37
+msgid "There was an issue with the theme selection."
+msgstr "Đã xảy ra sự cố với việc chọn giao diện."
 
 #: .\apps\core\views.py:23
-msgid "Invalid theme selection"
-msgstr ""
+msgid "Theme updated successfully!"
+msgstr "Cập nhật giao diện thành công!"
 
-#: .\apps\core\views.py:33
+#: .\apps\core\views.py:24
+msgid "Invalid theme selection"
+msgstr "Lựa chọn giao diện không hợp lệ"
+
+#: .\apps\core\views.py:34
 #, python-format
 msgid "Theme switched to %(theme)s!"
-msgstr ""
-
-#: .\apps\core\views.py:36
-msgid "There was an issue with the theme selection."
-msgstr ""
+msgstr "Đã chuyển giao diện sang %(theme)s!"
 
 #: .\apps\users\models.py:9
 msgid "Male"
-msgstr ""
+msgstr "Nam"
 
 #: .\apps\users\models.py:10
 msgid "Female"
-msgstr ""
+msgstr "Nữ"
 
 #: .\apps\users\models.py:11
 msgid "Other"
-msgstr ""
+msgstr "Khác"
 
 #: .\apps\users\models.py:12
 msgid "Prefer not to say"
-msgstr ""
+msgstr "Không muốn tiết lộ"
 
 #: .\apps\users\models.py:16
 msgid "Light"
-msgstr ""
+msgstr "Sáng"
 
 #: .\apps\users\models.py:17
 msgid "Dark"
-msgstr ""
+msgstr "Tối"
 
 #: .\apps\users\models.py:18
 msgid "System"
-msgstr ""
+msgstr "Hệ thống"
 
 #: .\apps\users\models.py:21
 msgid "User"
-msgstr ""
+msgstr "Người dùng"
 
 #: .\apps\users\models.py:26
 msgid "Avatar"
-msgstr ""
+msgstr "Ảnh đại diện"
 
 #: .\apps\users\models.py:33 .\apps\users\templates\profile_settings.html:88
 msgid "Gender"
-msgstr ""
+msgstr "Giới tính"
 
 #: .\apps\users\models.py:38 .\apps\users\templates\profile_settings.html:94
 msgid "Birthday"
-msgstr ""
+msgstr "Ngày sinh"
 
 #: .\apps\users\models.py:43 .\apps\users\templates\profile_settings.html:100
 msgid "Bio"
-msgstr ""
+msgstr "Tiểu sử"
 
 #: .\apps\users\models.py:51
 msgid "Enter a valid phone number."
-msgstr ""
+msgstr "Nhập số điện thoại hợp lệ."
 
 #: .\apps\users\models.py:53
 msgid "Phone number"
-msgstr ""
+msgstr "Số điện thoại"
 
 #: .\apps\users\models.py:61
 msgid "Theme"
-msgstr ""
+msgstr "Giao diện"
 
 #: .\apps\users\templates\change_password.html:4
 #: .\apps\users\templates\change_password.html:7
 #: .\templates\modals\change_password_modal.html:4 .\templates\settings.html:41
 #: .\templates\settings.html:42
 msgid "Change Password"
-msgstr ""
+msgstr "Đổi mật khẩu"
 
 #: .\apps\users\templates\change_password.html:8
 #: .\apps\users\templates\profile_delete.html:12
@@ -112,31 +113,31 @@ msgstr ""
 #: .\apps\users\templates\profile_settings.html:8
 #: .\templates\modals\account_delete_modal.html:15
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #: .\apps\users\templates\change_password.html:24
 #: .\templates\modals\change_password_modal.html:14
 msgid "Current Password"
-msgstr ""
+msgstr "Mật khẩu hiện tại"
 
 #: .\apps\users\templates\change_password.html:35
 #: .\templates\modals\change_password_modal.html:17
 msgid "New Password"
-msgstr ""
+msgstr "Mật khẩu mới"
 
 #: .\apps\users\templates\change_password.html:46
 #: .\templates\modals\change_password_modal.html:20
 msgid "Verify Password"
-msgstr ""
+msgstr "Xác nhận mật khẩu"
 
 #: .\apps\users\templates\change_password.html:53
 #: .\templates\modals\change_password_modal.html:25
 msgid "Update Password"
-msgstr ""
+msgstr "Cập nhật mật khẩu"
 
 #: .\apps\users\templates\profile.html:6
 msgid "My"
-msgstr ""
+msgstr "Của tôi"
 
 #: .\apps\users\templates\profile.html:8
 msgid "'s"
@@ -146,253 +147,267 @@ msgstr ""
 #: .\apps\users\templates\profile_settings.html:4
 #: .\templates\includes\sidebar.html:63
 msgid "Profile"
-msgstr ""
+msgstr "Hồ sơ"
 
 #: .\apps\users\templates\profile.html:15
 msgid "Edit Profile"
-msgstr ""
+msgstr "Chỉnh sửa hồ sơ"
 
 #: .\apps\users\templates\profile_delete.html:6 .\templates\settings.html:43
 msgid "Delete Account"
-msgstr ""
+msgstr "Xóa tài khoản"
 
 #: .\apps\users\templates\profile_delete.html:7
 msgid "Are you sure you want to delete your account?"
-msgstr ""
+msgstr "Bạn có chắc chắn muốn xóa tài khoản của mình không?"
 
 #: .\apps\users\templates\profile_delete.html:11
 msgid "Yes, I want to delete my account"
-msgstr ""
+msgstr "Có, tôi muốn xóa tài khoản của mình"
 
 #: .\apps\users\templates\profile_edit.html:7
 msgid "Complete your profile"
-msgstr ""
+msgstr "Hoàn thành hồ sơ của bạn"
 
 #: .\apps\users\templates\profile_edit.html:9
 msgid "Edit your profile"
-msgstr ""
+msgstr "Chỉnh sửa hồ sơ của bạn"
 
 #: .\apps\users\templates\profile_edit.html:22
 msgid "Submit"
-msgstr ""
+msgstr "Gửi"
 
 #: .\apps\users\templates\profile_edit.html:24
 msgid "Skip"
-msgstr ""
+msgstr "Bỏ qua"
 
 #: .\apps\users\templates\profile_settings.html:7
 msgid "Save"
-msgstr ""
-
-#: .\apps\users\templates\profile_settings.html:24
-msgid "edit"
-msgstr ""
+msgstr "Lưu"
 
 #: .\apps\users\templates\profile_settings.html:32
 #: .\templates\account\signup.html:25
 msgid "Username"
-msgstr ""
+msgstr "Tên người dùng"
 
 #: .\apps\users\templates\profile_settings.html:39
 #: .\templates\account\signup.html:31
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: .\apps\users\templates\profile_settings.html:46
 msgid "Unverified"
-msgstr ""
+msgstr "Chưa xác minh"
 
 #: .\apps\users\templates\profile_settings.html:48
 msgid "Verified"
-msgstr ""
+msgstr "Đã xác minh"
 
 #: .\apps\users\templates\profile_settings.html:53
 msgid "Verify"
-msgstr ""
+msgstr "Xác minh"
 
 #: .\apps\users\templates\profile_settings.html:55
 #: .\venv\Lib\site-packages\django\forms\widgets.py:463
 msgid "Change"
-msgstr ""
+msgstr "Thay đổi"
 
 #: .\apps\users\templates\profile_settings.html:62
 #: .\templates\account\signup.html:38
 msgid "First Name"
-msgstr ""
+msgstr "Tên"
 
 #: .\apps\users\templates\profile_settings.html:71
 #: .\templates\account\signup.html:49
 msgid "Last Name"
-msgstr ""
+msgstr "Họ"
 
 #: .\apps\users\templates\profile_settings.html:82
 msgid "Phone Number"
-msgstr ""
+msgstr "Số điện thoại"
 
 #: .\apps\users\views.py:26
 msgid "Post request received!"
-msgstr ""
+msgstr "Đã nhận được yêu cầu POST!"
 
 #: .\apps\users\views.py:31
 msgid "Profile updated successfully!"
-msgstr ""
+msgstr "Cập nhật hồ sơ thành công!"
 
 #: .\apps\users\views.py:37
 #, python-format
 msgid "User %(field)s: %(error)s"
-msgstr ""
+msgstr "Người dùng %(field)s: %(error)s"
 
 #: .\apps\users\views.py:40
 #, python-format
 msgid "Profile %(field)s: %(error)s"
-msgstr ""
+msgstr "Hồ sơ %(field)s: %(error)s"
 
 #: .\apps\users\views.py:63
 msgid "Password updated successfully!"
-msgstr ""
+msgstr "Cập nhật mật khẩu thành công!"
 
 #: .\apps\users\views.py:74
 msgid "Password changed!"
-msgstr ""
+msgstr "Đã thay đổi mật khẩu!"
 
 #: .\apps\users\views.py:91
 #, python-format
 msgid "%(email)s is already in use."
-msgstr ""
+msgstr "%(email)s đã được sử dụng."
 
 #: .\apps\users\views.py:95
 msgid "Email updated! Please confirm your new email."
-msgstr ""
+msgstr "Đã cập nhật email! Vui lòng xác nhận email mới của bạn."
 
 #: .\apps\users\views.py:99
 msgid "Invalid email. Please try again."
-msgstr ""
+msgstr "Email không hợp lệ. Vui lòng thử lại."
 
 #: .\apps\users\views.py:109
 msgid "Account deleted!"
-msgstr ""
+msgstr "Đã xóa tài khoản!"
+
+#: .\config\settings.py:139
+msgid "English"
+msgstr "Tiếng Anh"
+
+#: .\config\settings.py:140
+msgid "Chinese (Simplified)"
+msgstr "Tiếng Trung (Giản thể)"
+
+#: .\config\settings.py:141
+msgid "Spanish"
+msgstr "Tiếng Tây Ban Nha"
+
+#: .\config\settings.py:142
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:13
 #: .\templates\includes\header.html:36 .\templates\includes\sidebar.html:134
 msgid "Login"
-msgstr ""
+msgstr "Đăng nhập"
 
 #: .\templates\account\login.html:19
 msgid "Username or email"
-msgstr ""
+msgstr "Tên người dùng hoặc email"
 
 #: .\templates\account\login.html:22 .\templates\account\signup.html:61
 msgid "Password"
-msgstr ""
+msgstr "Mật khẩu"
 
 #: .\templates\account\login.html:38 .\templates\account\password_reset.html:33
 msgid "Log In"
-msgstr ""
+msgstr "Đăng nhập"
 
 #: .\templates\account\login.html:44
 msgid "Forgot Password?"
-msgstr ""
+msgstr "Quên mật khẩu?"
 
 #: .\templates\account\login.html:48
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Chưa có tài khoản?"
 
 #: .\templates\account\login.html:49
 msgid "Register here!"
-msgstr ""
+msgstr "Đăng ký tại đây!"
 
 #: .\templates\account\login.html:52
 msgid "Or sign in with:"
-msgstr ""
+msgstr "Hoặc đăng nhập bằng:"
 
 #: .\templates\account\password_reset.html:6
 #: .\templates\account\password_reset.html:12
 msgid "Reset Password"
-msgstr ""
+msgstr "Đặt lại mật khẩu"
 
 #: .\templates\account\password_reset.html:15
 msgid ""
 "Enter your email address and we will send you a link to reset your password."
 msgstr ""
+"Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt "
+"lại mật khẩu."
 
 #: .\templates\account\password_reset.html:19
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1915
 msgid "Email address"
-msgstr ""
+msgstr "Địa chỉ email"
 
 #: .\templates\account\password_reset.html:27
 msgid "Send Reset Link"
-msgstr ""
+msgstr "Gửi liên kết đặt lại"
 
 #: .\templates\account\password_reset.html:32
 msgid "Remember your password?"
-msgstr ""
+msgstr "Nhớ mật khẩu của bạn?"
 
 #: .\templates\account\signup.html:6
 msgid "Sign Up"
-msgstr ""
+msgstr "Đăng ký"
 
 #: .\templates\account\signup.html:13 .\templates\includes\header.html:37
 #: .\templates\includes\sidebar.html:135
 msgid "Register"
-msgstr ""
+msgstr "Đăng ký"
 
 #: .\templates\account\signup.html:67
 msgid "Confirm Password"
-msgstr ""
+msgstr "Xác nhận mật khẩu"
 
 #: .\templates\account\signup.html:74
 msgid "Create Account"
-msgstr ""
+msgstr "Tạo tài khoản"
 
 #: .\templates\account\signup.html:80
 msgid "Already have an account?"
-msgstr ""
+msgstr "Đã có tài khoản?"
 
 #: .\templates\account\signup.html:81
 msgid "Login here!"
-msgstr ""
+msgstr "Đăng nhập tại đây!"
 
 #: .\templates\account\signup.html:85
 msgid "Or sign up with:"
-msgstr ""
+msgstr "Hoặc đăng ký bằng:"
 
 #: .\templates\home.html:6 .\templates\includes\sidebar.html:52
 msgid "Home"
-msgstr ""
+msgstr "Trang chủ"
 
 #: .\templates\includes\footer.html:2
 msgid "Footer"
-msgstr ""
+msgstr "Chân trang"
 
 #: .\templates\includes\header.html:29 .\templates\includes\sidebar.html:96
 msgid "My Profile"
-msgstr ""
+msgstr "Hồ sơ của tôi"
 
 #: .\templates\includes\header.html:30 .\templates\includes\sidebar.html:97
-#: .\templates\includes\sidebar.html:131
+#: .\templates\includes\sidebar.html:131 .\templates\settings.html:4
 msgid "Settings"
-msgstr ""
+msgstr "Cài đặt"
 
 #: .\templates\includes\header.html:31 .\templates\includes\sidebar.html:95
 msgid "Log Out"
-msgstr ""
+msgstr "Đăng xuất"
 
 #: .\templates\includes\sidebar.html:103
 msgid "Appearance"
-msgstr ""
+msgstr "Giao diện"
 
 #: .\templates\layouts\account_layout.html:9
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #: .\templates\modals\account_delete_modal.html:5
 msgid "Delete Account!"
-msgstr ""
+msgstr "Xóa tài khoản!"
 
 #: .\templates\modals\account_delete_modal.html:8
 msgid "We're truly sorry to see you go!"
-msgstr ""
+msgstr "Chúng tôi rất tiếc khi bạn rời đi!"
 
 #: .\templates\modals\account_delete_modal.html:9
 msgid ""
@@ -400,242 +415,246 @@ msgid ""
 "all your data, including any saved information and content associated with "
 "your profile"
 msgstr ""
+"Việc xóa tài khoản của bạn là một hành động vĩnh viễn và sẽ xóa không thể "
+"phục hồi tất cả dữ liệu của bạn, bao gồm mọi thông tin và nội dung đã lưu "
+"liên kết với hồ sơ của bạn."
 
 #: .\templates\modals\account_delete_modal.html:10
 msgid "Do you still want to proceed?"
-msgstr ""
+msgstr "Bạn vẫn muốn tiếp tục?"
 
 #: .\templates\modals\account_delete_modal.html:14
 #: .\venv\Lib\site-packages\django\forms\formsets.py:499
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: .\templates\modals\change_email_modal.html:7
 msgid "Change Email"
-msgstr ""
+msgstr "Đổi email"
 
 #: .\templates\modals\change_email_modal.html:16
 msgid "Email not verified"
-msgstr ""
+msgstr "Email chưa được xác minh"
 
 #: .\templates\modals\change_email_modal.html:26
 msgid "Enter new email"
-msgstr ""
+msgstr "Nhập email mới"
 
 #: .\templates\modals\change_email_modal.html:32
 msgid "Confirm and Send Verification"
-msgstr ""
+msgstr "Xác nhận và gửi mã xác minh"
 
 #: .\templates\partials\theme_slider.html:14
 msgid "Dark Mode"
-msgstr ""
+msgstr "Chế độ tối"
 
 #: .\templates\settings.html:21
 msgid "General"
-msgstr ""
+msgstr "Chung"
 
 #: .\templates\settings.html:27
 msgid "Language"
-msgstr ""
+msgstr "Ngôn ngữ"
 
 #: .\venv\Lib\site-packages\click\_termui_impl.py:556
 #, python-brace-format
 msgid "{editor}: Editing failed"
-msgstr ""
+msgstr "{editor}: Chỉnh sửa thất bại"
 
 #: .\venv\Lib\site-packages\click\_termui_impl.py:560
 #, python-brace-format
 msgid "{editor}: Editing failed: {e}"
-msgstr ""
+msgstr "{editor}: Chỉnh sửa thất bại: {e}"
 
 #: .\venv\Lib\site-packages\click\core.py:1124
 msgid "Aborted!"
-msgstr ""
+msgstr "Đã hủy!"
 
 #: .\venv\Lib\site-packages\click\core.py:1349
 #: .\venv\Lib\site-packages\click\core.py:1379
 #, python-brace-format
 msgid "(Deprecated) {text}"
-msgstr ""
+msgstr "(Ngừng sử dụng) {text}"
 
 #: .\venv\Lib\site-packages\click\core.py:1396
 msgid "Options"
-msgstr ""
+msgstr "Tùy chọn"
 
 #: .\venv\Lib\site-packages\click\core.py:1422
 #, python-brace-format
 msgid "Got unexpected extra argument ({args})"
 msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nhận được đối số thừa không mong đợi ({args})"
+msgstr[1] "Nhận được các đối số thừa không mong đợi ({args})"
 
 #: .\venv\Lib\site-packages\click\core.py:1438
 msgid "DeprecationWarning: The command {name!r} is deprecated."
-msgstr ""
+msgstr "Cảnh báo Ngừng sử dụng: Lệnh {name!r} đã ngừng được sử dụng."
 
 #: .\venv\Lib\site-packages\click\core.py:1645
 msgid "Commands"
-msgstr ""
+msgstr "Lệnh"
 
 #: .\venv\Lib\site-packages\click\core.py:1677
 msgid "Missing command."
-msgstr ""
+msgstr "Thiếu lệnh."
 
 #: .\venv\Lib\site-packages\click\core.py:1755
 msgid "No such command {name!r}."
-msgstr ""
+msgstr "Không có lệnh nào tên là {name!r}."
 
 #: .\venv\Lib\site-packages\click\core.py:2313
 msgid "Value must be an iterable."
-msgstr ""
+msgstr "Giá trị phải là một đối tượng có thể lặp."
 
 #: .\venv\Lib\site-packages\click\core.py:2334
 #, python-brace-format
 msgid "Takes {nargs} values but 1 was given."
 msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Cần {nargs} giá trị nhưng chỉ nhận được 1."
+msgstr[1] "Cần {nargs} giá trị nhưng chỉ nhận được {len}."
 
 #: .\venv\Lib\site-packages\click\core.py:2783
 #, python-brace-format
 msgid "env var: {var}"
-msgstr ""
+msgstr "biến môi trường: {var}"
 
 #: .\venv\Lib\site-packages\click\core.py:2813
 msgid "(dynamic)"
-msgstr ""
+msgstr "(động)"
 
 #: .\venv\Lib\site-packages\click\core.py:2828
 #, python-brace-format
 msgid "default: {default}"
-msgstr ""
+msgstr "mặc định: {default}"
 
 #: .\venv\Lib\site-packages\click\core.py:2841
 msgid "required"
-msgstr ""
+msgstr "bắt buộc"
 
 #: .\venv\Lib\site-packages\click\decorators.py:457
 #, python-format
 msgid "%(prog)s, version %(version)s"
-msgstr ""
+msgstr "%(prog)s, phiên bản %(version)s"
 
 #: .\venv\Lib\site-packages\click\decorators.py:520
 msgid "Show the version and exit."
-msgstr ""
+msgstr "Hiển thị phiên bản và thoát."
 
 #: .\venv\Lib\site-packages\click\decorators.py:541
 msgid "Show this message and exit."
-msgstr ""
+msgstr "Hiển thị thông báo này và thoát."
 
 #: .\venv\Lib\site-packages\click\exceptions.py:49
 #: .\venv\Lib\site-packages\click\exceptions.py:88
 #, python-brace-format
 msgid "Error: {message}"
-msgstr ""
+msgstr "Lỗi: {message}"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:80
 #, python-brace-format
 msgid "Try '{command} {option}' for help."
-msgstr ""
+msgstr "Thử '{command} {option}' để được trợ giúp."
 
 #: .\venv\Lib\site-packages\click\exceptions.py:129
 #, python-brace-format
 msgid "Invalid value: {message}"
-msgstr ""
+msgstr "Giá trị không hợp lệ: {message}"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:131
 #, python-brace-format
 msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
+msgstr "Giá trị không hợp lệ cho {param_hint}: {message}"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:187
 msgid "Missing argument"
-msgstr ""
+msgstr "Thiếu đối số"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:189
 msgid "Missing option"
-msgstr ""
+msgstr "Thiếu tùy chọn"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:191
 msgid "Missing parameter"
-msgstr ""
+msgstr "Thiếu tham số"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:193
 #, python-brace-format
 msgid "Missing {param_type}"
-msgstr ""
+msgstr "Thiếu {param_type}"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:200
 #, python-brace-format
 msgid "Missing parameter: {param_name}"
-msgstr ""
+msgstr "Thiếu tham số: {param_name}"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:220
 #, python-brace-format
 msgid "No such option: {name}"
-msgstr ""
+msgstr "Không có tùy chọn nào tên là: {name}"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:232
 #, python-brace-format
 msgid "Did you mean {possibility}?"
 msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Có phải ý bạn là {possibility}?"
+msgstr[1] "(Các tùy chọn có thể: {possibilities})"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:270
 msgid "unknown error"
-msgstr ""
+msgstr "lỗi không xác định"
 
 #: .\venv\Lib\site-packages\click\exceptions.py:277
 msgid "Could not open file {filename!r}: {message}"
-msgstr ""
+msgstr "Không thể mở tệp {filename!r}: {message}"
 
 #: .\venv\Lib\site-packages\click\parser.py:233
 msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
+msgstr "Đối số {name!r} nhận {nargs} giá trị."
 
 #: .\venv\Lib\site-packages\click\parser.py:415
 msgid "Option {name!r} does not take a value."
-msgstr ""
+msgstr "Tùy chọn {name!r} không nhận giá trị."
 
 #: .\venv\Lib\site-packages\click\parser.py:476
 msgid "Option {name!r} requires an argument."
 msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tùy chọn {name!r} yêu cầu một đối số."
+msgstr[1] "Tùy chọn {name!r} yêu cầu {nargs} đối số."
 
 #: .\venv\Lib\site-packages\click\shell_completion.py:326
 msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
+msgstr "Hoàn thành shell không được hỗ trợ cho các phiên bản Bash cũ hơn 4.4."
 
 #: .\venv\Lib\site-packages\click\shell_completion.py:333
 msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
+"Không thể phát hiện phiên bản Bash, hoàn thành shell không được hỗ trợ."
 
 #: .\venv\Lib\site-packages\click\termui.py:158
 msgid "Repeat for confirmation"
-msgstr ""
+msgstr "Nhập lại để xác nhận"
 
 #: .\venv\Lib\site-packages\click\termui.py:174
 msgid "Error: The value you entered was invalid."
-msgstr ""
+msgstr "Lỗi: Giá trị bạn đã nhập không hợp lệ."
 
 #: .\venv\Lib\site-packages\click\termui.py:176
 #, python-brace-format
 msgid "Error: {e.message}"
-msgstr ""
+msgstr "Lỗi: {e.message}"
 
 #: .\venv\Lib\site-packages\click\termui.py:187
 msgid "Error: The two entered values do not match."
-msgstr ""
+msgstr "Lỗi: Hai giá trị đã nhập không khớp."
 
 #: .\venv\Lib\site-packages\click\termui.py:243
 msgid "Error: invalid input"
-msgstr ""
+msgstr "Lỗi: đầu vào không hợp lệ"
 
 #: .\venv\Lib\site-packages\click\termui.py:773
 msgid "Press any key to continue..."
-msgstr ""
+msgstr "Nhấn phím bất kỳ để tiếp tục..."
 
 #: .\venv\Lib\site-packages\click\types.py:267
 #, python-brace-format
@@ -643,145 +662,150 @@ msgid ""
 "Choose from:\n"
 "\t{choices}"
 msgstr ""
+"Chọn từ:\n"
+"\t{choices}"
 
 #: .\venv\Lib\site-packages\click\types.py:299
 msgid "{value!r} is not {choice}."
 msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{value!r} không phải là {choice}."
+msgstr[1] "{value!r} không phải là một trong số {choices}."
 
 #: .\venv\Lib\site-packages\click\types.py:393
 msgid "{value!r} does not match the format {format}."
 msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{value!r} không khớp với định dạng {format}."
+msgstr[1] "{value!r} không khớp với các định dạng {formats}."
 
 #: .\venv\Lib\site-packages\click\types.py:415
 msgid "{value!r} is not a valid {number_type}."
-msgstr ""
+msgstr "{value!r} không phải là {number_type} hợp lệ."
 
 #: .\venv\Lib\site-packages\click\types.py:471
 #, python-brace-format
 msgid "{value} is not in the range {range}."
-msgstr ""
+msgstr "{value} không nằm trong khoảng {range}."
 
 #: .\venv\Lib\site-packages\click\types.py:612
 msgid "{value!r} is not a valid boolean."
-msgstr ""
+msgstr "{value!r} không phải là giá trị boolean hợp lệ."
 
 #: .\venv\Lib\site-packages\click\types.py:636
 msgid "{value!r} is not a valid UUID."
-msgstr ""
+msgstr "{value!r} không phải là UUID hợp lệ."
 
 #: .\venv\Lib\site-packages\click\types.py:826
 msgid "file"
-msgstr ""
+msgstr "tệp"
 
 #: .\venv\Lib\site-packages\click\types.py:828
 msgid "directory"
-msgstr ""
+msgstr "thư mục"
 
 #: .\venv\Lib\site-packages\click\types.py:830
 msgid "path"
-msgstr ""
+msgstr "đường dẫn"
 
 #: .\venv\Lib\site-packages\click\types.py:881
 msgid "{name} {filename!r} does not exist."
-msgstr ""
+msgstr "{name} {filename!r} không tồn tại."
 
 #: .\venv\Lib\site-packages\click\types.py:890
 msgid "{name} {filename!r} is a file."
-msgstr ""
+msgstr "{name} {filename!r} là một tệp."
 
 #: .\venv\Lib\site-packages\click\types.py:898
 msgid "{name} {filename!r} is a directory."
-msgstr ""
+msgstr "{name} {filename!r} là một thư mục."
 
 #: .\venv\Lib\site-packages\click\types.py:907
 msgid "{name} {filename!r} is not readable."
-msgstr ""
+msgstr "{name} {filename!r} không thể đọc được."
 
 #: .\venv\Lib\site-packages\click\types.py:916
 msgid "{name} {filename!r} is not writable."
-msgstr ""
+msgstr "{name} {filename!r} không thể ghi được."
 
 #: .\venv\Lib\site-packages\click\types.py:925
 msgid "{name} {filename!r} is not executable."
-msgstr ""
+msgstr "{name} {filename!r} không thể thực thi được."
 
 #: .\venv\Lib\site-packages\click\types.py:992
 #, python-brace-format
 msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Cần {len_type} giá trị, nhưng chỉ nhận được {len_value}."
+msgstr[1] "Cần {len_type} giá trị, nhưng chỉ nhận được {len_value}."
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
-msgstr ""
+msgstr "Tin nhắn"
 
 #: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
 msgid "Site Maps"
-msgstr ""
+msgstr "Sơ đồ trang web"
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "Tệp tĩnh"
 
 #: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "Cung cấp tin (Syndication)"
 
 #. Translators: String used to replace omitted page numbers in elided page
 #. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
 #: .\venv\Lib\site-packages\django\core\paginator.py:30
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:32
 msgid "That page number is not an integer"
-msgstr ""
+msgstr "Số trang đó không phải là số nguyên"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:33
 msgid "That page number is less than 1"
-msgstr ""
+msgstr "Số trang đó nhỏ hơn 1"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:34
 msgid "That page contains no results"
-msgstr ""
+msgstr "Trang đó không có kết quả nào"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:22
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Nhập một giá trị hợp lệ."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:70
 msgid "Enter a valid domain name."
-msgstr ""
+msgstr "Nhập tên miền hợp lệ."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:155
 #: .\venv\Lib\site-packages\django\forms\fields.py:768
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Nhập một URL hợp lệ."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:216
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "Nhập một số nguyên hợp lệ."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:227
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Nhập một địa chỉ email hợp lệ."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: .\venv\Lib\site-packages\django\core\validators.py:310
 msgid ""
 "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
 msgstr ""
+"Nhập một “slug” hợp lệ bao gồm chữ cái, số, dấu gạch dưới hoặc dấu gạch nối."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:318
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
 msgstr ""
+"Nhập một “slug” hợp lệ bao gồm chữ cái Unicode, số, dấu gạch dưới hoặc dấu "
+"gạch nối."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:330
 #: .\venv\Lib\site-packages\django\core\validators.py:339
@@ -789,44 +813,44 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2215
 #, python-format
 msgid "Enter a valid %(protocol)s address."
-msgstr ""
+msgstr "Nhập địa chỉ %(protocol)s hợp lệ."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:332
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:341
 #: .\venv\Lib\site-packages\django\utils\ipv6.py:43
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:355
 msgid "IPv4 or IPv6"
-msgstr ""
+msgstr "IPv4 hoặc IPv6"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:396
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Chỉ nhập các chữ số được phân tách bằng dấu phẩy."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:402
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
+msgstr "Đảm bảo giá trị này là %(limit_value)s (hiện tại là %(show_value)s)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:437
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Đảm bảo giá trị này nhỏ hơn hoặc bằng %(limit_value)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:446
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Đảm bảo giá trị này lớn hơn hoặc bằng %(limit_value)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:455
 #, python-format
 msgid "Ensure this value is a multiple of step size %(limit_value)s."
-msgstr ""
+msgstr "Đảm bảo giá trị này là bội số của kích thước bước %(limit_value)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:462
 #, python-format
@@ -834,6 +858,9 @@ msgid ""
 "Ensure this value is a multiple of step size %(limit_value)s, starting from "
 "%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
 msgstr ""
+"Đảm bảo giá trị này là bội số của kích thước bước %(limit_value)s, bắt đầu "
+"từ %(offset)s, ví dụ: %(offset)s, %(valid_value1)s, %(valid_value2)s, và cứ "
+"thế."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:494
 #, python-format
@@ -844,7 +871,11 @@ msgid_plural ""
 "Ensure this value has at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
+"Đảm bảo giá trị này có ít nhất %(limit_value)d ký tự (hiện có "
+"%(show_value)d)."
 msgstr[1] ""
+"Đảm bảo giá trị này có ít nhất %(limit_value)d ký tự (hiện có "
+"%(show_value)d)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:512
 #, python-format
@@ -855,27 +886,29 @@ msgid_plural ""
 "Ensure this value has at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
+"Đảm bảo giá trị này có tối đa %(limit_value)d ký tự (hiện có %(show_value)d)."
 msgstr[1] ""
+"Đảm bảo giá trị này có tối đa %(limit_value)d ký tự (hiện có %(show_value)d)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:535
 #: .\venv\Lib\site-packages\django\forms\fields.py:359
 #: .\venv\Lib\site-packages\django\forms\fields.py:398
 msgid "Enter a number."
-msgstr ""
+msgstr "Nhập một số."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:537
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đảm bảo rằng có không quá %(max)s chữ số tổng cộng."
+msgstr[1] "Đảm bảo rằng có không quá %(max)s chữ số tổng cộng."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:542
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đảm bảo rằng có không quá %(max)s chữ số thập phân."
+msgstr[1] "Đảm bảo rằng có không quá %(max)s chữ số thập phân."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:547
 #, python-format
@@ -883,8 +916,8 @@ msgid ""
 "Ensure that there are no more than %(max)s digit before the decimal point."
 msgid_plural ""
 "Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đảm bảo rằng có không quá %(max)s chữ số trước dấu thập phân."
+msgstr[1] "Đảm bảo rằng có không quá %(max)s chữ số trước dấu thập phân."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:618
 #, python-format
@@ -892,43 +925,45 @@ msgid ""
 "File extension “%(extension)s” is not allowed. Allowed extensions are: "
 "%(allowed_extensions)s."
 msgstr ""
+"Phần mở rộng tệp “%(extension)s” không được phép. Các phần mở rộng được phép "
+"là: %(allowed_extensions)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:680
 msgid "Null characters are not allowed."
-msgstr ""
+msgstr "Ký tự null không được phép."
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1572
 #: .\venv\Lib\site-packages\django\forms\models.py:908
 msgid "and"
-msgstr ""
+msgstr "và"
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1574
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s với %(field_labels)s này đã tồn tại."
 
 #: .\venv\Lib\site-packages\django\db\models\constraints.py:22
 #, python-format
 msgid "Constraint “%(name)s” is violated."
-msgstr ""
+msgstr "Ràng buộc “%(name)s” bị vi phạm."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
 #, python-format
 msgid "Value %(value)r is not a valid choice."
-msgstr ""
+msgstr "Giá trị %(value)r không phải là một lựa chọn hợp lệ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
 msgid "This field cannot be null."
-msgstr ""
+msgstr "Trường này không thể là null."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
 msgid "This field cannot be blank."
-msgstr ""
+msgstr "Trường này không thể để trống."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+msgstr "%(model_name)s với %(field_label)s này đã tồn tại."
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or
 #. 'month'. Eg: "Title must be unique for pub_date year"
@@ -937,38 +972,40 @@ msgstr ""
 msgid ""
 "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
 msgstr ""
+"%(field_label)s phải là duy nhất đối với %(lookup_type)s của "
+"%(date_field_label)s."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
 #, python-format
 msgid "Field of type: %(field_type)s"
-msgstr ""
+msgstr "Trường kiểu: %(field_type)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1156
 #, python-format
 msgid "“%(value)s” value must be either True or False."
-msgstr ""
+msgstr "Giá trị “%(value)s” phải là True hoặc False."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1157
 #, python-format
 msgid "“%(value)s” value must be either True, False, or None."
-msgstr ""
+msgstr "Giá trị “%(value)s” phải là True, False, hoặc None."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1159
 msgid "Boolean (Either True or False)"
-msgstr ""
+msgstr "Boolean (Hoặc True hoặc False)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1209
 #, python-format
 msgid "String (up to %(max_length)s)"
-msgstr ""
+msgstr "Chuỗi (tối đa %(max_length)s)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1211
 msgid "String (unlimited)"
-msgstr ""
+msgstr "Chuỗi (không giới hạn)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1320
 msgid "Comma-separated integers"
-msgstr ""
+msgstr "Các số nguyên được phân tách bằng dấu phẩy"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1421
 #, python-format
@@ -976,6 +1013,8 @@ msgid ""
 "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
 msgstr ""
+"Giá trị “%(value)s” có định dạng ngày không hợp lệ. Nó phải theo định dạng "
+"YYYY-MM-DD."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1425
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1560
@@ -984,10 +1023,12 @@ msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
 "date."
 msgstr ""
+"Giá trị “%(value)s” có định dạng đúng (YYYY-MM-DD) nhưng là một ngày không "
+"hợp lệ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1429
 msgid "Date (without time)"
-msgstr ""
+msgstr "Ngày (không có thời gian)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1556
 #, python-format
@@ -995,6 +1036,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
 "uuuuuu]][TZ] format."
 msgstr ""
+"Giá trị “%(value)s” có định dạng không hợp lệ. Nó phải theo định dạng YYYY-"
+"MM-DD HH:MM[:ss[.uuuuuu]][TZ]."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1564
 #, python-format
@@ -1002,19 +1045,21 @@ msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
 "[TZ]) but it is an invalid date/time."
 msgstr ""
+"Giá trị “%(value)s” có định dạng đúng (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) "
+"nhưng là một ngày/giờ không hợp lệ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1569
 msgid "Date (with time)"
-msgstr ""
+msgstr "Ngày (có thời gian)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1696
 #, python-format
 msgid "“%(value)s” value must be a decimal number."
-msgstr ""
+msgstr "Giá trị “%(value)s” phải là một số thập phân."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1698
 msgid "Decimal number"
-msgstr ""
+msgstr "Số thập phân"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1859
 #, python-format
@@ -1022,79 +1067,81 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
 "uuuuuu] format."
 msgstr ""
+"Giá trị “%(value)s” có định dạng không hợp lệ. Nó phải theo định dạng [DD] "
+"[[HH:]MM:]ss[.uuuuuu]."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1863
 msgid "Duration"
-msgstr ""
+msgstr "Khoảng thời gian"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1940
 msgid "File path"
-msgstr ""
+msgstr "Đường dẫn tệp"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2018
 #, python-format
 msgid "“%(value)s” value must be a float."
-msgstr ""
+msgstr "Giá trị “%(value)s” phải là một số thực."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2020
 msgid "Floating point number"
-msgstr ""
+msgstr "Số thực (dấu phẩy động)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2060
 #, python-format
 msgid "“%(value)s” value must be an integer."
-msgstr ""
+msgstr "Giá trị “%(value)s” phải là một số nguyên."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2062
 msgid "Integer"
-msgstr ""
+msgstr "Số nguyên"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2158
 msgid "Big (8 byte) integer"
-msgstr ""
+msgstr "Số nguyên lớn (8 byte)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2175
 msgid "Small integer"
-msgstr ""
+msgstr "Số nguyên nhỏ"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2183
 msgid "IPv4 address"
-msgstr ""
+msgstr "Địa chỉ IPv4"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2214
 msgid "IP address"
-msgstr ""
+msgstr "Địa chỉ IP"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2305
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2306
 #, python-format
 msgid "“%(value)s” value must be either None, True or False."
-msgstr ""
+msgstr "Giá trị “%(value)s” phải là None, True hoặc False."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2308
 msgid "Boolean (Either True, False or None)"
-msgstr ""
+msgstr "Boolean (Hoặc True, False hoặc None)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2359
 msgid "Positive big integer"
-msgstr ""
+msgstr "Số nguyên lớn dương"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2374
 msgid "Positive integer"
-msgstr ""
+msgstr "Số nguyên dương"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2389
 msgid "Positive small integer"
-msgstr ""
+msgstr "Số nguyên nhỏ dương"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2405
 #, python-format
 msgid "Slug (up to %(max_length)s)"
-msgstr ""
+msgstr "Slug (tối đa %(max_length)s)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2441
 msgid "Text"
-msgstr ""
+msgstr "Văn bản"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2521
 #, python-format
@@ -1102,6 +1149,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
+"Giá trị “%(value)s” có định dạng không hợp lệ. Nó phải theo định dạng HH:MM[:"
+"ss[.uuuuuu]]."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2525
 #, python-format
@@ -1109,137 +1158,141 @@ msgid ""
 "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
 "invalid time."
 msgstr ""
+"Giá trị “%(value)s” có định dạng đúng (HH:MM[:ss[.uuuuuu]]) nhưng là một "
+"thời gian không hợp lệ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2529
 msgid "Time"
-msgstr ""
+msgstr "Thời gian"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2637
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2661
 msgid "Raw binary data"
-msgstr ""
+msgstr "Dữ liệu nhị phân thô"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2726
 #, python-format
 msgid "“%(value)s” is not a valid UUID."
-msgstr ""
+msgstr "“%(value)s” không phải là UUID hợp lệ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2728
 msgid "Universally unique identifier"
-msgstr ""
+msgstr "Định danh duy nhất phổ quát (UUID)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
 msgid "File"
-msgstr ""
+msgstr "Tệp"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
 msgid "Image"
-msgstr ""
+msgstr "Ảnh"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
 msgid "A JSON object"
-msgstr ""
+msgstr "Một đối tượng JSON"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
 msgid "Value must be valid JSON."
-msgstr ""
+msgstr "Giá trị phải là JSON hợp lệ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:932
 #, python-format
 msgid "%(model)s instance with %(field)s %(value)r does not exist."
-msgstr ""
+msgstr "Phiên bản %(model)s với %(field)s %(value)r không tồn tại."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:934
 msgid "Foreign Key (type determined by related field)"
-msgstr ""
+msgstr "Khóa ngoại (loại được xác định bởi trường liên quan)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1228
 msgid "One-to-one relationship"
-msgstr ""
+msgstr "Quan hệ một-một"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1285
 #, python-format
 msgid "%(from)s-%(to)s relationship"
-msgstr ""
+msgstr "Quan hệ %(from)s-%(to)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1287
 #, python-format
 msgid "%(from)s-%(to)s relationships"
-msgstr ""
+msgstr "Các quan hệ %(from)s-%(to)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1335
 msgid "Many-to-many relationship"
-msgstr ""
+msgstr "Quan hệ nhiều-nhiều"
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to the label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:185
 msgid ":?.!"
-msgstr ""
+msgstr ":?.!"
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:95
 msgid "This field is required."
-msgstr ""
+msgstr "Trường này là bắt buộc."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:308
 msgid "Enter a whole number."
-msgstr ""
+msgstr "Nhập một số nguyên."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:479
 #: .\venv\Lib\site-packages\django\forms\fields.py:1260
 msgid "Enter a valid date."
-msgstr ""
+msgstr "Nhập một ngày hợp lệ."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:502
 #: .\venv\Lib\site-packages\django\forms\fields.py:1261
 msgid "Enter a valid time."
-msgstr ""
+msgstr "Nhập một thời gian hợp lệ."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:529
 msgid "Enter a valid date/time."
-msgstr ""
+msgstr "Nhập ngày/giờ hợp lệ."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:563
 msgid "Enter a valid duration."
-msgstr ""
+msgstr "Nhập một khoảng thời gian hợp lệ."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:564
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
-msgstr ""
+msgstr "Số ngày phải nằm trong khoảng từ {min_days} đến {max_days}."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:633
 msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
+msgstr "Không có tệp nào được gửi. Kiểm tra loại mã hóa trên biểu mẫu."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:634
 msgid "No file was submitted."
-msgstr ""
+msgstr "Không có tệp nào được gửi."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:635
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Tệp được gửi trống."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:637
 #, python-format
 msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đảm bảo tên tệp này có tối đa %(max)d ký tự (hiện có %(length)d)."
+msgstr[1] "Đảm bảo tên tệp này có tối đa %(max)d ký tự (hiện có %(length)d)."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:642
 msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
+msgstr "Vui lòng gửi một tệp hoặc chọn hộp kiểm xóa, không phải cả hai."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:710
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
 msgstr ""
+"Tải lên một hình ảnh hợp lệ. Tệp bạn đã tải lên không phải là hình ảnh hoặc "
+"là một hình ảnh bị hỏng."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:882
 #: .\venv\Lib\site-packages\django\forms\fields.py:968
@@ -1247,34 +1300,36 @@ msgstr ""
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
 msgstr ""
+"Chọn một lựa chọn hợp lệ. %(value)s không phải là một trong những lựa chọn "
+"có sẵn."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:970
 #: .\venv\Lib\site-packages\django\forms\fields.py:1089
 #: .\venv\Lib\site-packages\django\forms\models.py:1590
 msgid "Enter a list of values."
-msgstr ""
+msgstr "Nhập một danh sách các giá trị."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:1090
 msgid "Enter a complete value."
-msgstr ""
+msgstr "Nhập một giá trị hoàn chỉnh."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:1332
 msgid "Enter a valid UUID."
-msgstr ""
+msgstr "Nhập một UUID hợp lệ."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:1362
 msgid "Enter a valid JSON."
-msgstr ""
+msgstr "Nhập JSON hợp lệ."
 
 #. Translators: This is the default suffix added to form field labels
 #: .\venv\Lib\site-packages\django\forms\forms.py:94
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: .\venv\Lib\site-packages\django\forms\forms.py:230
 #, python-format
 msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
+msgstr "(Trường ẩn %(name)s) %(error)s"
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:61
 #, python-format
@@ -1282,35 +1337,38 @@ msgid ""
 "ManagementForm data is missing or has been tampered with. Missing fields: "
 "%(field_names)s. You may need to file a bug report if the issue persists."
 msgstr ""
+"Dữ liệu ManagementForm bị thiếu hoặc đã bị giả mạo. Các trường bị thiếu: "
+"%(field_names)s. Bạn có thể cần báo cáo lỗi nếu sự cố vẫn tiếp diễn."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:65
 #, python-format
 msgid "Please submit at most %(num)d form."
 msgid_plural "Please submit at most %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vui lòng gửi tối đa %(num)d biểu mẫu."
+msgstr[1] "Vui lòng gửi tối đa %(num)d biểu mẫu."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:70
 #, python-format
 msgid "Please submit at least %(num)d form."
 msgid_plural "Please submit at least %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vui lòng gửi ít nhất %(num)d biểu mẫu."
+msgstr[1] "Vui lòng gửi ít nhất %(num)d biểu mẫu."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:484
 #: .\venv\Lib\site-packages\django\forms\formsets.py:491
 msgid "Order"
-msgstr ""
+msgstr "Thứ tự"
 
 #: .\venv\Lib\site-packages\django\forms\models.py:901
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
+msgstr "Vui lòng sửa dữ liệu trùng lặp cho %(field)s."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:906
 #, python-format
 msgid "Please correct the duplicate data for %(field)s, which must be unique."
 msgstr ""
+"Vui lòng sửa dữ liệu trùng lặp cho %(field)s, trường này phải là duy nhất."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:913
 #, python-format
@@ -1318,23 +1376,27 @@ msgid ""
 "Please correct the duplicate data for %(field_name)s which must be unique "
 "for the %(lookup)s in %(date_field)s."
 msgstr ""
+"Vui lòng sửa dữ liệu trùng lặp cho %(field_name)s phải là duy nhất đối với "
+"%(lookup)s trong %(date_field)s."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:922
 msgid "Please correct the duplicate values below."
-msgstr ""
+msgstr "Vui lòng sửa các giá trị trùng lặp bên dưới."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1359
 msgid "The inline value did not match the parent instance."
-msgstr ""
+msgstr "Giá trị nội tuyến không khớp với phiên bản mẹ."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1450
 msgid "Select a valid choice. That choice is not one of the available choices."
 msgstr ""
+"Chọn một lựa chọn hợp lệ. Lựa chọn đó không phải là một trong những lựa chọn "
+"có sẵn."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1594
 #, python-format
 msgid "“%(pk)s” is not a valid value."
-msgstr ""
+msgstr "“%(pk)s” không phải là một giá trị hợp lệ."
 
 #: .\venv\Lib\site-packages\django\forms\utils.py:227
 #, python-format
@@ -1342,430 +1404,432 @@ msgid ""
 "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
 "may be ambiguous or it may not exist."
 msgstr ""
+"%(datetime)s không thể được diễn giải trong múi giờ %(current_timezone)s; nó "
+"có thể không rõ ràng hoặc không tồn tại."
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:461
 msgid "Clear"
-msgstr ""
+msgstr "Xóa"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:462
 msgid "Currently"
-msgstr ""
+msgstr "Hiện tại"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:800
 msgid "Unknown"
-msgstr ""
+msgstr "Không xác định"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:801
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:802
 msgid "No"
-msgstr ""
+msgstr "Không"
 
 #. Translators: Please do not add spaces around commas.
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:873
 msgid "yes,no,maybe"
-msgstr ""
+msgstr "có,không,có thể"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:903
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:920
 #, python-format
 msgid "%(size)d byte"
 msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(size)d byte"
+msgstr[1] "%(size)d byte"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:922
 #, python-format
 msgid "%s KB"
-msgstr ""
+msgstr "%s KB"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:924
 #, python-format
 msgid "%s MB"
-msgstr ""
+msgstr "%s MB"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:926
 #, python-format
 msgid "%s GB"
-msgstr ""
+msgstr "%s GB"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:928
 #, python-format
 msgid "%s TB"
-msgstr ""
+msgstr "%s TB"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:930
 #, python-format
 msgid "%s PB"
-msgstr ""
+msgstr "%s PB"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:74
 msgid "p.m."
-msgstr ""
+msgstr "CH"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:75
 msgid "a.m."
-msgstr ""
+msgstr "SA"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:80
 msgid "PM"
-msgstr ""
+msgstr "CH"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:81
 msgid "AM"
-msgstr ""
+msgstr "SA"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:153
 msgid "midnight"
-msgstr ""
+msgstr "nửa đêm"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:155
 msgid "noon"
-msgstr ""
+msgstr "buổi trưa"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:7
 msgid "Monday"
-msgstr ""
+msgstr "Thứ Hai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:8
 msgid "Tuesday"
-msgstr ""
+msgstr "Thứ Ba"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:9
 msgid "Wednesday"
-msgstr ""
+msgstr "Thứ Tư"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Thursday"
-msgstr ""
+msgstr "Thứ Năm"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:11
 msgid "Friday"
-msgstr ""
+msgstr "Thứ Sáu"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:12
 msgid "Saturday"
-msgstr ""
+msgstr "Thứ Bảy"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:13
 msgid "Sunday"
-msgstr ""
+msgstr "Chủ Nhật"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:16
 msgid "Mon"
-msgstr ""
+msgstr "T2"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:17
 msgid "Tue"
-msgstr ""
+msgstr "T3"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "Wed"
-msgstr ""
+msgstr "T4"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "Thu"
-msgstr ""
+msgstr "T5"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:20
 msgid "Fri"
-msgstr ""
+msgstr "T6"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:21
 msgid "Sat"
-msgstr ""
+msgstr "T7"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:22
 msgid "Sun"
-msgstr ""
+msgstr "CN"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:25
 msgid "January"
-msgstr ""
+msgstr "Tháng Một"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:26
 msgid "February"
-msgstr ""
+msgstr "Tháng Hai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:27
 msgid "March"
-msgstr ""
+msgstr "Tháng Ba"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:28
 msgid "April"
-msgstr ""
+msgstr "Tháng Tư"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:29
 msgid "May"
-msgstr ""
+msgstr "Tháng Năm"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:30
 msgid "June"
-msgstr ""
+msgstr "Tháng Sáu"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:31
 msgid "July"
-msgstr ""
+msgstr "Tháng Bảy"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:32
 msgid "August"
-msgstr ""
+msgstr "Tháng Tám"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:33
 msgid "September"
-msgstr ""
+msgstr "Tháng Chín"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:34
 msgid "October"
-msgstr ""
+msgstr "Tháng Mười"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:35
 msgid "November"
-msgstr ""
+msgstr "Tháng Mười Một"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:36
 msgid "December"
-msgstr ""
+msgstr "Tháng Mười Hai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:39
 msgid "jan"
-msgstr ""
+msgstr "Thg 1"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:40
 msgid "feb"
-msgstr ""
+msgstr "Thg 2"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:41
 msgid "mar"
-msgstr ""
+msgstr "Thg 3"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:42
 msgid "apr"
-msgstr ""
+msgstr "Thg 4"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:43
 msgid "may"
-msgstr ""
+msgstr "Thg 5"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:44
 msgid "jun"
-msgstr ""
+msgstr "Thg 6"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:45
 msgid "jul"
-msgstr ""
+msgstr "Thg 7"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:46
 msgid "aug"
-msgstr ""
+msgstr "Thg 8"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:47
 msgid "sep"
-msgstr ""
+msgstr "Thg 9"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:48
 msgid "oct"
-msgstr ""
+msgstr "Thg 10"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:49
 msgid "nov"
-msgstr ""
+msgstr "Thg 11"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:50
 msgid "dec"
-msgstr ""
+msgstr "Thg 12"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:53
 msgctxt "abbrev. month"
 msgid "Jan."
-msgstr ""
+msgstr "Tháng 1"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:54
 msgctxt "abbrev. month"
 msgid "Feb."
-msgstr ""
+msgstr "Tháng 2"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:55
 msgctxt "abbrev. month"
 msgid "March"
-msgstr ""
+msgstr "Tháng Ba"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:56
 msgctxt "abbrev. month"
 msgid "April"
-msgstr ""
+msgstr "Tháng Tư"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:57
 msgctxt "abbrev. month"
 msgid "May"
-msgstr ""
+msgstr "Tháng Năm"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:58
 msgctxt "abbrev. month"
 msgid "June"
-msgstr ""
+msgstr "Tháng Sáu"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:59
 msgctxt "abbrev. month"
 msgid "July"
-msgstr ""
+msgstr "Tháng Bảy"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:60
 msgctxt "abbrev. month"
 msgid "Aug."
-msgstr ""
+msgstr "Tháng 8"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:61
 msgctxt "abbrev. month"
 msgid "Sept."
-msgstr ""
+msgstr "Tháng 9"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:62
 msgctxt "abbrev. month"
 msgid "Oct."
-msgstr ""
+msgstr "Tháng 10"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:63
 msgctxt "abbrev. month"
 msgid "Nov."
-msgstr ""
+msgstr "Tháng 11"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:64
 msgctxt "abbrev. month"
 msgid "Dec."
-msgstr ""
+msgstr "Tháng 12"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:67
 msgctxt "alt. month"
 msgid "January"
-msgstr ""
+msgstr "Tháng Một"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:68
 msgctxt "alt. month"
 msgid "February"
-msgstr ""
+msgstr "Tháng Hai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:69
 msgctxt "alt. month"
 msgid "March"
-msgstr ""
+msgstr "Tháng Ba"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:70
 msgctxt "alt. month"
 msgid "April"
-msgstr ""
+msgstr "Tháng Tư"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:71
 msgctxt "alt. month"
 msgid "May"
-msgstr ""
+msgstr "Tháng Năm"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:72
 msgctxt "alt. month"
 msgid "June"
-msgstr ""
+msgstr "Tháng Sáu"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:73
 msgctxt "alt. month"
 msgid "July"
-msgstr ""
+msgstr "Tháng Bảy"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:74
 msgctxt "alt. month"
 msgid "August"
-msgstr ""
+msgstr "Tháng Tám"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:75
 msgctxt "alt. month"
 msgid "September"
-msgstr ""
+msgstr "Tháng Chín"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:76
 msgctxt "alt. month"
 msgid "October"
-msgstr ""
+msgstr "Tháng Mười"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:77
 msgctxt "alt. month"
 msgid "November"
-msgstr ""
+msgstr "Tháng Mười Một"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:78
 msgctxt "alt. month"
 msgid "December"
-msgstr ""
+msgstr "Tháng Mười Hai"
 
 #: .\venv\Lib\site-packages\django\utils\ipv6.py:20
 msgid "This is not a valid IPv6 address."
-msgstr ""
+msgstr "Đây không phải là địa chỉ IPv6 hợp lệ."
 
 #: .\venv\Lib\site-packages\django\utils\text.py:67
 #, python-format
 msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
-msgstr ""
+msgstr "%(truncated_text)s…"
 
 #: .\venv\Lib\site-packages\django\utils\text.py:278
 msgid "or"
-msgstr ""
+msgstr "hoặc"
 
 #. Translators: This string is used as a separator between list elements
 #: .\venv\Lib\site-packages\django\utils\text.py:297
 #: .\venv\Lib\site-packages\django\utils\timesince.py:135
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:8
 #, python-format
 msgid "%(num)d year"
 msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d năm"
+msgstr[1] "%(num)d năm"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:9
 #, python-format
 msgid "%(num)d month"
 msgid_plural "%(num)d months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d tháng"
+msgstr[1] "%(num)d tháng"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:10
 #, python-format
 msgid "%(num)d week"
 msgid_plural "%(num)d weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d tuần"
+msgstr[1] "%(num)d tuần"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:11
 #, python-format
 msgid "%(num)d day"
 msgid_plural "%(num)d days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d ngày"
+msgstr[1] "%(num)d ngày"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:12
 #, python-format
 msgid "%(num)d hour"
 msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d giờ"
+msgstr[1] "%(num)d giờ"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:13
 #, python-format
 msgid "%(num)d minute"
 msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d phút"
+msgstr[1] "%(num)d phút"
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:29
 msgid "Forbidden"
-msgstr ""
+msgstr "Bị cấm"
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:30
 msgid "CSRF verification failed. Request aborted."
-msgstr ""
+msgstr "Xác minh CSRF thất bại. Yêu cầu đã bị hủy bỏ."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:34
 msgid ""
@@ -1774,6 +1838,10 @@ msgid ""
 "required for security reasons, to ensure that your browser is not being "
 "hijacked by third parties."
 msgstr ""
+"Bạn thấy thông báo này vì trang HTTPS này yêu cầu trình duyệt web của bạn "
+"gửi một “Referer header”, nhưng không có header nào được gửi. Header này "
+"được yêu cầu vì lý do bảo mật, để đảm bảo rằng trình duyệt của bạn không bị "
+"bên thứ ba chiếm quyền điều khiển."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:40
 msgid ""
@@ -1781,6 +1849,9 @@ msgid ""
 "enable them, at least for this site, or for HTTPS connections, or for “same-"
 "origin” requests."
 msgstr ""
+"Nếu bạn đã cấu hình trình duyệt của mình để tắt “Referer” header, vui lòng "
+"bật lại chúng, ít nhất là cho trang web này, hoặc cho các kết nối HTTPS, "
+"hoặc cho các yêu cầu “same-origin” (cùng nguồn)."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:45
 msgid ""
@@ -1790,6 +1861,11 @@ msgid ""
 "If you’re concerned about privacy, use alternatives like <a "
 "rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
+"Nếu bạn đang sử dụng thẻ <meta name=\"referrer\" content=\"no-referrer\"> "
+"hoặc bao gồm header “Referrer-Policy: no-referrer”, vui lòng xóa chúng. Việc "
+"bảo vệ CSRF yêu cầu “Referer” header để thực hiện kiểm tra referer nghiêm "
+"ngặt. Nếu bạn lo ngại về quyền riêng tư, hãy sử dụng các giải pháp thay thế "
+"như <a rel=\"noreferrer\" …> cho các liên kết đến trang web của bên thứ ba."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:54
 msgid ""
@@ -1797,44 +1873,50 @@ msgid ""
 "submitting forms. This cookie is required for security reasons, to ensure "
 "that your browser is not being hijacked by third parties."
 msgstr ""
+"Bạn thấy thông báo này vì trang web này yêu cầu một cookie CSRF khi gửi biểu "
+"mẫu. Cookie này được yêu cầu vì lý do bảo mật, để đảm bảo rằng trình duyệt "
+"của bạn không bị bên thứ ba chiếm quyền điều khiển."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:60
 msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
 "them, at least for this site, or for “same-origin” requests."
 msgstr ""
+"Nếu bạn đã cấu hình trình duyệt của mình để tắt cookie, vui lòng bật lại "
+"chúng, ít nhất là cho trang web này, hoặc cho các yêu cầu “same-"
+"origin” (cùng nguồn)."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:66
 msgid "More information is available with DEBUG=True."
-msgstr ""
+msgstr "Thông tin thêm có sẵn khi DEBUG=True."
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:44
 msgid "No year specified"
-msgstr ""
+msgstr "Không có năm nào được chỉ định"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:64
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:115
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:214
 msgid "Date out of range"
-msgstr ""
+msgstr "Ngày nằm ngoài phạm vi"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:94
 msgid "No month specified"
-msgstr ""
+msgstr "Không có tháng nào được chỉ định"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:147
 msgid "No day specified"
-msgstr ""
+msgstr "Không có ngày nào được chỉ định"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:194
 msgid "No week specified"
-msgstr ""
+msgstr "Không có tuần nào được chỉ định"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:349
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:380
 #, python-format
 msgid "No %(verbose_name_plural)s available"
-msgstr ""
+msgstr "Không có %(verbose_name_plural)s nào có sẵn"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:652
 #, python-format
@@ -1842,51 +1924,54 @@ msgid ""
 "Future %(verbose_name_plural)s not available because %(class_name)s."
 "allow_future is False."
 msgstr ""
+"%(verbose_name_plural)s trong tương lai không có sẵn vì %(class_name)s."
+"allow_future là False."
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:692
 #, python-format
 msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
-msgstr ""
+msgstr "Chuỗi ngày không hợp lệ “%(datestr)s” với định dạng “%(format)s”"
 
 #: .\venv\Lib\site-packages\django\views\generic\detail.py:56
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
-msgstr ""
+msgstr "Không tìm thấy %(verbose_name)s nào khớp với truy vấn"
 
 #: .\venv\Lib\site-packages\django\views\generic\list.py:70
 msgid "Page is not “last”, nor can it be converted to an int."
 msgstr ""
+"Trang không phải là “last” (cuối), cũng không thể chuyển đổi thành số nguyên."
 
 #: .\venv\Lib\site-packages\django\views\generic\list.py:77
 #, python-format
 msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
+msgstr "Trang không hợp lệ (%(page_number)s): %(message)s"
 
 #: .\venv\Lib\site-packages\django\views\generic\list.py:169
 #, python-format
 msgid "Empty list and “%(class_name)s.allow_empty” is False."
-msgstr ""
+msgstr "Danh sách trống và “%(class_name)s.allow_empty” là False."
 
 #: .\venv\Lib\site-packages\django\views\static.py:49
 msgid "Directory indexes are not allowed here."
-msgstr ""
+msgstr "Chỉ mục thư mục không được phép ở đây."
 
 #: .\venv\Lib\site-packages\django\views\static.py:51
 #, python-format
 msgid "“%(path)s” does not exist"
-msgstr ""
+msgstr "“%(path)s” không tồn tại"
 
 #: .\venv\Lib\site-packages\django\views\static.py:68
 #: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
 #: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
 #, python-format
 msgid "Index of %(directory)s"
-msgstr ""
+msgstr "Chỉ mục của %(directory)s"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
 msgid "The install worked successfully! Congratulations!"
-msgstr ""
+msgstr "Cài đặt đã hoạt động thành công! Xin chúc mừng!"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
 #, python-format
@@ -1894,6 +1979,9 @@ msgid ""
 "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
 "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 msgstr ""
+"Xem <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">ghi chú phát hành</a> cho Django "
+"%(version)s"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
 #, python-format
@@ -1903,27 +1991,34 @@ msgid ""
 "rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
 "configured any URLs."
 msgstr ""
+"Bạn đang thấy trang này vì <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> nằm trong tệp cài đặt của bạn và bạn chưa "
+"cấu hình bất kỳ URL nào."
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
 msgid "Django Documentation"
-msgstr ""
+msgstr "Tài liệu Django"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
 msgid "Topics, references, &amp; how-to’s"
-msgstr ""
+msgstr "Chủ đề, tài liệu tham khảo, &amp; hướng dẫn"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
 msgid "Tutorial: A Polling App"
-msgstr ""
+msgstr "Hướng dẫn: Ứng dụng thăm dò ý kiến"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
 msgid "Get started with Django"
-msgstr ""
+msgstr "Bắt đầu với Django"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
 msgid "Django Community"
-msgstr ""
+msgstr "Cộng đồng Django"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
-msgstr ""
+msgstr "Kết nối, nhận trợ giúp hoặc đóng góp"
+
+#~ msgid "edit"
+#~ msgstr "chỉnh sửa"
