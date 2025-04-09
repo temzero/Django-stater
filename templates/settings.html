@@ -1,4 +1,5 @@
 {% extends 'layouts/form_layout.html' %}
+{% load i18n %}
 
 {% block label %}Settings{% endblock %}
 
@@ -17,11 +18,29 @@
     {% endif %}
 
     <div class="flex flex-col rounded w-full custom-border">
-        <a href="{% url 'settings-general' %}" class="h-12 flex items-center px-4 custom-border-b">General</a>
+        <a href="{% url 'settings-general' %}" class="h-12 flex items-center px-4 custom-border-b">{% trans "General" %}</a>
+
+        <!-- Language -->
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <div class="h-12 flex items-center justify-between px-4 pr-1 custom-border-b">
+                <h1>{% trans "Language" %}</h1>
+                <select name="language" id="language" class="w-[200px] bg-transparent" onchange="this.form.submit()">
+                    {% get_current_language as current_language %}
+                    {% get_available_languages as languages %}
+                    {% for lang in languages %}
+                        <option value="{{ lang.0 }}" {% if lang.0 == current_language %}selected{% endif %}>
+                            {{ lang.1 }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+
         {% if request.user.is_authenticated %}
-        <a href="{% url 'profile-password-change' %}" class="h-12 flex items-center px-4 custom-border-b">Change Password</a>
-        <a href="#" class="h-12 flex items-center px-4 custom-border-b" onclick="openChangePasswordModal()">Change Password Front</a>
-        <a href="#" class="h-12 flex items-center px-4 text-red-500" onclick="openDeleteAccountModal()">Delete Account</a>
+        <!-- <a href="{% url 'profile-password-change' %}" class="h-12 flex items-center px-4 custom-border-b">{% trans "Change Password" %}</a> -->
+        <a href="#" class="h-12 flex items-center px-4 custom-border-b" onclick="openChangePasswordModal()">{% trans "Change Password" %}</a>
+        <a href="#" class="h-12 flex items-center px-4 text-red-500" onclick="openDeleteAccountModal()">{% trans "Delete Account" %}</a>
         {% endif %}
     </div>
 

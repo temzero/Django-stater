@@ -17,25 +17,25 @@
             {% if form.non_field_errors %}
                 <p class="text-red-500 text-xs">{{ form.non_field_errors.0 }}</p>
             {% endif %}
-    
+
             <!-- Preserve Redirection -->
             <input type="hidden" name="next" value="{{ request.GET.next }}">
-    
+
             <!-- Username Input -->
-            <input type="text" name="username" placeholder="Username" required class="input" autofocus>
+            <input type="text" name="username" placeholder="{% trans 'Username' %}" required class="input" autofocus>
             {% if form.username.errors %}
                 <p class="text-red-500 text-xs">{{ form.username.errors.0 }}</p>
             {% endif %}
-    
+
             <!-- Email Input -->
-            <input type="email" name="email" placeholder="Email" required class="input">
+            <input type="email" name="email" placeholder="{% trans 'Email' %}" required class="input">
             {% if form.email.errors %}
                 <p class="text-red-500 text-xs">{{ form.email.errors.0 }}</p>
             {% endif %}
 
             <div class="flex gap-2">
                 <!-- First Name Input -->
-                <input id="registerFirstName" type="text" name="first_name" placeholder="First Name" required class="input">
+                <input id="registerFirstName" type="text" name="first_name" placeholder="{% trans 'First Name' %}" required class="input">
                 <script>
                     document.getElementById('registerFirstName').addEventListener('input', function(e) {
                         e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
@@ -44,9 +44,9 @@
                 {% if form.first_name.errors %}
                     <p class="text-red-500 text-xs">{{ form.first_name.errors.0 }}</p>
                 {% endif %}
-            
+
                 <!-- Last Name Input -->
-                <input id="registerLastName" type="text" name="last_name" placeholder="Last Name" required class="input">
+                <input id="registerLastName" type="text" name="last_name" placeholder="{% trans 'Last Name' %}" required class="input">
                 <script>
                     document.getElementById('registerLastName').addEventListener('input', function(e) {
                         e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
@@ -56,15 +56,15 @@
                     <p class="text-red-500 text-xs">{{ form.last_name.errors.0 }}</p>
                 {% endif %}
             </div>
-    
+
             <!-- Password Input -->
-            <input type="password" name="password1" placeholder="Password" required class="input">
+            <input type="password" name="password1" placeholder="{% trans 'Password' %}" required class="input">
             {% if form.password1.errors %}
                 <p class="text-red-500 text-xs">{{ form.password1.errors.0 }}</p>
             {% endif %}
-    
+
             <!-- Confirm Password Input -->
-            <input type="password" name="password2" placeholder="Confirm Password" required class="input">
+            <input type="password" name="password2" placeholder="{% trans 'Confirm Password' %}" required class="input">
             {% if form.password2.errors %}
                 <p class="text-red-500 text-xs">{{ form.password2.errors.0 }}</p>
             {% endif %}
@@ -80,7 +80,7 @@
             {% trans "Already have an account?" %}
             <a class="text-blue-500 hover:underline" href="{% url 'account_login' %}">{% trans "Login here!" %}</a>
         </p>
-    
+
         {% if SOCIALACCOUNT_ENABLED %}
             <p class="mt-4">{% trans "Or sign up with:" %}</p>
             {% include "socialaccount/snippets/signup.html" %}

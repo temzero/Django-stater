@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block layout %}
 
 <div class="relative flex flex-col items-center justify-center min-h-screen bg-[#ccc] dark:bg-black w-full">
     <a class="absolute top-[10%] flex items-center gap-2" href="/"> 
         <img class="h-10" src="/static/images/logo.svg" alt="Logo"/>
-        <span class="text-3xl font-semibold">Project Title</span>
+        <span class="text-3xl font-semibold">{% trans "Name" %}</span>
     </a>
     {% block content %}{% endblock %}
 </div>

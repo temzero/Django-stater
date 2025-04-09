@@ -1,11 +1,12 @@
 {% extends 'layouts/form_layout.html' %}
+{% load i18n %}
 
 {% block form_content %}
 
 {%if onboarding%}
-    <h1 class='mb-4'>Complete your profile</h1>
+    <h1 class='mb-4'>{% trans "Complete your profile" %}</h1>
 {%else%}
-    <h1 class='mb-4 text-3xl font-bold'>Edit your profile</h1>
+    <h1 class='mb-4 text-3xl font-bold'>{% trans "Edit your profile" %}</h1>
 {%endif%}
 
 <img id="avatar" class="w-24 h-24 rounded-full object-cover my-4" src="{{ user.profile.avatar }}" />
@@ -18,11 +19,11 @@
 
     <!-- Button container with flex to align right -->
     <div class="flex justify-end space-x-2">
-        <button class="button button-primary" type="submit">Submit</button>
+        <button class="button button-primary" type="submit">{% trans "Submit" %}</button>
         {% if onboarding %}
-            <a class="button button-gray" href="{% url 'home' %}">Skip</a>
+            <a class="button button-gray" href="{% url 'home' %}">{% trans "Skip" %}</a>
         {% else %}
-            <a class="button button-gray" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+            <a class="button button-gray" href="{{ request.META.HTTP_REFERER }}">{% trans "Cancel" %}</a>
         {% endif %}
     </div>
 </form>

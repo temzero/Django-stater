@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <header class="flex items-center justify-between h-12 px-4 sticky top-0 shadow border-b border-[var(--border-color)] backdrop-blur-[99px] z-50">
     <div>
         <!-- <a class="flex items-center gap-2 mr-4" href="/">
@@ -24,15 +26,15 @@
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 -translate-y-4 scale-20"
                 >
-                <a href="{% url 'profile' %}">My Profile</a>
-                <a href="{% url 'settings' %}">Settings</a>
-                <a href="{% url 'account_logout' %}" class="text-red-500">Log Out</a>
+                <a href="{% url 'profile' %}">{% trans "My Profile" %}</a>
+                <a href="{% url 'settings' %}">{% trans "Settings" %}</a>
+                <a href="{% url 'account_logout' %}" class="text-red-500">{% trans "Log Out" %}</a>
             </div>
         </div>
         
         {% else %}
-        <a class="a font-bold" href="{% url 'account_login' %}">Login</a>
-        <a class="a font-bold" href="{% url 'account_signup' %}">Register</a>
+        <a class="a font-bold" href="{% url 'account_login' %}">{% trans "Login" %}</a>
+        <a class="a font-bold" href="{% url 'account_signup' %}">{% trans "Register" %}</a>
         {% endif %}
     </div>
 </header>

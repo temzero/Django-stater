@@ -64,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -130,8 +131,25 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
 USE_TZ = True
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('zh-hans', 'Chinese (Simplified)'),
+    ('fr', 'French'),
+    ('hi', 'Hindi'),
+    ('ja', 'Japanese'),
+    ('ko', 'Korean'),
+    ('ru', 'Russian'),
+    ('es', 'Spanish'),
+    ('th', 'Thai'),
+    ('vi', 'Vietnamese')
+]
+
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -161,8 +179,6 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_COOKIE_AGE = 1209600
 ACCOUNT_SESSION_REMEMBER = True
-
-
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [

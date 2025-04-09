@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <form id="theme-form"
   hx-post="{% url 'settings-theme' %}"
   hx-trigger="change from:#theme-input"
@@ -9,7 +11,7 @@
     <input type="checkbox" id="theme-toggle">
     <span class="slider"></span>
   </label>
-  <span>Dark Mode</span>
+  <span>{% trans "Dark Mode" %}</span>
 
   <input type="hidden" name="theme" id="theme-input">
 </form>

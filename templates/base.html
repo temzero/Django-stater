@@ -3,21 +3,34 @@
 <html lang="en">
 <head>
     <script>
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        let systemListener = null;
+    
         function applyTheme(theme) {
             const localTheme = theme || localStorage.getItem("theme") || "system";
             localStorage.setItem("theme", localTheme);
-            // If it's not in localStorage yet (first login), fallback to server-side theme
-
+    
+            // Remove system listener if it exists
+            if (systemListener) {
+                mediaQuery.removeEventListener("change", systemListener);
+                systemListener = null;
+            }
+    
             if (localTheme === "light") {
                 document.documentElement.classList.remove("dark");
             } else if (localTheme === "dark") {
                 document.documentElement.classList.add("dark");
             } else {
-                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                document.documentElement.classList.toggle("dark", prefersDark);
+                // Apply current system preference
+                document.documentElement.classList.toggle("dark", mediaQuery.matches);
+                // Add listener for system changes
+                systemListener = (e) => {
+                    document.documentElement.classList.toggle("dark", e.matches);
+                };
+                mediaQuery.addEventListener("change", systemListener);
             }
         }
-
+    
         applyTheme();
     </script>
     <meta charset="UTF-8">
@@ -38,7 +51,7 @@
     {% tailwind_css %}
 </head>
 
-<body class="flex">
+<body class="flex">    
     {% include 'includes/messages.html' %}
     {% block layout %}{% endblock %}
 </body>

@@ -1,33 +1,65 @@
-<div id="changeEmailModal" class="modal">
+{% load i18n %}
 
+<div id="changeEmailModal" class="modal">
     <div class="modal-content w-[360px]">
 
-            <div class="flex flex-col justify-center items-center gap-4 mb-2">
-                <h2 class="text-3xl text-center font-semibold">Change Email</h2>
-                <i class="material-symbols-outlined text-4xl">email</i>
-            </div>
+        <div class="flex flex-col justify-center items-center gap-4 mb-2">
+            <h2 class="text-3xl text-center">{% trans "Change Email" %}</h2>
+            <i class="material-symbols-outlined text-4xl">email</i>
+        </div>
 
-            <!-- Display Current Email -->
-            <div class="flex items-center gap-1 justify-center">
-                <p class="text-xl font-light">{{ request.user.email }}</p>
+        <!-- Display Current Email -->
+        <div class="flex items-center gap-1 justify-center">
+            <p class="text-xl font-light">{{ request.user.email }}</p>
 
-                {% if not request.user.emailaddress_set.first.verified %}
-                    <!-- <p class="text-red-500 text-xs mt-1">Email not verified</p> -->
-                    <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
-                {% else %}
-                    <img class="h-5" src="/static/icon/tick.svg" alt="Logo"/>
-                {% endif %}
-            </div>
+            {% if not request.user.emailaddress_set.first.verified %}
+                <!-- <p class="text-red-500 text-xs mt-1">{% trans "Email not verified" %}</p> -->
+                <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
+            {% else %}
+                <img class="h-5" src="/static/icon/tick.svg" alt="Logo"/>
+            {% endif %}
+        </div>
 
-            <!-- Change Email Form -->
-            <form id="changeEmailForm" action="{% url 'profile-email-change' %}" method="post" class="mt-6">
-                {% csrf_token %}
-                <input type="email" name="email" placeholder="Enter new email" class="input" required autofocus>
-                {% if form.email.errors %}
-                    <p class="text-red-500 text-xs p-1">{{ form.email.errors.0 }}</p>
-                {% endif %}
+        <!-- Change Email Form -->
+        <form id="changeEmailForm" action="{% url 'profile-email-change' %}" method="post" class="mt-6">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="{% trans 'Enter new email' %}" class="input" required autofocus>
+            {% if form.email.errors %}
+                <p class="text-red-500 text-xs p-1">{{ form.email.errors.0 }}</p>
+            {% endif %}
 
-                <button type="submit" class="button w-full button-primary p-1 mt-4">Confirm and Send Verification</button>
-            </form>
+            <button type="submit" class="button w-full button-primary p-1 mt-4">
+                {% trans "Confirm and Send Verification" %}
+            </button>
+        </form>
     </div>
 </div>
+
+<script>
+    const emailModal = document.getElementById('changeEmailModal');
+    const emailModalContent = emailModal.querySelector('.modal-content');
+
+    function openEmailModal() {
+        emailModal.classList.add("show");
+        emailModalContent.classList.add("show");
+        emailModal.querySelector('input[name="email"]').focus();
+    }
+
+    function closeEmailModal() {
+        emailModal.classList.remove("show");
+        emailModalContent.classList.remove("show");
+        emailModal.querySelector('input[name="email"]').value = '';
+    }
+
+    emailModal.addEventListener('click', function (event) {
+        if (event.target === emailModal) {
+            closeEmailModal();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && emailModal.classList.contains('show')) {
+            closeEmailModal();
+        }
+    });
+</script>

@@ -1,18 +1,12 @@
 {% extends 'layouts/form_layout.html' %}
+{% load i18n %}
 
 {% block label %}General Settings{% endblock %}
 
 {% block form_content %}
 
     <div class="flex flex-col rounded w-full custom-border">
-        <div class="h-12 flex items-center justify-between px-4 pr-1">
-            <h1>Language</h1>
-            <select name="language" id="language" class="w-[200px] bg-transparent">
-                {% for lang in languages %}
-                    <option value="{{ lang.code }}" {% if lang.code == current_language %}selected{% endif %}>{{ lang.name }}</option>
-                {% endfor %}
-            </select>
-        </div>
+        <a href="{% url 'settings-general' %}" class="h-12 flex items-center px-4">{% trans "General Setting" %}</a>
     </div>
 
 {% endblock %}

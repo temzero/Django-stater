@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <nav x-data="{
     expanded: localStorage.getItem('sidebarExpanded') === 'true',
     
@@ -27,7 +29,7 @@ class="sticky top-0 h-screen p-[10px] pr-0 shadow border-r border-[var(--border-
 }">
     
     <div class="flex flex-col justify-between h-full items-start">
-        <a class="flex gap-2 items-center justify-center hover:opacity-70" href="/">
+        <a class="flex gap-2 items-center justify-center" href="/">
             <div class="w-[40px] h-[40px] flex items-center justify-center">
                 <img class="h-full w-full" src="/static/images/logo.svg" alt="Logo"/>
             </div>
@@ -47,7 +49,7 @@ class="sticky top-0 h-screen p-[10px] pr-0 shadow border-r border-[var(--border-
                     <i class="material-symbols-outlined text-4xl {% if request.path == '/' or request.path == '/home/' %}filled{% endif %}">home</i>
                 </div>
                 <div x-show="expanded" x-transition:enter="transition ease-out duration-300 opacity-100" x-transition:leave="opacity-0 transition ease-in duration-300">
-                    Home
+                    {% trans "Home" %}
                 </div>
             </a>
         
@@ -58,7 +60,7 @@ class="sticky top-0 h-screen p-[10px] pr-0 shadow border-r border-[var(--border-
                     <i class="material-symbols-outlined text-4xl {% if request.path|slice:':8' == '/profile' %}filled{% endif %}">person</i>
                 </div>
                 <div x-show="expanded" x-transition:enter="transition ease-out duration-300 opacity-100" x-transition:leave="opacity-0 transition ease-in duration-300">
-                    Profile
+                    {% trans "Profile" %}
                 </div>
             </a>
         </div>
@@ -90,15 +92,15 @@ class="sticky top-0 h-screen p-[10px] pr-0 shadow border-r border-[var(--border-
                     x-transition:leave="duration-100 ease-in"
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 -translate-x-2 translate-y-2 scale-20">
-                    <a href="{% url 'account_logout' %}" class="text-red-500">Log Out</a>
-                    <a href="{% url 'profile' %}">My Profile</a>
-                    <a href="{% url 'settings' %}">Settings</a>
+                    <a href="{% url 'account_logout' %}" class="text-red-500">{% trans "Log Out" %}</a>
+                    <a href="{% url 'profile' %}">{% trans "My Profile" %}</a>
+                    <a @click.stop href="{% url 'settings' %}">{% trans "Settings" %}</a>
             
                     <!-- Appearance toggle -->
                     <a id="show-theme-toggle" 
-                       @click="showThemeToggle = true"
-                       class="flex items-center justify-between cursor-pointer">
-                        Appearance 
+                        @click.stop="showThemeToggle = true"
+                        class="flex items-center justify-between cursor-pointer">
+                        {% trans "Appearance" %}
                         <i class="material-symbols-outlined opacity-60 text-sm">arrow_forward_ios</i>
                     </a>
                 </div>
@@ -113,8 +115,7 @@ class="sticky top-0 h-screen p-[10px] pr-0 shadow border-r border-[var(--border-
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-90"
                     class="absolute bottom-4 left-4 border-4 min-w-[300px] z-90 dropdown-menu shadow-4xl rounded-xl"
-                    @click.stop
-                    @click.away="showThemeToggle = false">
+                    @click.stop>
                     {% include 'partials/theme_toggle.html' %}
                 </div>
             </div>
@@ -127,11 +128,11 @@ class="sticky top-0 h-screen p-[10px] pr-0 shadow border-r border-[var(--border-
                     <i class="material-symbols-outlined text-2xl {% if '/settings' in request.path %}filled{% endif %}">settings</i>
                 </div>
                 <div x-show="expanded" x-transition:enter="transition ease-out duration-300 opacity-100" x-transition:leave="opacity-0 transition ease-in duration-300">
-                    Settings
+                    {% trans "Settings" %}
                 </div>
             </a>
-            <!-- <a class="a font-bold" href="{% url 'account_login' %}">Login</a>
-            <a class="a font-bold" href="{% url 'account_signup' %}">Register</a> -->
+            <!-- <a class="a font-bold" href="{% url 'account_login' %}">{% trans "Login" %}</a>
+            <a class="a font-bold" href="{% url 'account_signup' %}">{% trans "Register" %}</a> -->
             {% endif %}
         </div>
     </div>

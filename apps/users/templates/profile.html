@@ -1,14 +1,18 @@
 {% extends 'layouts/form_layout.html' %}
+{% load i18n %}
 
 {% block label %}
-    {% if request.user == profile.user %}My{% else %}
-    @{{ profile.user.username }}'s{% endif %}
-    Profile
+    {% if request.user == profile.user %}
+        {% trans "My" %}
+    {% else %}
+        @{{ profile.user.username }}{% trans "'s" %}
+    {% endif %}
+    {% trans "Profile" %}
 {% endblock %}
 
 {% block buttons %}
     {% if request.user == profile.user %}
-    <a href="{% url 'profile-settings' %}" class="button">Edit Profile</a>
+        <a href="{% url 'profile-settings' %}" class="button">{% trans "Edit Profile" %}</a>
     {% endif %}
 {% endblock %}
 
@@ -25,7 +29,6 @@
     <div class="custom-border-b my-6"></div>
 
     <div class="flex flex-col gap-2">
-
         <h1 class="flex gap-2">
             <i class="material-symbols-outlined text">mail</i>
             {{ profile.user.email }}
@@ -36,15 +39,15 @@
             <i class="material-symbols-outlined">calendar_today</i>
             {{ profile.birthday }}
         </h1>
-        {%endif%}
+        {% endif %}
+
         {% if profile.phone_number %}
         <h1 class="flex gap-2">
             <i class="material-symbols-outlined">call</i>
             {{ profile.phone_number }}
         </h1>
-        {%endif%}
+        {% endif %}
     </div>
 
     <div class="custom-border-b my-6"></div>
-
 {% endblock %}

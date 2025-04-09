@@ -15,6 +15,10 @@
     --text-color: black;
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 /* Dark mode styles */
 html.dark {
     --bg-color: #222;

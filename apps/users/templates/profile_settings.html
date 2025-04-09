@@ -1,10 +1,11 @@
 {% extends 'layouts/form_layout.html' %}
+{% load i18n %}
 
-{% block label %}Profile{% endblock %}
+{% block label %}{% trans "Profile" %}{% endblock %}
 
 {% block buttons %}
-    <button onclick=" document.getElementById('profileForm').submit()" id="saveButton" class="button button-primary button-disabled" type="submit">Save</button>
-    <a href="{% url 'profile' %}" class="button">Cancel</a>
+    <button onclick=" document.getElementById('profileForm').submit()" id="saveButton" class="button button-primary button-disabled" type="submit">{% trans "Save" %}</button>
+    <a href="{% url 'profile' %}" class="button">{% trans "Cancel" %}</a>
 {% endblock %}
 
 {% block form_content %}
@@ -20,7 +21,7 @@
             <div class="overflow-hidden rounded-full">
                 <img id="avatarPreview" class="avatar" src="{{ user.profile.avatarDisplay }}" />
                 <div class="w-24 h-24 rounded-full absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                    <i class="material-symbols-outlined">edit</i>
+                    <i class="material-symbols-outlined">{% trans "edit" %}</i>
                 </div>
             </div>
         </label>
@@ -28,37 +29,37 @@
     </div>
 
     <div class="input-container bg-transparent border-none">
-        <label for="id_gender" class="text-xs font-semibold">Username</label> 
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Username" %}</label> 
         <div class="text-lg font-light">
             {{ user.username }}
         </div>
     </div>
 
     <div class="input-container bg-transparent border-none">
-        <label for="id_gender" class="text-xs font-semibold">Email</label>
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Email" %}</label>
         <div class="flex justify-between items-center text-lg">
             <div class="flex gap-2 items-center">
                 <div class="font-light">
                     {{ user.email }}
                 </div>
                 {% if not request.user.emailaddress_set.first.verified %}
-                    <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
+                    <img class="h-5" src="/static/icon/danger.svg" alt="{% trans 'Unverified' %}"/>
                 {% else %}
-                    <img class="h-4" src="/static/icon/tick.svg" alt="Logo"/>
+                    <img class="h-4" src="/static/icon/tick.svg" alt="{% trans 'Verified' %}"/>
                 {% endif %}
             </div>
             <div class="flex gap-3">
                 {% if not request.user.emailaddress_set.first.verified %}
-                <a href="#" class="text-yellow-500 text-sm hover:underline" onclick="document.getElementById('verifyEmailForm').submit();">Verify</a>
+                <a href="#" class="text-yellow-500 text-sm hover:underline" onclick="document.getElementById('verifyEmailForm').submit();">{% trans "Verify" %}</a>
                 {% endif %}
-                <a href="#" class="text-blue-500 text-sm hover:underline" onclick="openEmailModal()">Change</a>
+                <a href="#" class="text-blue-500 text-sm hover:underline" onclick="openEmailModal()">{% trans "Change" %}</a>
             </div>
         </div>
     </div>
 
     <div class="flex gap-2 w-full">
         <div class="input-container">
-            <label for="id_first_name" class="text-xs font-semibold">First Name</label>
+            <label for="id_first_name" class="text-xs font-semibold">{% trans "First Name" %}</label>
             {{ user_form.first_name }}
             <script>
                 document.getElementById('{{ user_form.first_name.id_for_label }}').addEventListener('input', function(e) {
@@ -67,7 +68,7 @@
             </script>
         </div>
         <div class="input-container">
-            <label for="id_last_name" class="text-xs font-semibold">Last Name</label>
+            <label for="id_last_name" class="text-xs font-semibold">{% trans "Last Name" %}</label>
             {{ user_form.last_name }}
             <script>
                 document.getElementById('{{ user_form.last_name.id_for_label }}').addEventListener('input', function(e) {
@@ -78,25 +79,25 @@
     </div>
     
     <div class="input-container">
-        <label for="id_gender" class="text-xs font-semibold">Phone Number</label>
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Phone Number" %}</label>
         {{ profile_form.phone_number }}
     </div>
 
     <!-- Gender -->
     <div class="input-container">
-        <label for="id_gender" class="text-xs font-semibold">Gender</label>
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Gender" %}</label>
         {{ profile_form.gender }}
     </div>
 
     <!-- Birthday -->
     <div class="input-container">
-        <label for="id_gender" class="text-xs font-semibold">Birthday</label>
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Birthday" %}</label>
         {{ profile_form.birthday }}
     </div>
 
     <!-- Bio -->
     <div class="input-container">
-        <label for="id_gender" class="text-xs font-semibold">Bio</label>
+        <label for="id_gender" class="text-xs font-semibold">{% trans "Bio" %}</label>
         {{ profile_form.bio }}
     </div>
 </form>
@@ -114,23 +115,6 @@
     // Add event listener to detect changes in the form
     document.getElementById('profileForm').addEventListener('input', function() {
         document.getElementById('saveButton').classList.remove('button-disabled');
-    });
-
-    const emailModal = document.getElementById('changeEmailModal');
-    const emailModalContent = emailModal.querySelector('.modal-content');
-    function openEmailModal() {
-        emailModal.classList.add("show"); // Show modal and trigger animation
-        emailModalContent.classList.add("show"); // Trigger animation on content
-
-        // Focus the email input field and clear the value
-        emailModal.querySelector('input[name="email"]').focus();
-        emailModal.querySelector('input[name="email"]').value = '';
-    }
-    emailModal.addEventListener('click', function (event) {
-        if (event.target === emailModal) {
-            emailModal.classList.remove("show"); // Hide modal and trigger animation out
-            emailModalContent.classList.remove("show");
-        }
     });
 
     const avatarInput = document.getElementById('avatarInput');

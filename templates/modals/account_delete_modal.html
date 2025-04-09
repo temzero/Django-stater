@@ -1,16 +1,18 @@
+{% load i18n %}
+
 <div id="deleteAccountModal" class="modal bg-red-500/25">
     <div class="modal-content w-[400px] flex flex-col justify-center items-center gap-4">
-        <h2 class="text-3xl text-center text-red-500">Delete Account!</h2>
+        <h2 class="text-3xl text-center text-red-500">{% trans "Delete Account!" %}</h2>
         <i class="material-symbols-outlined text-red-500 text-5xl">delete_forever</i>
 
-        <p class="text-center text-sm font-light">We're truly sorry to see you go!</p>
-        <p class="text-center text-sm font-light">Deleting your account is a permanent action, and will irreversibly remove all your data, including any saved information and content associated with your profile.</p>
-        <p class="text-center text-sm font-light">Do you still want to proceed?</p>
+        <p class="text-center text-sm font-light">{% trans "We're truly sorry to see you go!" %}</p>
+        <p class="text-center text-sm font-light">{% trans "Deleting your account is a permanent action, and will irreversibly remove all your data, including any saved information and content associated with your profile" %}</p>
+        <p class="text-center text-sm font-light">{% trans "Do you still want to proceed?" %}</p>
 
         <form method="POST" action="{% url 'profile-delete' %}" class="flex gap-2 mt-4 w-full justify-end">
             {% csrf_token %}
-            <button type="submit" class="button button-primary w-full bg-red-500 cursor-default">Delete</button>
-            <button type="button" onclick="closeDeleteAccountModal()" class="button w-full">Cancel</button>
+            <button type="submit" class="button button-primary w-full bg-red-500 cursor-default">{% trans "Delete" %}</button>
+            <button type="button" onclick="closeDeleteAccountModal()" class="button w-full">{% trans "Cancel" %}</button>
         </form>
     </div>
 </div>
@@ -34,6 +36,13 @@
     deleteAccountModal.addEventListener('click', function (event) {
         if (event.target === deleteAccountModal) {
             closeDeleteAccountModal()
+        }
+    });
+
+    // Close the modal when pressing the Escape key
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && deleteAccountModal.classList.contains('show')) {
+            closeDeleteAccountModal();
         }
     });
 </script>
