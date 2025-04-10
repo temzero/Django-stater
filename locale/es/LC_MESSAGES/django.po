@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 14:41+0700\n"
+"POT-Creation-Date: 2025-04-10 14:38+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,27 +19,57 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
 
+#: .\apps\core\templates\favorite.html:4 .\templates\includes\sidebar.html:85
+msgid "Favorite"
+msgstr "Favoritos"
+
+#: .\apps\core\templates\home.html:4 .\templates\includes\sidebar.html:66
+msgid "Home"
+msgstr "Inicio"
+
+#: .\apps\core\templates\search.html:4 .\templates\includes\sidebar.html:104
+#, fuzzy
+#| msgid "March"
+msgid "Search"
+msgstr "marzo"
+
+#: .\apps\core\templates\search.html:14
+msgid "Search for something..."
+msgstr "Buscar algo..."
+
+#: .\apps\core\templates\search.html:23
+msgid "Showing results for:"
+msgstr "Mostrando resultados para:"
+
+#: .\apps\core\templates\settings.html:4 .\templates\includes\header.html:30
+#: .\templates\includes\sidebar.html:137
+msgid "Settings"
+msgstr "Configuración"
+
+#: .\apps\core\templates\settings.html:21
+msgid "General"
+msgstr "General"
+
+#: .\apps\core\templates\settings.html:27
+msgid "Language"
+msgstr "Idioma"
+
+#: .\apps\core\templates\settings.html:41
+#: .\apps\core\templates\settings.html:42
+#: .\apps\users\templates\change_password.html:4
+#: .\apps\users\templates\change_password.html:7
+#: .\templates\modals\change_password_modal.html:4
+msgid "Change Password"
+msgstr "Cambiar Contraseña"
+
+#: .\apps\core\templates\settings.html:43
+msgid "Delete Account"
+msgstr "Eliminar Cuenta"
+
 #: .\apps\core\templates\settings\settings_general.html:4
 #: .\apps\core\templates\settings\settings_general.html:9
 msgid "General Setting"
 msgstr "Configuración General"
-
-#: .\apps\core\views.py:8 .\apps\core\views.py:37
-msgid "There was an issue with the theme selection."
-msgstr "Hubo un problema con la selección del tema."
-
-#: .\apps\core\views.py:23
-msgid "Theme updated successfully!"
-msgstr "¡Tema actualizado con éxito!"
-
-#: .\apps\core\views.py:24
-msgid "Invalid theme selection"
-msgstr "Selección de tema inválida"
-
-#: .\apps\core\views.py:34
-#, python-format
-msgid "Theme switched to %(theme)s!"
-msgstr "¡Tema cambiado a %(theme)s!"
 
 #: .\apps\users\models.py:9
 msgid "Male"
@@ -77,15 +107,15 @@ msgstr "Usuario"
 msgid "Avatar"
 msgstr "Avatar"
 
-#: .\apps\users\models.py:33 .\apps\users\templates\profile_settings.html:88
+#: .\apps\users\models.py:33 .\apps\users\templates\profile_edit.html:86
 msgid "Gender"
 msgstr "Género"
 
-#: .\apps\users\models.py:38 .\apps\users\templates\profile_settings.html:94
+#: .\apps\users\models.py:38
 msgid "Birthday"
 msgstr "Fecha de nacimiento"
 
-#: .\apps\users\models.py:43 .\apps\users\templates\profile_settings.html:100
+#: .\apps\users\models.py:43 .\apps\users\templates\profile_edit.html:98
 msgid "Bio"
 msgstr "Biografía"
 
@@ -97,21 +127,8 @@ msgstr "Introduce un número de teléfono válido."
 msgid "Phone number"
 msgstr "Número de teléfono"
 
-#: .\apps\users\models.py:61
-msgid "Theme"
-msgstr "Tema"
-
-#: .\apps\users\templates\change_password.html:4
-#: .\apps\users\templates\change_password.html:7
-#: .\templates\modals\change_password_modal.html:4 .\templates\settings.html:41
-#: .\templates\settings.html:42
-msgid "Change Password"
-msgstr "Cambiar Contraseña"
-
 #: .\apps\users\templates\change_password.html:8
-#: .\apps\users\templates\profile_delete.html:12
-#: .\apps\users\templates\profile_edit.html:26
-#: .\apps\users\templates\profile_settings.html:8
+#: .\apps\users\templates\profile_edit.html:103
 #: .\templates\modals\account_delete_modal.html:15
 msgid "Cancel"
 msgstr "Cancelar"
@@ -136,139 +153,86 @@ msgstr "Verificar Contraseña"
 msgid "Update Password"
 msgstr "Actualizar Contraseña"
 
-#: .\apps\users\templates\profile.html:6
-msgid "My"
-msgstr "Mi"
-
-#: .\apps\users\templates\profile.html:8
-msgid "'s"
-msgstr "de"
-
-#: .\apps\users\templates\profile.html:10
-#: .\apps\users\templates\profile_settings.html:4
-#: .\templates\includes\sidebar.html:63
-msgid "Profile"
-msgstr "Perfil"
-
-#: .\apps\users\templates\profile.html:15
+#: .\apps\users\templates\profile.html:12
+#: .\apps\users\templates\profile_edit.html:4
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: .\apps\users\templates\profile_delete.html:6 .\templates\settings.html:43
-msgid "Delete Account"
-msgstr "Eliminar Cuenta"
-
-#: .\apps\users\templates\profile_delete.html:7
-msgid "Are you sure you want to delete your account?"
-msgstr "¿Estás seguro de que quieres eliminar tu cuenta?"
-
-#: .\apps\users\templates\profile_delete.html:11
-msgid "Yes, I want to delete my account"
-msgstr "Sí, quiero eliminar mi cuenta"
-
-#: .\apps\users\templates\profile_edit.html:7
-msgid "Complete your profile"
-msgstr "Completa tu perfil"
-
-#: .\apps\users\templates\profile_edit.html:9
-msgid "Edit your profile"
-msgstr "Edita tu perfil"
-
-#: .\apps\users\templates\profile_edit.html:22
-msgid "Submit"
-msgstr "Enviar"
-
-#: .\apps\users\templates\profile_edit.html:24
-msgid "Skip"
-msgstr "Omitir"
-
-#: .\apps\users\templates\profile_settings.html:7
-msgid "Save"
-msgstr "Guardar"
-
-#: .\apps\users\templates\profile_settings.html:32
+#: .\apps\users\templates\profile_edit.html:30
 #: .\templates\account\signup.html:25
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\apps\users\templates\profile_settings.html:39
+#: .\apps\users\templates\profile_edit.html:37
 #: .\templates\account\signup.html:31
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\apps\users\templates\profile_settings.html:46
-msgid "Unverified"
-msgstr "No verificado"
-
-#: .\apps\users\templates\profile_settings.html:48
-msgid "Verified"
-msgstr "Verificado"
-
-#: .\apps\users\templates\profile_settings.html:53
+#: .\apps\users\templates\profile_edit.html:51
 msgid "Verify"
 msgstr "Verificar"
 
-#: .\apps\users\templates\profile_settings.html:55
+#: .\apps\users\templates\profile_edit.html:53
 #: .\venv\Lib\site-packages\django\forms\widgets.py:463
 msgid "Change"
 msgstr "Cambiar"
 
-#: .\apps\users\templates\profile_settings.html:62
+#: .\apps\users\templates\profile_edit.html:60
 #: .\templates\account\signup.html:38
 msgid "First Name"
 msgstr "Nombre"
 
-#: .\apps\users\templates\profile_settings.html:71
+#: .\apps\users\templates\profile_edit.html:69
 #: .\templates\account\signup.html:49
 msgid "Last Name"
 msgstr "Apellido"
 
-#: .\apps\users\templates\profile_settings.html:82
+#: .\apps\users\templates\profile_edit.html:80
 msgid "Phone Number"
 msgstr "Número de teléfono"
 
-#: .\apps\users\views.py:26
-msgid "Post request received!"
-msgstr "¡Solicitud POST recibida!"
+#: .\apps\users\templates\profile_edit.html:92
+#, fuzzy
+#| msgid "Birthday"
+msgid "Birthday (m/d/y)"
+msgstr "Fecha de nacimiento"
 
-#: .\apps\users\views.py:31
+#: .\apps\users\templates\profile_edit.html:102
+msgid "Save"
+msgstr "Guardar"
+
+#: .\apps\users\views.py:29
 msgid "Profile updated successfully!"
 msgstr "¡Perfil actualizado con éxito!"
 
-#: .\apps\users\views.py:37
+#: .\apps\users\views.py:35
 #, python-format
 msgid "User %(field)s: %(error)s"
 msgstr "Usuario %(field)s: %(error)s"
 
-#: .\apps\users\views.py:40
+#: .\apps\users\views.py:38
 #, python-format
 msgid "Profile %(field)s: %(error)s"
 msgstr "Perfil %(field)s: %(error)s"
 
-#: .\apps\users\views.py:63
+#: .\apps\users\views.py:61
 msgid "Password updated successfully!"
 msgstr "¡Contraseña actualizada con éxito!"
 
-#: .\apps\users\views.py:74
+#: .\apps\users\views.py:72
 msgid "Password changed!"
 msgstr "¡Contraseña cambiada!"
 
-#: .\apps\users\views.py:91
+#: .\apps\users\views.py:89
 #, python-format
 msgid "%(email)s is already in use."
 msgstr "%(email)s ya está en uso."
 
-#: .\apps\users\views.py:95
-msgid "Email updated! Please confirm your new email."
-msgstr ""
-"¡Correo electrónico actualizado! Por favor, confirma tu nuevo correo "
-"electrónico."
-
-#: .\apps\users\views.py:99
+#: .\apps\users\views.py:96
 msgid "Invalid email. Please try again."
 msgstr "Correo electrónico inválido. Por favor, inténtalo de nuevo."
 
-#: .\apps\users\views.py:109
+#: .\apps\users\views.py:106
 msgid "Account deleted!"
 msgstr "¡Cuenta eliminada!"
 
@@ -288,8 +252,61 @@ msgstr "Español"
 msgid "Vietnamese"
 msgstr "Vietnamita"
 
+#: .\templates\account\email_confirm.html:15
+#, fuzzy
+#| msgid "Email address"
+msgid "Confirm Your Email Address"
+msgstr "Dirección de correo electrónico"
+
+#: .\templates\account\email_confirm.html:18
+#, python-format
+msgid ""
+"\n"
+"              please verify that <span class=\"text-[var(--primary-"
+"color)]\">%(email)s</span> belongs to you.<br/>\n"
+"              Verifying your email helps us secure your account and ensures "
+"you receive important updates without interruption.\n"
+"            "
+msgstr ""
+
+#: .\templates\account\email_confirm.html:26
+#, fuzzy
+#| msgid "Verify"
+msgid "Verify Email"
+msgstr "Verificar"
+
+#: .\templates\account\email_confirm.html:35
+msgid "Email Already Confirmed"
+msgstr "Correo Electrónico Ya Confirmado"
+
+#: .\templates\account\email_confirm.html:39
+#, python-format
+msgid ""
+"\n"
+"            We're unable to confirm "
+"<strong>%(confirmation.email_address.email)s</strong> because it's already "
+"been verified by another account.<br />\n"
+"            If you believe this is a mistake, please contact support for "
+"assistance.\n"
+"        "
+msgstr ""
+
+#: .\templates\account\email_confirm.html:53
+msgid "Email Confirmation Failed"
+msgstr "Falló la Confirmación del Correo Electrónico"
+
+#: .\templates\account\email_confirm.html:57
+msgid ""
+"\n"
+"                This email confirmation link has expired or is invalid. <br /"
+">\n"
+"                Please request a new confirmation email to complete the "
+"verification process.\n"
+"            "
+msgstr ""
+
 #: .\templates\account\login.html:6 .\templates\account\login.html:13
-#: .\templates\includes\header.html:36 .\templates\includes\sidebar.html:134
+#: .\templates\includes\header.html:36
 msgid "Login"
 msgstr "Iniciar sesión"
 
@@ -351,7 +368,6 @@ msgid "Sign Up"
 msgstr "Registrarse"
 
 #: .\templates\account\signup.html:13 .\templates\includes\header.html:37
-#: .\templates\includes\sidebar.html:135
 msgid "Register"
 msgstr "Registrarse"
 
@@ -375,28 +391,15 @@ msgstr "¡Inicia sesión aquí!"
 msgid "Or sign up with:"
 msgstr "O regístrate con:"
 
-#: .\templates\home.html:6 .\templates\includes\sidebar.html:52
-msgid "Home"
-msgstr "Inicio"
-
-#: .\templates\includes\footer.html:2
-msgid "Footer"
-msgstr "Pie de página"
-
-#: .\templates\includes\header.html:29 .\templates\includes\sidebar.html:96
+#: .\templates\includes\header.html:29 .\templates\includes\sidebar.html:136
 msgid "My Profile"
 msgstr "Mi Perfil"
 
-#: .\templates\includes\header.html:30 .\templates\includes\sidebar.html:97
-#: .\templates\includes\sidebar.html:131 .\templates\settings.html:4
-msgid "Settings"
-msgstr "Configuración"
-
-#: .\templates\includes\header.html:31 .\templates\includes\sidebar.html:95
+#: .\templates\includes\header.html:31 .\templates\includes\sidebar.html:135
 msgid "Log Out"
 msgstr "Cerrar sesión"
 
-#: .\templates\includes\sidebar.html:103
+#: .\templates\includes\sidebar.html:143
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -435,29 +438,13 @@ msgstr "Eliminar"
 msgid "Change Email"
 msgstr "Cambiar Correo Electrónico"
 
-#: .\templates\modals\change_email_modal.html:16
-msgid "Email not verified"
-msgstr "Correo electrónico no verificado"
-
-#: .\templates\modals\change_email_modal.html:26
+#: .\templates\modals\change_email_modal.html:25
 msgid "Enter new email"
 msgstr "Introduce el nuevo correo electrónico"
 
-#: .\templates\modals\change_email_modal.html:32
+#: .\templates\modals\change_email_modal.html:31
 msgid "Confirm and Send Verification"
 msgstr "Confirmar y Enviar Verificación"
-
-#: .\templates\partials\theme_slider.html:14
-msgid "Dark Mode"
-msgstr "Modo Oscuro"
-
-#: .\templates\settings.html:21
-msgid "General"
-msgstr "General"
-
-#: .\templates\settings.html:27
-msgid "Language"
-msgstr "Idioma"
 
 #: .\venv\Lib\site-packages\click\_termui_impl.py:556
 #, python-brace-format
@@ -2045,6 +2032,72 @@ msgstr "Comunidad Django"
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
 msgstr "Conéctate, obtén ayuda o contribuye"
+
+#~ msgid "There was an issue with the theme selection."
+#~ msgstr "Hubo un problema con la selección del tema."
+
+#~ msgid "Theme updated successfully!"
+#~ msgstr "¡Tema actualizado con éxito!"
+
+#~ msgid "Invalid theme selection"
+#~ msgstr "Selección de tema inválida"
+
+#, python-format
+#~ msgid "Theme switched to %(theme)s!"
+#~ msgstr "¡Tema cambiado a %(theme)s!"
+
+#~ msgid "Theme"
+#~ msgstr "Tema"
+
+#~ msgid "My"
+#~ msgstr "Mi"
+
+#~ msgid "'s"
+#~ msgstr "de"
+
+#~ msgid "Profile"
+#~ msgstr "Perfil"
+
+#~ msgid "Are you sure you want to delete your account?"
+#~ msgstr "¿Estás seguro de que quieres eliminar tu cuenta?"
+
+#~ msgid "Yes, I want to delete my account"
+#~ msgstr "Sí, quiero eliminar mi cuenta"
+
+#~ msgid "Complete your profile"
+#~ msgstr "Completa tu perfil"
+
+#~ msgid "Edit your profile"
+#~ msgstr "Edita tu perfil"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"
+
+#~ msgid "Skip"
+#~ msgstr "Omitir"
+
+#~ msgid "Unverified"
+#~ msgstr "No verificado"
+
+#~ msgid "Verified"
+#~ msgstr "Verificado"
+
+#~ msgid "Post request received!"
+#~ msgstr "¡Solicitud POST recibida!"
+
+#~ msgid "Email updated! Please confirm your new email."
+#~ msgstr ""
+#~ "¡Correo electrónico actualizado! Por favor, confirma tu nuevo correo "
+#~ "electrónico."
+
+#~ msgid "Footer"
+#~ msgstr "Pie de página"
+
+#~ msgid "Email not verified"
+#~ msgstr "Correo electrónico no verificado"
+
+#~ msgid "Dark Mode"
+#~ msgstr "Modo Oscuro"
 
 #~ msgid "edit"
 #~ msgstr "editar"

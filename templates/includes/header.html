@@ -11,7 +11,7 @@
         {% if request.user.is_authenticated %}
         <div x-data="{ dropdownOpen: false }">
             <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="flex items-center cursor-pointer select-none">
-                <img class="mr-2 h-8 w-8 avatar-header" src="{{user.profile.avatarDisplay}}"/>
+                <img class="mr-2 avatar h-8 w-8" src="{{user.profile.avatarDisplay}}"/>
                 {% if user.first_name %}
                     {{user.first_name}}
                 {% else %}

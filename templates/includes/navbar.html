@@ -1,4 +1,4 @@
-<nav class="fixed bottom-0 left-0 right-0 flex items-center justify-around h-20 px-4 shadow border-t border-[var(--border-color)] backdrop-blur-[99px] z-50">
+<nav class="fixed bottom-0 left-0 right-0 flex items-center justify-around h-20 px-4 shadow border-t border-[var(--border-color)] bg-[var(--bg-color)] z-50">
     <a href="{% url 'home' %}">
         <i class="material-symbols-outlined text-4xl opacity-40 {% if request.path == '/' %}filled !opacity-100{% endif %}">home</i>
     </a>
@@ -16,5 +16,4 @@
             <i class="material-symbols-outlined text-4xl opacity-40 {% if request.path == '/settings/'%}filled !opacity-100{% endif %}">account_circle</i>
         {% endif %}
     </a>
-
 </nav>

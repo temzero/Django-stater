@@ -12,11 +12,10 @@
         <div class="flex items-center gap-1 justify-center">
             <p class="text-xl font-light">{{ request.user.email }}</p>
 
-            {% if not request.user.emailaddress_set.first.verified %}
-                <!-- <p class="text-red-500 text-xs mt-1">{% trans "Email not verified" %}</p> -->
-                <img class="h-5" src="/static/icon/danger.svg" alt="Logo"/>
+            {% if request.user.emailaddress_set.first.verified %}
+                <i class="material-symbols-outlined text-green-500">check</i>
             {% else %}
-                <img class="h-5" src="/static/icon/tick.svg" alt="Logo"/>
+                <i class="material-symbols-outlined  text-yellow-500">error</i>
             {% endif %}
         </div>
 

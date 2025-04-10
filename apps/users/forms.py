@@ -26,9 +26,9 @@ class ProfileForm(forms.ModelForm):
         exclude = ['user']
         widgets = {
             'avatar': forms.ClearableFileInput(attrs={'id': 'avatarInput', 'class': 'hidden'}),
-            'gender': forms.Select(choices=Profile.GENDER_CHOICES, attrs={'class': 'form-input, w-full bg-transparent'}),
+            'gender': forms.Select(choices=Profile.GENDER_CHOICES, attrs={'class': 'form-input w-full bg-transparent'}),
             'birthday': forms.DateInput(attrs={'type': 'date', 'class': 'form-input'}),
-            'bio': forms.Textarea(attrs={'rows': 4, 'class': 'form-input', 'placeholder': '...', 'maxlength': 180, 'style': 'resize: none;'}),
+            'bio': forms.Textarea(attrs={'rows': 4, 'class': 'form-input', 'placeholder': '...', 'maxlength': 180, 'style': 'resize: none; font-size: 1rem;'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-input', 'placeholder': '...'}),
         }
 

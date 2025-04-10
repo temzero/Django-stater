@@ -1,0 +1,64 @@
+{% extends "layouts/account_layout.html" %}
+{% load i18n %}
+{% load account %}
+{% load allauth %}
+
+{% block content %}
+  {% if confirmation %}
+    {% user_display confirmation.email_address.user as user_display %}
+
+    {% if can_confirm %}
+      <form class="form rounded-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+        {% csrf_token %}
+
+        <i class="material-symbols-outlined text-8xl">contact_mail</i>
+        <h2 class="text-2xl font-semibold">{% trans "Confirm Your Email Address" %}</h2>
+
+        <p class="text-center my-1 max-w-[500px]">
+            <span class="text-[var(--primary-color)]">{{ user.first_name }}</span>, {% blocktrans with confirmation.email_address.email as email %}
+              please verify that <span class="text-[var(--primary-color)]">{{ email }}</span> belongs to you.<br/>
+              Verifying your email helps us secure your account and ensures you receive important updates without interruption.
+            {% endblocktrans %}
+        </p>
+        
+
+        <button class="a text-xl" type="submit">
+          {% trans "Verify Email" %}
+        </button>
+      </form>
+
+    {% else %}
+    <div class="form rounded-none text-center p-6 bg-yellow-50 border border-yellow-200">
+        <i class="material-symbols-outlined text-8xl text-yellow-500">contact_mail</i>
+    
+        <h2 class="text-xl font-semibold text-yellow-500 mb-2">
+        {% trans "Email Already Confirmed" %}
+        </h2>
+    
+        <p class="text-yellow-600">
+        {% blocktrans %}
+            We're unable to confirm <strong>{{ confirmation.email_address.email }}</strong> because it's already been verified by another account.<br />
+            If you believe this is a mistake, please contact support for assistance.
+        {% endblocktrans %}
+        </p>
+    </div>
+    {% endif %}
+
+  {% else %}
+    {% url 'account_email' as email_url %}
+    <div class="form rounded-none">
+        <i class="material-symbols-outlined text-8xl text-red-500">contact_mail</i>
+        
+        <h2 class="text-xl font-semibold text-red-500 mb-2">
+            {% trans "Email Confirmation Failed" %}
+        </h2>
+    
+        <p class="text-red-500 text-center">
+            {% blocktrans %}
+                This email confirmation link has expired or is invalid. <br />
+                Please request a new confirmation email to complete the verification process.
+            {% endblocktrans %}
+        </p>
+    </div>
+  {% endif %}
+{% endblock %}

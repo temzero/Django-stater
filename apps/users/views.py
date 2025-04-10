@@ -18,7 +18,7 @@ def profile_view(request, username=None):
     return render(request, 'profile.html', {'profile': profile})
 
 @login_required
-def profile_settings_view(request):
+def profile_edit_view(request):
     if request.method == "POST":
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
@@ -40,7 +40,7 @@ def profile_settings_view(request):
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
 
-    return render(request, 'profile_settings.html', {
+    return render(request, 'profile_edit.html', {
         'user_form': user_form,
         'profile_form': profile_form
     })
@@ -90,9 +90,8 @@ def profile_email_change_view(request):
             else:
                 form.save()
                 send_email_confirmation(request, user)
-                messages.success(request, _("Email updated! Please confirm your new email."))
 
-            return redirect("profile-settings")
+            return redirect("profile-edit")
 
         messages.error(request, _("Invalid email. Please try again."))
 
@@ -112,4 +111,4 @@ def profile_delete_view(request):
 @login_required
 def profile_email_verify_view(request):
     send_email_confirmation(request, request.user)
-    return redirect('profile-settings')
+    return redirect('profile-edit')

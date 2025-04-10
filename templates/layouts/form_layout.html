@@ -1,7 +1,11 @@
 {% extends 'layouts/default_layout.html' %}
 
 {% block content %}
-    <div class="w-[600px] rounded mx-auto">
+    <div class="max-w-[600px] rounded mx-auto">
+        <div class="flex top-12 mb-4 justify-between">
+            <div class="text-3xl">{% block form_label %}{% endblock %}</div>
+            <div class="flex gap-2">{% block form_buttons %}{% endblock %}</div>
+        </div>
         {% block form_content %}{% endblock %}
     </div>
 {% endblock %}

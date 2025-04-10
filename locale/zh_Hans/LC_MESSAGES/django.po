@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 14:36+0700\n"
+"POT-Creation-Date: 2025-04-10 14:38+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: .\apps\core\templates\favorite.html:4 .\templates\includes\sidebar.html:85
+msgid "Favorite"
+msgstr "收藏夹"
+
+#: .\apps\core\templates\home.html:4 .\templates\includes\sidebar.html:66
+msgid "Home"
+msgstr "主页"
+
+#: .\apps\core\templates\search.html:4 .\templates\includes\sidebar.html:104
+#, fuzzy
+#| msgid "March"
+msgid "Search"
+msgstr "搜索"
+
+#: .\apps\core\templates\search.html:14
+msgid "Search for something..."
+msgstr "搜索内容..."
+
+#: .\apps\core\templates\search.html:23
+msgid "Showing results for:"
+msgstr "显示搜索结果："
+
+#: .\apps\core\templates\settings.html:4 .\templates\includes\header.html:30
+#: .\templates\includes\sidebar.html:137
+msgid "Settings"
+msgstr "设置"
+
+#: .\apps\core\templates\settings.html:21
+msgid "General"
+msgstr "常规"
+
+#: .\apps\core\templates\settings.html:27
+msgid "Language"
+msgstr "语言"
+
+#: .\apps\core\templates\settings.html:41
+#: .\apps\core\templates\settings.html:42
+#: .\apps\users\templates\change_password.html:4
+#: .\apps\users\templates\change_password.html:7
+#: .\templates\modals\change_password_modal.html:4
+msgid "Change Password"
+msgstr "更改密码"
+
+#: .\apps\core\templates\settings.html:43
+msgid "Delete Account"
+msgstr "删除账户"
+
 #: .\apps\core\templates\settings\settings_general.html:4
 #: .\apps\core\templates\settings\settings_general.html:9
 msgid "General Setting"
 msgstr "常规设置"
-
-#: .\apps\core\views.py:8 .\apps\core\views.py:37
-msgid "There was an issue with the theme selection."
-msgstr "主题选择出现问题。"
-
-#: .\apps\core\views.py:23
-msgid "Theme updated successfully!"
-msgstr "主题更新成功！"
-
-#: .\apps\core\views.py:24
-msgid "Invalid theme selection"
-msgstr "无效的主题选择"
-
-#: .\apps\core\views.py:34
-#, python-format
-msgid "Theme switched to %(theme)s!"
-msgstr "主题已切换到 %(theme)s！"
 
 #: .\apps\users\models.py:9
 msgid "Male"
@@ -76,15 +106,15 @@ msgstr "用户"
 msgid "Avatar"
 msgstr "头像"
 
-#: .\apps\users\models.py:33 .\apps\users\templates\profile_settings.html:88
+#: .\apps\users\models.py:33 .\apps\users\templates\profile_edit.html:86
 msgid "Gender"
 msgstr "性别"
 
-#: .\apps\users\models.py:38 .\apps\users\templates\profile_settings.html:94
+#: .\apps\users\models.py:38
 msgid "Birthday"
 msgstr "生日"
 
-#: .\apps\users\models.py:43 .\apps\users\templates\profile_settings.html:100
+#: .\apps\users\models.py:43 .\apps\users\templates\profile_edit.html:98
 msgid "Bio"
 msgstr "简介"
 
@@ -96,21 +126,8 @@ msgstr "请输入有效的电话号码。"
 msgid "Phone number"
 msgstr "电话号码"
 
-#: .\apps\users\models.py:61
-msgid "Theme"
-msgstr "主题"
-
-#: .\apps\users\templates\change_password.html:4
-#: .\apps\users\templates\change_password.html:7
-#: .\templates\modals\change_password_modal.html:4 .\templates\settings.html:41
-#: .\templates\settings.html:42
-msgid "Change Password"
-msgstr "更改密码"
-
 #: .\apps\users\templates\change_password.html:8
-#: .\apps\users\templates\profile_delete.html:12
-#: .\apps\users\templates\profile_edit.html:26
-#: .\apps\users\templates\profile_settings.html:8
+#: .\apps\users\templates\profile_edit.html:103
 #: .\templates\modals\account_delete_modal.html:15
 msgid "Cancel"
 msgstr "取消"
@@ -135,138 +152,86 @@ msgstr "确认密码"
 msgid "Update Password"
 msgstr "更新密码"
 
-#: .\apps\users\templates\profile.html:6
-msgid "My"
-msgstr "我的"
-
-#: .\apps\users\templates\profile.html:8
-msgid "'s"
-msgstr "的"
-
-# Context dependent, might need adjustment based on usage with "My"
-#: .\apps\users\templates\profile.html:10
-#: .\apps\users\templates\profile_settings.html:4
-#: .\templates\includes\sidebar.html:63
-msgid "Profile"
-msgstr "个人资料"
-
-#: .\apps\users\templates\profile.html:15
+#: .\apps\users\templates\profile.html:12
+#: .\apps\users\templates\profile_edit.html:4
 msgid "Edit Profile"
 msgstr "编辑个人资料"
 
-#: .\apps\users\templates\profile_delete.html:6 .\templates\settings.html:43
-msgid "Delete Account"
-msgstr "删除账户"
-
-#: .\apps\users\templates\profile_delete.html:7
-msgid "Are you sure you want to delete your account?"
-msgstr "您确定要删除您的账户吗？"
-
-#: .\apps\users\templates\profile_delete.html:11
-msgid "Yes, I want to delete my account"
-msgstr "是的，我要删除我的账户"
-
-#: .\apps\users\templates\profile_edit.html:7
-msgid "Complete your profile"
-msgstr "完善您的个人资料"
-
-#: .\apps\users\templates\profile_edit.html:9
-msgid "Edit your profile"
-msgstr "编辑您的个人资料"
-
-#: .\apps\users\templates\profile_edit.html:22
-msgid "Submit"
-msgstr "提交"
-
-#: .\apps\users\templates\profile_edit.html:24
-msgid "Skip"
-msgstr "跳过"
-
-#: .\apps\users\templates\profile_settings.html:7
-msgid "Save"
-msgstr "保存"
-
-#: .\apps\users\templates\profile_settings.html:32
+#: .\apps\users\templates\profile_edit.html:30
 #: .\templates\account\signup.html:25
 msgid "Username"
 msgstr "用户名"
 
-#: .\apps\users\templates\profile_settings.html:39
+#: .\apps\users\templates\profile_edit.html:37
 #: .\templates\account\signup.html:31
 msgid "Email"
 msgstr "电子邮件"
 
-#: .\apps\users\templates\profile_settings.html:46
-msgid "Unverified"
-msgstr "未验证"
-
-#: .\apps\users\templates\profile_settings.html:48
-msgid "Verified"
-msgstr "已验证"
-
-#: .\apps\users\templates\profile_settings.html:53
+#: .\apps\users\templates\profile_edit.html:51
 msgid "Verify"
 msgstr "验证"
 
-#: .\apps\users\templates\profile_settings.html:55
+#: .\apps\users\templates\profile_edit.html:53
 #: .\venv\Lib\site-packages\django\forms\widgets.py:463
 msgid "Change"
 msgstr "更改"
 
-#: .\apps\users\templates\profile_settings.html:62
+#: .\apps\users\templates\profile_edit.html:60
 #: .\templates\account\signup.html:38
 msgid "First Name"
 msgstr "名字"
 
-#: .\apps\users\templates\profile_settings.html:71
+#: .\apps\users\templates\profile_edit.html:69
 #: .\templates\account\signup.html:49
 msgid "Last Name"
 msgstr "姓氏"
 
-#: .\apps\users\templates\profile_settings.html:82
+#: .\apps\users\templates\profile_edit.html:80
 msgid "Phone Number"
 msgstr "电话号码"
 
-#: .\apps\users\views.py:26
-msgid "Post request received!"
-msgstr "收到 POST 请求！"
+#: .\apps\users\templates\profile_edit.html:92
+#, fuzzy
+#| msgid "Birthday"
+msgid "Birthday (m/d/y)"
+msgstr "生日"
 
-#: .\apps\users\views.py:31
+#: .\apps\users\templates\profile_edit.html:102
+msgid "Save"
+msgstr "保存"
+
+#: .\apps\users\views.py:29
 msgid "Profile updated successfully!"
 msgstr "个人资料更新成功！"
 
-#: .\apps\users\views.py:37
+#: .\apps\users\views.py:35
 #, python-format
 msgid "User %(field)s: %(error)s"
 msgstr "用户 %(field)s：%(error)s"
 
-#: .\apps\users\views.py:40
+#: .\apps\users\views.py:38
 #, python-format
 msgid "Profile %(field)s: %(error)s"
 msgstr "个人资料 %(field)s：%(error)s"
 
-#: .\apps\users\views.py:63
+#: .\apps\users\views.py:61
 msgid "Password updated successfully!"
 msgstr "密码更新成功！"
 
-#: .\apps\users\views.py:74
+#: .\apps\users\views.py:72
 msgid "Password changed!"
 msgstr "密码已更改！"
 
-#: .\apps\users\views.py:91
+#: .\apps\users\views.py:89
 #, python-format
 msgid "%(email)s is already in use."
 msgstr "%(email)s 已被使用。"
 
-#: .\apps\users\views.py:95
-msgid "Email updated! Please confirm your new email."
-msgstr "电子邮件已更新！请确认您的新电子邮件地址。"
-
-#: .\apps\users\views.py:99
+#: .\apps\users\views.py:96
 msgid "Invalid email. Please try again."
 msgstr "无效的电子邮件。请重试。"
 
-#: .\apps\users\views.py:109
+#: .\apps\users\views.py:106
 msgid "Account deleted!"
 msgstr "账户已删除！"
 
@@ -286,9 +251,61 @@ msgstr "西班牙语"
 msgid "Vietnamese"
 msgstr "越南语"
 
+#: .\templates\account\email_confirm.html:15
+#, fuzzy
+#| msgid "Email address"
+msgid "Confirm Your Email Address"
+msgstr "电子邮件地址"
+
+#: .\templates\account\email_confirm.html:18
+#, python-format
+msgid ""
+"\n"
+"              please verify that <span class=\"text-[var(--primary-"
+"color)]\">%(email)s</span> belongs to you.<br/>\n"
+"              Verifying your email helps us secure your account and ensures "
+"you receive important updates without interruption.\n"
+"            "
+msgstr ""
+
+#: .\templates\account\email_confirm.html:26
+#, fuzzy
+#| msgid "Verify"
+msgid "Verify Email"
+msgstr "验证"
+
+#: .\templates\account\email_confirm.html:35
+msgid "Email Already Confirmed"
+msgstr "电子邮件已验证"
+
+#: .\templates\account\email_confirm.html:39
+#, python-format
+msgid ""
+"\n"
+"            We're unable to confirm "
+"<strong>%(confirmation.email_address.email)s</strong> because it's already "
+"been verified by another account.<br />\n"
+"            If you believe this is a mistake, please contact support for "
+"assistance.\n"
+"        "
+msgstr ""
+
+#: .\templates\account\email_confirm.html:53
+msgid "Email Confirmation Failed"
+msgstr "电子邮件验证失败"
+
+#: .\templates\account\email_confirm.html:57
+msgid ""
+"\n"
+"                This email confirmation link has expired or is invalid. <br /"
+">\n"
+"                Please request a new confirmation email to complete the "
+"verification process.\n"
+"            "
+msgstr ""
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:13
-#: .\templates\includes\header.html:36 .\templates\includes\sidebar.html:134
+#: .\templates\includes\header.html:36
 msgid "Login"
 msgstr "登录"
 
@@ -348,7 +365,6 @@ msgid "Sign Up"
 msgstr "注册"
 
 #: .\templates\account\signup.html:13 .\templates\includes\header.html:37
-#: .\templates\includes\sidebar.html:135
 msgid "Register"
 msgstr "注册"
 
@@ -372,28 +388,15 @@ msgstr "在此登录！"
 msgid "Or sign up with:"
 msgstr "或使用以下方式注册："
 
-#: .\templates\home.html:6 .\templates\includes\sidebar.html:52
-msgid "Home"
-msgstr "主页"
-
-#: .\templates\includes\footer.html:2
-msgid "Footer"
-msgstr "页脚"
-
-#: .\templates\includes\header.html:29 .\templates\includes\sidebar.html:96
+#: .\templates\includes\header.html:29 .\templates\includes\sidebar.html:136
 msgid "My Profile"
 msgstr "我的个人资料"
 
-#: .\templates\includes\header.html:30 .\templates\includes\sidebar.html:97
-#: .\templates\includes\sidebar.html:131 .\templates\settings.html:4
-msgid "Settings"
-msgstr "设置"
-
-#: .\templates\includes\header.html:31 .\templates\includes\sidebar.html:95
+#: .\templates\includes\header.html:31 .\templates\includes\sidebar.html:135
 msgid "Log Out"
 msgstr "退出登录"
 
-#: .\templates\includes\sidebar.html:103
+#: .\templates\includes\sidebar.html:143
 msgid "Appearance"
 msgstr "外观"
 
@@ -431,29 +434,13 @@ msgstr "删除"
 msgid "Change Email"
 msgstr "更改电子邮件"
 
-#: .\templates\modals\change_email_modal.html:16
-msgid "Email not verified"
-msgstr "电子邮件未验证"
-
-#: .\templates\modals\change_email_modal.html:26
+#: .\templates\modals\change_email_modal.html:25
 msgid "Enter new email"
 msgstr "输入新电子邮件"
 
-#: .\templates\modals\change_email_modal.html:32
+#: .\templates\modals\change_email_modal.html:31
 msgid "Confirm and Send Verification"
 msgstr "确认并发送验证"
-
-#: .\templates\partials\theme_slider.html:14
-msgid "Dark Mode"
-msgstr "深色模式"
-
-#: .\templates\settings.html:21
-msgid "General"
-msgstr "常规"
-
-#: .\templates\settings.html:27
-msgid "Language"
-msgstr "语言"
 
 #: .\venv\Lib\site-packages\click\_termui_impl.py:556
 #, python-brace-format
@@ -1988,3 +1975,68 @@ msgstr "Django 社区"
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
 msgstr "连接、获取帮助或做出贡献"
+
+#~ msgid "There was an issue with the theme selection."
+#~ msgstr "主题选择出现问题。"
+
+#~ msgid "Theme updated successfully!"
+#~ msgstr "主题更新成功！"
+
+#~ msgid "Invalid theme selection"
+#~ msgstr "无效的主题选择"
+
+#, python-format
+#~ msgid "Theme switched to %(theme)s!"
+#~ msgstr "主题已切换到 %(theme)s！"
+
+#~ msgid "Theme"
+#~ msgstr "主题"
+
+#~ msgid "My"
+#~ msgstr "我的"
+
+#~ msgid "'s"
+#~ msgstr "的"
+
+# Context dependent, might need adjustment based on usage with "My"
+#~ msgid "Profile"
+#~ msgstr "个人资料"
+
+#~ msgid "Are you sure you want to delete your account?"
+#~ msgstr "您确定要删除您的账户吗？"
+
+#~ msgid "Yes, I want to delete my account"
+#~ msgstr "是的，我要删除我的账户"
+
+#~ msgid "Complete your profile"
+#~ msgstr "完善您的个人资料"
+
+#~ msgid "Edit your profile"
+#~ msgstr "编辑您的个人资料"
+
+#~ msgid "Submit"
+#~ msgstr "提交"
+
+#~ msgid "Skip"
+#~ msgstr "跳过"
+
+#~ msgid "Unverified"
+#~ msgstr "未验证"
+
+#~ msgid "Verified"
+#~ msgstr "已验证"
+
+#~ msgid "Post request received!"
+#~ msgstr "收到 POST 请求！"
+
+#~ msgid "Email updated! Please confirm your new email."
+#~ msgstr "电子邮件已更新！请确认您的新电子邮件地址。"
+
+#~ msgid "Footer"
+#~ msgstr "页脚"
+
+#~ msgid "Email not verified"
+#~ msgstr "电子邮件未验证"
+
+#~ msgid "Dark Mode"
+#~ msgstr "深色模式"

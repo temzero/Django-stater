@@ -1,11 +1,13 @@
 {% extends 'layouts/default_layout.html' %}
 {% load i18n %}
 
-{% block content %}
-    <div class="flex flex-col mx-auto gap-4 font-light max-w-xl w-full px-4">
-        <h1 class="text-4xl mb-2">{% trans "Search" %}</h1>
+{% block label %}{% trans "Search" %}{% endblock %}
 
-        <form method="GET" action="{% url 'search' %}" class="flex input border-red items-center justify-between gap-2">
+{% block content %}
+        <form method="GET" action="{% url 'search' %}" class="flex input border-red items-center justify-between gap-1">
+            <button type="submit">
+                <i class="material-symbols-outlined text-2xl opacity-50">search</i>
+            </button>
             <input
                 type="text"
                 name="q"
@@ -14,15 +16,11 @@
                 value="{{ request.GET.q|default_if_none:'' }}"
                 autofocus
             />
-            <button type="submit">
-                <i class="material-symbols-outlined text-2xl opacity-50">search</i>
-            </button>
         </form>
 
         {% if request.GET.q %}
-            <p class="text-sm text-gray-500">
+            <p class="text-sm p-1 opacity-70">
                 {% trans "Showing results for:" %} <strong>{{ request.GET.q }}</strong>
             </p>
         {% endif %}
-    </div>
 {% endblock %}
